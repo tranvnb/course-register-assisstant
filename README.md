@@ -1,1 +1,1 @@
-# Course Register Assistant
+# Course Registration Assistant
