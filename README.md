@@ -1,1 +1,1 @@
-# 3380-project
+# Course Register Assistant
