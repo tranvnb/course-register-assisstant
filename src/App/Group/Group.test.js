@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import Group from '../../App/components/Group';
+import Group from './Group';
 
 test('renders group list', () => {
   render(<Group />);
