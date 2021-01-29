@@ -1,7 +1,7 @@
 import logo from '../assets/logo.svg';
 import style from './App.module.scss';
 
-import Group from './Group/Group';
+import Group from '../components/Group/Group';
 
 function App() {
   return (
