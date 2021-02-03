@@ -16,7 +16,7 @@ const Login = ({location, history}) => {
         } else {
 
             //request to back-end service here
-            if (username == 'test@test.com' && password == 'test@test.com') {
+            if (username ==='test@test.com' && password === 'test@test.com') {
                 const { from } = location.state || { from: { pathname: "/group" } };
                 history.push(from);
             }
@@ -29,27 +29,27 @@ const Login = ({location, history}) => {
     return (
         <div className={style.loginContainer}>
             <img src={logo} className={style.logo} alt="logo" />
-            <Form className={style.formLogin} onSubmit={handleSubmit}>
-                <Form.Group as={Row} controlId="formHorizontalEmail">
+            <Form className={style.formLogin} data-testid="form-submit">
+                <Form.Group as={Row} controlId="email">
                     <Form.Label column sm={2}>Email</Form.Label>
                     <Col sm={10}>
-                        <Form.Control type="email" placeholder="Email" value={username} required  onChange={(e) => setUsername(e.target.value)}/>
+                        <Form.Control type="email" data-testid="email" placeholder="Email" value={username} required  onChange={(e) => setUsername(e.target.value)}/>
                     </Col>
                     <Form.Control.Feedback type="invalid">
                         Please choose a usename.
                     </Form.Control.Feedback>
                 </Form.Group>
 
-                <Form.Group as={Row} controlId="formHorizontalPassword">
+                <Form.Group as={Row} controlId="password">
                     <Form.Label column sm={2}>Password</Form.Label>
                     <Col sm={10}>
-                        <Form.Control type="password" placeholder="Password" value={password} required onChange={(e) => setPassword(e.target.value)} />
+                        <Form.Control type="password" data-testid="password" placeholder="Password" value={password} required onChange={(e) => setPassword(e.target.value)} />
                     </Col>
                     <Form.Control.Feedback type="invalid">
                         Please choose a password.
                     </Form.Control.Feedback>
                 </Form.Group>
-                <Form.Group as={Row} controlId="formHorizontalCheck">
+                <Form.Group as={Row} controlId="checkbox">
                     <Col sm={{ span: 10, offset: 2 }}>
                         <Form.Check label="Remember me" noValidate />
                     </Col>
@@ -57,7 +57,7 @@ const Login = ({location, history}) => {
 
                 <Form.Group as={Row}>
                     <Col sm={{ span: 10, offset: 2 }}>
-                        <Button type="submit">Sign in</Button>
+                        <Button type="button" id="signInButton" onClick={handleSubmit} >Sign in</Button>
                     </Col>
                 </Form.Group>
             </Form>
