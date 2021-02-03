@@ -1,13 +1,13 @@
 import { render, fireEvent, waitFor, screen } from '@testing-library/react';
 import Login from '.';
 import userEvent from '@testing-library/user-event';
-import { createMemoryHistory } from 'history';
+import { createMemoryHistory, createBrowserHistory } from 'history';
 import renderWithRouter from "../../utils/test.util.js";
 import App from '../../App';
-import { Router } from 'react-router-dom';
+import { Router, BrowserRouter } from 'react-router-dom';
 
 test('renders login component', () => {
-  render(<Login />);
+  renderWithRouter(<Login />, {route: '/login'});
 
   const lgButton = screen.getByRole('button', {id: /signInButton/i});
   const lgUsername = screen.getByRole('textbox', {id: /email/i});
@@ -39,3 +39,24 @@ test('user login action fail when no data input', () => {
 });
 
 
+it("login success when data input correct", async () => {
+
+    renderWithRouter(<App />, { route: '/login' });
+
+    const lgButton = screen.getByRole('button', { id: /signInButton/i });
+
+    const lgUsername = screen.getByRole('textbox', { id: /email/i });
+    const lgPassword = screen.getByTestId('password');
+
+
+    userEvent.type(lgUsername, 'test@test.com');
+    userEvent.type(lgPassword, 'test@test.com');
+    userEvent.click(lgButton);
+
+    // navigate away login page
+    expect(lgButton).not.toBeInTheDocument();
+
+    //get in group page
+    const groupList = screen.getByText(/group brian/i);
+    expect(groupList).toBeInTheDocument();
+});

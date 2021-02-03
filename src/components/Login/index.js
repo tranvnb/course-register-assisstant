@@ -2,12 +2,16 @@ import { useState } from 'react';
 import { Form, Row, Col, Button } from 'react-bootstrap';
 import logo from '../../assets/logo.svg';
 import style from './Login.module.scss';
+import {useLocation, useHistory} from 'react-router-dom';
 
-const Login = ({location, history}) => {   
+const Login = () => {   
     const [validated, setValidated] = useState(false);
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     
+    const location = useLocation();
+    const history = useHistory();
+
     const handleSubmit = (event) => {
         const form = event.currentTarget;
         if (form.checkValidity() === false) {
