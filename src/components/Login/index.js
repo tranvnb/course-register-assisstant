@@ -33,7 +33,7 @@ const Login = () => {
     return (
         <div className={style.loginContainer}>
             <img src={logo} className={style.logo} alt="logo" />
-            <Form className={style.formLogin} data-testid="form-submit">
+            <Form className={style.formLogin} data-testid="form-submit" validated={validated}  >
                 <Form.Group as={Row} controlId="email">
                     <Form.Label column sm={2}>Email</Form.Label>
                     <Col sm={10}>
@@ -55,7 +55,7 @@ const Login = () => {
                 </Form.Group>
                 <Form.Group as={Row} controlId="checkbox">
                     <Col sm={{ span: 10, offset: 2 }}>
-                        <Form.Check label="Remember me" noValidate />
+                        <Form.Check label="Remember me" formNoValidate={true} />
                     </Col>
                 </Form.Group>
 
