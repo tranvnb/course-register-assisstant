@@ -21,7 +21,7 @@ export const loginSlice = createSlice({
         authenticating: false,
         isAuthenticated: true,
         userCredentials: {
-          username: state.userCredentials.username,
+          email: state.userCredentials.email,
           password: ""
         }
       }

@@ -23,12 +23,12 @@ describe("login reducer test", () => {
       authenticating: true,
       isAuthenticated: false,
       userCredentials: {
-        username: "JohnDoe",
+        email: "johndoe@test.com",
         password: "Password123"
       }
     };
 
-    store.dispatch(startAuthenticating({ username: "JohnDoe", password: "Password123" }));
+    store.dispatch(startAuthenticating({ email: "johndoe@test.com", password: "Password123" }));
 
     let state = store.getState().login;
 
@@ -42,12 +42,12 @@ describe("login reducer test", () => {
       authenticating: false,
       isAuthenticated: false,
       userCredentials: {
-        username: "JohnDoe",
+        email: "johndoe@test.com",
         password: "Password123"
       }
     };
     
-    store.dispatch(startAuthenticating({ username: "JohnDoe", password: "Password123" }));
+    store.dispatch(startAuthenticating({ email: "johndoe@test.com", password: "Password123" }));
 
     store.dispatch(failureAuthenticating());
 
@@ -63,12 +63,12 @@ describe("login reducer test", () => {
       authenticating: false,
       isAuthenticated: true,
       userCredentials: {
-        username: "JohnDoe",
+        email: "johndoe@test.com",
         password: ""
       }
     };
     
-    store.dispatch(startAuthenticating({ username: "JohnDoe", password: "Password123" }));
+    store.dispatch(startAuthenticating({ email: "johndoe@test.com", password: "Password123" }));
 
     store.dispatch(successAuthenticating());
 
