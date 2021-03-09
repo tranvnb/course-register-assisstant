@@ -1,6 +1,24 @@
-const express = require("express");
+const express = require('express');
+const { userRoute }  = require ('./routes/index.js');
+const mongoose = require('mongoose');
+const cors = require('cors');
+
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config();
+}
+
+const corsOptions = {
+    origin: '*'
+}
+
 const app = express();
-const port = 8080;
+app.use(cors(corsOptions));
+
+const port = process.env.PORT || 8080;
+
+app.use(express.json());
+
+app.use('/users', userRoute);
 
 app.get("/", (req, res) => {
   res.send("The course registration assistant api is running");
