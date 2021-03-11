@@ -11,6 +11,6 @@ ENV PATH /app/node_modules/.bin:$PATH
 COPY . ./
 
 # Running npm install to set environment variables
-RUN npm install
+RUN npm install -g nodemon && npm install
 
-CMD [ "node", "index.js" ]
+CMD [ "npm", "run", "dev"]

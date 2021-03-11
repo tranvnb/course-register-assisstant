@@ -1,4 +1,4 @@
-[
+const courses = [
     {
         "CRN": "22371",
         "subject": "CSIS 1175 001",
@@ -1800,3 +1800,8 @@
         "sessionnote": "Section Notes:: All course activities will be asynchronous. Students will not be required to be online at specific scheduled times."
     }
 ]
+
+conn = new Mongo();
+db = conn.getDB("cra-db");
+
+db.courses.insertMany(courses);

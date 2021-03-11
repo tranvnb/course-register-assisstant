@@ -4,7 +4,8 @@
   "description": "Back-End Web Service for course-registration-assistant built with express",
   "main": "index.js",
   "scripts": {
-    "start": "NODE_ENV=dev nodemon index.js",
+    "start": "node index.js",
+    "dev": "NODE_ENV=dev nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
