@@ -1,13 +1,15 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 export const userLogin = createAsyncThunk(
-  'user/login', 
-  async (loginData, thunkAPI) =>  {
-    const { currentRequestId, authenticating } = thunkAPI.getState().login
-    if (authenticating || thunkAPI.requestId !== currentRequestId) {
+  'user/login',
+  async (loginData, thunkAPI) => {
+    const { currentRequestId, isLoading } = thunkAPI.getState().login
+    // cancel any new requests if current request had not been fulfilled (reset to undefined), 
+    // in other words, if this request (requestId) is different from the one was init(pending) before, then cancel
+    if (!isLoading || thunkAPI.requestId !== currentRequestId) {
       return
     }
-    const response = await fetch(process.env.BASE_URL + '/users/login', {
+    const response = await fetch(process.env.REACT_APP_WEB_SESRVICE_URL + '/users/login', {
       method: 'POST',
       headers: {
         'Content-type': 'application/json',
@@ -19,7 +21,7 @@ export const userLogin = createAsyncThunk(
     if (response.status === 200) {
       return response.json();
     } else if (response.status === 401) {
-      return thunkAPI.rejectWithValue({message: 'Wrong username or password'});
+      return thunkAPI.rejectWithValue({ message: 'Wrong username or password' });
     }
   });
 
@@ -28,7 +30,7 @@ export const loginSlice = createSlice({
 
   name: 'login',
   initialState: {
-    authenticating: false,
+    isLoading: false,
     isAuthenticated: false,
     userCredentials: null,
     currentRequestId: undefined,
@@ -62,29 +64,41 @@ export const loginSlice = createSlice({
     }
   },
   extraReducers: builder => {
-    builder.addCase(userLogin.pending.apply, (state, action) => {
-      console.log('in extra reducer pending', action);
-      state.authenticating = true;
-      state.isAuthenticated = false;
-      state.error = null;
-    })
-    .addCase(userLogin.fulfilled, (state, action) => {
-      // console.log('in extra reducer fulfilled', action);
-      state.authenticating = false;
-      if (action.payload?.user) {
-        state.userCredentials = action.payload.user;
-        state.isAuthenticated = true;
+    builder.addCase(userLogin.pending, (state, action) => {
+      // only start update state if there is no request are loading/pending
+      if (!state.isLoading) {
+        state.isLoading = true;
+        // store the request Id to avoid multiple request simultaneously
+        state.currentRequestId = action.meta.requestId;
+        // reset authenticated state
+        state.isAuthenticated = false;
+        // reset error
+        state.error = null;
       }
     })
-    .addCase(userLogin.rejected, (state, action) => {
-      console.log('in extra reducer rejected', action);
-      state.authenticating = false;
-      state.isAuthenticated = false;
-      if (action.payload) {
-        state.error = action.payload;
-      }
-      console.log('in extra reducer rejected state.error', state.error);
-    })
+      .addCase(userLogin.fulfilled, (state, action) => {
+        // only process if fulfilled is called from its request, but not from other request when user click multiple time on the button
+        if (state.isLoading && state.currentRequestId === action.meta.requestId) {
+          state.currentRequestId = undefined;
+          state.isLoading = false;
+          if (action.payload?.user) {
+            state.userCredentials = action.payload.user;
+            state.isAuthenticated = true;
+          }
+        }
+
+      })
+      .addCase(userLogin.rejected, (state, action) => {
+        if (state.isLoading && state.currentRequestId === action.meta.requestId) {
+          state.currentRequestId = undefined;
+          state.isLoading = false;
+          state.isAuthenticated = false;
+          if (action.payload) {
+            state.error = action.payload;
+          }
+        }
+
+      })
   }
 });
 
