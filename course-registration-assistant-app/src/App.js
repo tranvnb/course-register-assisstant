@@ -1,7 +1,7 @@
-import { Switch, Route, BrowserRouter } from 'react-router-dom';
+import React, { Switch, Route, BrowserRouter } from 'react-router-dom';
 import style from './App.scss';
 import Group from './components/Group/Group';
-import Login from "./components/Login";
+import Login from "./containers/Login";
 
 function App() {
   return (
