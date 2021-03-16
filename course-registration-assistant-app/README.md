@@ -6,6 +6,6 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ````shell
     $ touch .env-example .env
-    $ echo BASE_URL='http://yourlocalwebservice' > .env
+    $ echo REACT_APP_WEB_SESRVICE_URL='http://yourlocalwebservice' > .env
     $ npm start
 ````
