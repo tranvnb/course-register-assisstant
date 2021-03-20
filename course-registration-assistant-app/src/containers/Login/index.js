@@ -1,29 +1,65 @@
 import { useState } from 'react';
-import { Form, Row, Col, Button } from 'react-bootstrap';
+import { useDispatch, useSelector } from 'react-redux';
+import { Form, Row, Col, Button, Alert } from 'react-bootstrap';
 import logo from '../../assets/logo.svg';
 import style from './Login.module.scss';
 import {useLocation, useHistory} from 'react-router-dom';
+import { userLogin } from './loginSlice'
+
+
 
 const Login = () => {   
+    const dispatch = useDispatch();
     const [validated, setValidated] = useState(false);
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+    const [hasError, setHasError] = useState(false);
     
+    const error = useSelector(state => state.login.error);
+
     const location = useLocation();
     const history = useHistory();
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         const form = event.currentTarget;
         if (form.checkValidity() === false) {
           event.preventDefault();
           event.stopPropagation();
         } else {
+            // //request to back-end service here
+            // if (username ==='test@test.com' && password === 'test@test.com') {
+            //     const { from } = location.state || { from: { pathname: "/group" } };
+            //     history.push(from);
+            // }
 
-            //request to back-end service here
-            if (username ==='test@test.com' && password === 'test@test.com') {
+            // console.log('resultAction', resultAction);
+            // console.log('unwrapResult(resultAction)', unwrapResult(resultAction)); // == payload
+            
+
+            // NEDT test whether it run reject or fulfill
+            // dispatch(userLogin({username: username, password: password}))
+            // .then(unwrapResult)
+            // .then(payload => {
+            //     // console.log('originalPromiseResult', originalPromiseResult);
+            //     if (payload?.user) {
+            //         const { from } = location.state || { from: { pathname: "/group" } };
+            //         history.push(from);
+            //     } else {
+            //         console.error(payload);
+            //     }
+                
+            // });
+            
+            const resultAction = await dispatch(userLogin({username: username, password: password}))
+            if (resultAction?.payload?.user)  {
                 const { from } = location.state || { from: { pathname: "/group" } };
                 history.push(from);
+            } else {
+                setHasError(true);
+                // console.log('error', error);
+                console.error('resultAction', resultAction); // same as action in reject
             }
+
         }
 
         setValidated(true);
@@ -33,7 +69,18 @@ const Login = () => {
     return (
         <div className={style.loginContainer}>
             <img src={logo} className={style.logo} alt="logo" />
+
             <Form className={style.formLogin} data-testid="form-submit" validated={validated}  >
+                {hasError ? 
+                    (<Form.Group as={Row}>
+                        <Col sm={12}>
+                            <Alert variant="danger" onClose={() => setHasError(false)} dismissible>
+                                {error !== null ? error.message : ""}
+                            </Alert>
+                        </Col>
+                    </Form.Group>) 
+                    : ""
+                }
                 <Form.Group as={Row} controlId="email">
                     <Form.Label column sm={2}>Email</Form.Label>
                     <Col sm={10}>

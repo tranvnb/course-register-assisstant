@@ -1,0 +1,38 @@
+version: "3.9"
+
+services:
+  app:
+    build:
+      context: ./course-registration-assistant-app
+      dockerfile: Dockerfile
+    ports: 
+      - 3000:3000
+    volumes:
+      - ./course-registration-assistant-app:/app
+      - /app/node_modules
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+
+  api:
+    build:
+      context: ./course-registration-assistant-ws
+      dockerfile: Dockerfile
+    ports:
+      - 8080:8080
+    volumes:
+      - ./course-registration-assistant-ws:/app
+      - /app/node_modules
+    environment:
+    - CHOKIDAR_USEPOLLING=true
+
+  database:
+    image: mongo
+    restart: always
+    ports:
+      - 27017:27017
+    volumes:
+      - ./course-registration-assistant-database/scripts:/docker-entrypoint-initdb.d/
+      - cra-data:/data/db
+
+volumes:
+  cra-data:
