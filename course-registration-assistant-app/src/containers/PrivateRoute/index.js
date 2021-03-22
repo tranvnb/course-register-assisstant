@@ -1,14 +1,17 @@
-import React, { useContext } from 'react';
-import { Route, Redirect, useLocation } from 'react-router-dom';
-import UserContext from '../../contexts/UserContext'
+import React from 'react';
+import { useSelector } from 'react-redux';
+import { Route, Redirect } from 'react-router-dom';
 
 const PrivateRoute = ({ component: Component, ...rest }) => {
-    const { isUserLogin } = useContext(UserContext);
+    let isAuthenticated = useSelector(state => state.login.isAuthenticated);
     return (
         <Route {...rest} render={
-            props => isUserLogin() ? 
-                (<Component {...props} />) 
-                : (<Redirect to={{ pathname: "/login", state: { from: props.location } }} />)
+            props => isAuthenticated ?
+                (<Component {...props} />)
+                : (<Redirect to={{
+                    pathname: "/login",
+                    state: { from: props.location }
+                }} />)
         } />
     )
 }

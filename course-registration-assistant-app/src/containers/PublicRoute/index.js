@@ -1,12 +1,12 @@
-import React, { useContext } from "react";
+import React from "react";
+import { useSelector } from "react-redux";
 import { Route, Redirect } from 'react-router-dom';
-import UserContext from '../../contexts/UserContext';
 
 const PublicRoute = ({component: Component, isRestricted = false, ...rest}) => {
-    const {isUserLogin} = useContext(UserContext);
+    const isUserLogin = useSelector(state => state.login.isAuthenticated);
     return (
         <Route {...rest} render={
-            props => isRestricted && isUserLogin() ? <Redirect to="/dashboard" /> : <Component {...props} />}
+            props => isRestricted && isUserLogin ? <Redirect to="/dashboard" /> : <Component {...props} />}
         />
     )
 }
