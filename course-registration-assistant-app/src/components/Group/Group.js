@@ -1,13 +1,15 @@
 // Brief Discription of out Group
 import style from './Group.module.scss';
-import {logUserOut} from "../../services/UserService";
 import { useHistory } from 'react-router';
+import { useDispatch } from 'react-redux';
+import { userLogout } from '../../containers/Login/loginSlice'
 
 function Group() {
 
   const history = useHistory();
+  const dispatch = useDispatch();
   const logout = () => {
-    logUserOut();
+    dispatch(userLogout());
     history.replace("/login");
   }
 

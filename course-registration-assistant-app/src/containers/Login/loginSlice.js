@@ -1,38 +1,37 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import UserService from '../../services/UserService';
 
 export const userLogin = createAsyncThunk(
   'user/login',
-  async (loginData, thunkAPI) => {
+  (loginData, thunkAPI) => {
     const { currentRequestId, isLoading } = thunkAPI.getState().login
     // cancel any new requests if current request had not been fulfilled (reset to undefined), 
     // in other words, if this request (requestId) is different from the one was init(pending) before, then cancel
     if (!isLoading || thunkAPI.requestId !== currentRequestId) {
       return
     }
-    const response = await fetch(process.env.REACT_APP_WEB_SESRVICE_URL + '/users/login', {
-      method: 'POST',
-      headers: {
-        'Content-type': 'application/json',
-        'Access-Control-Allow-Origin': '*'
-      },
-      body: JSON.stringify(loginData)
-    })
+    return UserService.logUserIn(loginData)
+      .then(data => {
+        // return data to fulfill reducer or we can use dispatch an action here
+        // just return data or a promise resolve
+        return data;
+      }).catch(error => {
+        // return data to reject reducer or we can use dispatch an action here
+        // at here we should return promise reject or use rejectWithValue
+        return thunkAPI.rejectWithValue({ message: 'Wrong username or password' });
+      });
 
-    if (response.status === 200) {
-      return response.json();
-    } else if (response.status === 401) {
-      return thunkAPI.rejectWithValue({ message: 'Wrong username or password' });
-    }
   });
 
+const user = JSON.parse(localStorage.getItem("user"));
 
 export const loginSlice = createSlice({
 
   name: 'login',
   initialState: {
     isLoading: false,
-    isAuthenticated: false,
-    userCredentials: null,
+    isAuthenticated: user !== null && user !== undefined, // get localStorage here and assign to the initializeState
+    userCredentials: user,
     currentRequestId: undefined,
     error: null
   },
@@ -61,6 +60,13 @@ export const loginSlice = createSlice({
         authenticating: false,
         isAuthenticated: false
       }
+    },
+    userLogout: (state, action) => {
+      debugger;
+      UserService.logUserOut();
+      // immer behind the scene
+      state.isAuthenticated = false;
+      state.userCredentials = null;
     }
   },
   extraReducers: builder => {
@@ -102,6 +108,6 @@ export const loginSlice = createSlice({
   }
 });
 
-export const { startAuthenticating, successAuthenticating, failureAuthenticating } = loginSlice.actions
+export const { startAuthenticating, successAuthenticating, failureAuthenticating, userLogout } = loginSlice.actions
 
 export default loginSlice.reducer;

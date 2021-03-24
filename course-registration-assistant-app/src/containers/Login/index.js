@@ -22,47 +22,20 @@ const Login = () => {
 
     const handleSubmit = async (event) => {
         const form = event.currentTarget;
+        setValidated(true);
         if (form.checkValidity() === false) {
           event.preventDefault();
           event.stopPropagation();
         } else {
-            // //request to back-end service here
-            // if (username ==='test@test.com' && password === 'test@test.com') {
-            //     const { from } = location.state || { from: { pathname: "/group" } };
-            //     history.push(from);
-            // }
-
-            // console.log('resultAction', resultAction);
-            // console.log('unwrapResult(resultAction)', unwrapResult(resultAction)); // == payload
-            
-
-            // NEDT test whether it run reject or fulfill
-            // dispatch(userLogin({username: username, password: password}))
-            // .then(unwrapResult)
-            // .then(payload => {
-            //     // console.log('originalPromiseResult', originalPromiseResult);
-            //     if (payload?.user) {
-            //         const { from } = location.state || { from: { pathname: "/group" } };
-            //         history.push(from);
-            //     } else {
-            //         console.error(payload);
-            //     }
-                
-            // });
-            
             const resultAction = await dispatch(userLogin({username: username, password: password}))
             if (resultAction?.payload?.user)  {
-                const { from } = location.state || { from: { pathname: "/group" } };
-                history.push(from);
+                const { from } = location.state || { from: { pathname: "/dashboard" } };
+                history.replace(from);
             } else {
                 setHasError(true);
-                // console.log('error', error);
-                console.error('resultAction', resultAction); // same as action in reject
             }
 
         }
-
-        setValidated(true);
 
       };
 
