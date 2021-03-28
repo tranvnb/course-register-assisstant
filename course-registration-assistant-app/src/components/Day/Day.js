@@ -23,6 +23,7 @@ const Day = ({ courses }) => {
             + (DAY_MAX_WORKING_TIME_BLOCK - course.offset - course.duration) * BLOCK_HEIGHT + "px " // bottom
             + (index * paddingWidth) + "%" // left
           , zIndex: (index + 1)
+          , backgroundColor: groupCourse.length == 1 ? "rgba(112, 136, 158, 0.64)" : "#ff00007a"
         };
         return (
           <Course

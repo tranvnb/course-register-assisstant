@@ -65,7 +65,7 @@ const initData = [
               {
                   id: "1",
                   title: "2200",
-                  details: { instructor: "Rahim", credit: 3 },
+                  details: { instructor: "Rahim Rahim", credit: 3 },
                   offset: 3,
                   duration: 4,
                   preCoursePos: 0,
@@ -74,7 +74,7 @@ const initData = [
               {
                   id: "3",
                   title: "2300",
-                  details: { instructor: "Brian", credit: 3 },
+                  details: { instructor: "Brian Vo", credit: 3 },
                   offset: 3,
                   duration: 4,
                   preCoursePos: 0,
@@ -172,19 +172,17 @@ const Dashboard = () => {
             This is sidebar
             </div>
           <div className="col-9">
-            This is the calendar
             <Week timeFrames={timeTableLabel} days={initData}/>
           </div>
         </div>
         <div className="row">
           <div className="col">
             This is footer
+            <button onClick={logout}>LOG OUT</button>
           </div>
         </div>
       </div>
 
-
-      <button onClick={logout}>LOG OUT</button>
 
 
     </div>
