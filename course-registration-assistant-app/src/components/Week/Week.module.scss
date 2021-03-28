@@ -1,0 +1,53 @@
+$colwidth: 150px;
+$cellHeight: 60px;
+.scheduleDay {
+  display: inline-block;
+  width: $colwidth;
+  height: $cellHeight;
+  // border: 1px solid #e6e6e6;
+  padding: 0 5px 0 5px;
+} 
+.tableArea {
+  // min-width: $colwidth * 6;
+  // position: absolute;
+  display: inline-block;
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  .table {
+    border-collapse: separate;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  .scheduleTimeFrame {  
+      // .scheduleDay {
+      //   position: relative;        
+      // }
+      .scheduleDay:nth-child(odd) {
+          background-color: #e1e1e1;    
+      }
+
+      .scheduleDay:nth-child(even) {
+          background-color: #c1c1c1;    
+      }
+    }
+  }
+
+  .courseTable {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    .courseWrapper {
+      width: $colwidth;
+      position: absolute;
+      height: 100%;
+      top: 0px;
+    }
+  }
+}

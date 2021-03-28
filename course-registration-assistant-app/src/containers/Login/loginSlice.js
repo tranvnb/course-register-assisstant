@@ -62,7 +62,6 @@ export const loginSlice = createSlice({
       }
     },
     userLogout: (state, action) => {
-      debugger;
       UserService.logUserOut();
       // immer behind the scene
       state.isAuthenticated = false;
