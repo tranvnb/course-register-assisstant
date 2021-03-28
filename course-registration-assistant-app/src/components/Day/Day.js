@@ -11,7 +11,7 @@ const Day = ({ courses }) => {
 
   useEffect(() => {
     const courseRender = [];
-    courses.map((groupCourse, groupKey) => {
+    courses.forEach((groupCourse, groupKey) => {
       let paddingWidth = 0;
       if (groupCourse.length > 1) {
         paddingWidth = 100 / groupCourse.length;
@@ -23,7 +23,7 @@ const Day = ({ courses }) => {
             + (DAY_MAX_WORKING_TIME_BLOCK - course.offset - course.duration) * BLOCK_HEIGHT + "px " // bottom
             + (index * paddingWidth) + "%" // left
           , zIndex: (index + 1)
-          , backgroundColor: groupCourse.length == 1 ? "rgba(112, 136, 158, 0.64)" : "#ff00007a"
+          , backgroundColor: groupCourse.length === 1 ? "rgba(112, 136, 158, 0.64)" : "#ff00007a"
         };
         return (
           <Course

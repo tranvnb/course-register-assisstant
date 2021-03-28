@@ -2,7 +2,7 @@ import React from 'react';
 import Day from '../Day';
 import style from './Week.module.scss';
 
-const Week = ({ timeFrames, days }) => {
+const Week = ({ timeFrames, days, courses = [] }) => {
 
   const table = timeFrames.map((time, timeIndex) => {
     return (
@@ -25,7 +25,7 @@ const Week = ({ timeFrames, days }) => {
             <th></th>
             {days.map((day, dayIndex) => {
               return <th key={dayIndex} className={style.scheduleDay}>
-                {day.name}
+                {day}
               </th>
             })}
             <th></th>
@@ -47,7 +47,7 @@ const Week = ({ timeFrames, days }) => {
                 <table className={style.courseTable}>
                   <tbody>
                     <tr>
-                      {days.map((day, dayIndex) => {
+                      {courses.map((day, dayIndex) => {
                         return (
                           <td key={dayIndex}>
                             <div className={style.courseWrapper}>
