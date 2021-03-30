@@ -5,40 +5,12 @@ import Course from '../Course';
 
 const Day = ({ dayOfWeek, courses }) => {
 
-  const DAY_MAX_WORKING_TIME_BLOCK = 26;
-  const BLOCK_HEIGHT = 30+1;
+
   const [courseList, setCourseList] = useState([]);
 
-  const oldRender =  () => courses.forEach((groupCourse, groupKey) => {
-    const courseRender = [];
-    let paddingWidth = 0;
-    if (groupCourse.length > 1) {
-      paddingWidth = 100 / groupCourse.length;
-    }
-    courseRender.push(...groupCourse.map((course, index) => {
-      const style = {
-        inset: (BLOCK_HEIGHT * course.offset) + "px " // top
-          + (paddingWidth * (groupCourse.length - index - 1)) + "% " // padding right
-          + (DAY_MAX_WORKING_TIME_BLOCK - course.offset - course.duration) * BLOCK_HEIGHT + "px " // bottom
-          + (index * paddingWidth) + "%" // left
-        , zIndex: (index + 1)
-        , backgroundColor: groupCourse.length === 1 ? "rgba(112, 136, 158, 0.64)" : "#ff00007a"
-      };
-      return (
-        <Course
-          key={course.id}
-          style={style}
-          id={course.id}
-          preCoursePos={course.preCoursePos}
-          details={course.details}
-          title={course.title}
-          offset={course.offset}
-          duration={course.duration} />)
-    }));
-    // no need to return
-  });
-
   useEffect(() => {
+    const DAY_MAX_WORKING_TIME_BLOCK = 26;
+    const BLOCK_HEIGHT = 30+1;
     const courseRender = [];
     courses.forEach((course, courseIndex) => {
       let paddingWidth = 0;
@@ -60,9 +32,9 @@ const Day = ({ dayOfWeek, courses }) => {
         };
         courseRender.push(
             <Course
-              key={dayIndex}
+              key={course.CRN+ "-" + dayIndex}
               style={style}
-              id={course.crn}
+              id={course.CRN}
               subject={course.subject}
               instructor={course.instructor}
               credit={course.credit}
@@ -77,7 +49,7 @@ const Day = ({ dayOfWeek, courses }) => {
         
       })
     setCourseList(courseRender);
-  }, [courses]);
+  }, [courses, dayOfWeek]);
 
   return (
     <>

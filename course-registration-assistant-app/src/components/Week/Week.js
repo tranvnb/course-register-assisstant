@@ -4,31 +4,6 @@ import style from './Week.module.scss';
 
 const Week = ({ timeFrames, days, courses = [] }) => {
 
-
-  (days.map(day => {
-
-    const data = courses.filter(course => {
-      // console.log(course);
-      return course.days
-        .filter(schedule => {
-          return schedule.day !== "" && schedule.day.toLowerCase() === day.toLowerCase();
-        })
-        .length > 0
-    })
-    console.log(day, data);
-    return data;
-  })
-  // .map((coursesOfDay, dayIndex) => {
-  //     return (
-  //       <td key={dayIndex}>
-  //         <div className={style.courseWrapper}>
-  //           <Day courses={coursesOfDay} />
-  //         </div>
-  //       </td>
-  //     )
-  //   })
-  )
-
   const table = timeFrames.map((time, timeIndex) => {
     return (
       <tr className={style.scheduleTimeFrame} key={timeIndex}>
@@ -82,7 +57,7 @@ const Week = ({ timeFrames, days, courses = [] }) => {
                         })}
                       }).map(({day, courses: coursesOfDay}, dayIndex) => {
                           return (
-                            <td key={dayIndex}>
+                            <td key={day + "-" + dayIndex}>
                               <div className={style.courseWrapper}>
                                 <Day dayOfWeek={day} courses={coursesOfDay} />
                               </div>
@@ -90,17 +65,6 @@ const Week = ({ timeFrames, days, courses = [] }) => {
                           )
                         })
                       }
-
-
-                      {/* {courses.map((day, dayIndex) => {
-                        return (
-                          <td key={dayIndex}>
-                            <div className={style.courseWrapper}>
-                              <Day courses={day.courses} />
-                            </div>
-                          </td>
-                        )
-                      })} */}
                     </tr>
                   </tbody>
                 </table>

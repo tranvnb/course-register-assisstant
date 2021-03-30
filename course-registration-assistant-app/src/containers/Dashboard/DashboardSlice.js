@@ -40,6 +40,7 @@ const DashboardSlice = createSlice({
             currCourse.days.forEach(currCourseDay => {
               addedCourse.days.forEach(addCourseDay => {
                 if (addCourseDay.day.toLowerCase() === currCourseDay.day.toLowerCase()) {
+                  // Please note the exclamation mark
                   if (!(addCourseDay.offset + addCourseDay.duration <= currCourseDay.offset || addCourseDay.offset >= currCourseDay.offset + currCourseDay.duration)) {
                     currCourseDay.numCourseInGroup++
                     if (addCourseDay.numCourseInGroup < currCourseDay.numCourseInGroup) {
@@ -69,6 +70,40 @@ const DashboardSlice = createSlice({
 
         state.selectedCourses = newData;
       }
+    },
+    deselectCourse: (state, action) => {
+
+      // re-arrange the other courses
+      let newData = [];
+      if (state.selectedCourses.length >= 1) {
+        const removeCourseIndex = state.selectedCourses.findIndex(c => c.CRN === action.payload);
+        let removeCourse;
+        // only remove and re-arrange if the deselected course had been selected before
+        if (removeCourseIndex !== -1) {
+          removeCourse = state.selectedCourses.splice(removeCourseIndex, 1)[0];
+          newData = state.selectedCourses;
+          state.selectedCourses.forEach(currCourse => {
+            currCourse.days.forEach(currCourseSchedule => {
+              removeCourse.days.forEach(removeCourseSchedule => {
+                if (removeCourseSchedule.day.toLowerCase() === currCourseSchedule.day.toLowerCase()) {
+                  // Please BE AWARE the exclamation mark
+                  if (!(removeCourseSchedule.offset + removeCourseSchedule.duration <= currCourseSchedule.offset || removeCourseSchedule.offset >= currCourseSchedule.offset + currCourseSchedule.duration)) {
+                    currCourseSchedule.numCourseInGroup--
+                    if (currCourseSchedule.indexInGroup >= removeCourseSchedule.indexInGroup) {
+                      currCourseSchedule.indexInGroup--;
+                    }
+                  }
+                }
+              })
+            })
+          });
+
+        }
+
+      }
+
+      // immer behind the scene otherwise, spread operator must be used 
+      state.selectedCourses = newData;
     }
   },
   extraReducers: {
@@ -84,6 +119,6 @@ const DashboardSlice = createSlice({
   }
 })
 
-export const { selectCourse } = DashboardSlice.actions;
+export const { selectCourse, deselectCourse } = DashboardSlice.actions;
 
 export default DashboardSlice.reducer;

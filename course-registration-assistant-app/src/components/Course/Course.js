@@ -1,4 +1,4 @@
-import React, { useContext, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import CourseDetails from "../CourseDetails";
 import css from './Course.module.scss';
 import Overlay from 'react-bootstrap/Overlay';

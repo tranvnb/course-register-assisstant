@@ -73,7 +73,7 @@ var courseSchema = new Schema({
         required: false
     },
     days: {
-        type: daysSchema,
+        type: [daysSchema],
         required: [true, "Day is required"]
     },
     sessionnote: {
