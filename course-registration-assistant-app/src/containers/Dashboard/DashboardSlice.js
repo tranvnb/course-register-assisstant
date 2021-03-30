@@ -40,7 +40,7 @@ const DashboardSlice = createSlice({
             currCourse.days.forEach(currCourseDay => {
               addedCourse.days.forEach(addCourseDay => {
                 if (addCourseDay.day.toLowerCase() === currCourseDay.day.toLowerCase()) {
-                  if (!(addCourseDay.offset + addCourseDay.duration < currCourseDay.offset || addCourseDay.offset > currCourseDay.offset + currCourseDay.duration)) {
+                  if (!(addCourseDay.offset + addCourseDay.duration <= currCourseDay.offset || addCourseDay.offset >= currCourseDay.offset + currCourseDay.duration)) {
                     currCourseDay.numCourseInGroup++
                     if (addCourseDay.numCourseInGroup < currCourseDay.numCourseInGroup) {
                       addCourseDay.numCourseInGroup = currCourseDay.numCourseInGroup;

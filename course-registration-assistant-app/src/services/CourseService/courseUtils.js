@@ -89,21 +89,110 @@ export const testData = [
     "instructor": "Noman Saleem",
     "prerequisites": "Yes",
     "days": [
-        {
-            "day": "Wed",
-            "time": "10:00 - 12:00",
-            "buiding": "Building:",
-            "rom": "Room:"
-        },
-        {
-            "day": "Thu",
-            "time": "10:30 - 12:20",
-            "buiding": "Building:",
-            "rom": "Room:"
-        }
+      {
+        "day": "Wed",
+        "time": "10:00 - 12:00",
+        "buiding": "Building:",
+        "rom": "Room:"
+      },
+      {
+        "day": "Thu",
+        "time": "10:30 - 12:20",
+        "buiding": "Building:",
+        "rom": "Room:"
+      }
     ],
     "sessionnote": "Section Notes:: CSIS 2260 006 is restricted to students in the following programs: Cmpt Studies and Info Systems Diploma, Data and Analytics, Web and Mobile Computing, Emerging Technology PD Diploma, Information & Communication Technology PD Diploma, Data Analytics PD Diploma, and Emerging Technology PB Diploma.On Wednesday, March 24, 2021 at 10:30am registration opens to students in the following programs: BBA-Accounting - Bach Degree FT, Accounting Diploma, Cmpt Studies and Info Systems Diploma, Comm and Busn Admin Diploma, General Business Certificate, General Business Diploma, Accounting Post-Degree Diploma, BBA-Fin Serv & Admin-Bach Degree FT, Busn Mgmt Diploma – General Business, Marketing Diploma.Students should plan to be available on-line at scheduled course times. This course will include synchronous on-line activities."
-}
+  }, {
+    "CRN": "23724",
+    "subject": "CSIS 2260 005",
+    "credit": "3",
+    "title": "Operating Systems",
+    "max": "10",
+    "enrolled": "0",
+    "remain": "10",
+    "wait": "0",
+    "status": "Open",
+    "startEnd": "10-MAY-2021 to 09-AUG-2021",
+    "campus": "O",
+    "instructor": "Noman Saleem",
+    "prerequisites": "Yes",
+    "days": [
+      {
+        "day": "Wed",
+        "time": "10:30 - 12:20",
+        "buiding": "Building:",
+        "rom": "Room:"
+      },
+      {
+        "day": "Thu",
+        "time": "08:30 - 10:20",
+        "buiding": "Building:",
+        "rom": "Room:"
+      }
+    ],
+    "sessionnote": "Section Notes:: CSIS 2260 005 is restricted to students in the following programs: Cmpt Studies and Info Systems Diploma, Data and Analytics, Web and Mobile Computing, Emerging Technology PD Diploma, Information & Communication Technology PD Diploma, Data Analytics PD Diploma, and Emerging Technology PB Diploma.On Wednesday, March 24, 2021 at 10:30am registration opens to students in the following programs: BBA-Accounting - Bach Degree FT, Accounting Diploma, Cmpt Studies and Info Systems Diploma, Comm and Busn Admin Diploma, General Business Certificate, General Business Diploma, Accounting Post-Degree Diploma, BBA-Fin Serv & Admin-Bach Degree FT, Busn Mgmt Diploma – General Business, Marketing Diploma.Students should plan to be available on-line at scheduled course times. This course will include synchronous on-line activities."
+  },
+  {
+    "CRN": "23752",
+    "subject": "CSIS 2260 007",
+    "credit": "3",
+    "title": "Operating Systems",
+    "max": "9",
+    "enrolled": "0",
+    "remain": "9",
+    "wait": "0",
+    "status": "Open",
+    "startEnd": "10-MAY-2021 to 09-AUG-2021",
+    "campus": "O",
+    "instructor": "Michael Ma",
+    "prerequisites": "Yes",
+    "days": [
+      {
+        "day": "Thu",
+        "time": "10:30 - 12:20",
+        "buiding": "Building:",
+        "rom": "Room:"
+      },
+      {
+        "day": "Thu",
+        "time": "12:30 - 14:20",
+        "buiding": "Building:",
+        "rom": "Room:"
+      }
+    ],
+    "sessionnote": "Section Notes:: CSIS 2260 007 is restricted to students in the following programs: Cmpt Studies and Info Systems Diploma, Data and Analytics, Web and Mobile Computing, Emerging Technology PD Diploma, Information & Communication Technology PD Diploma, Data Analytics PD Diploma, and Emerging Technology PB Diploma.On Wednesday, March 24, 2021 at 10:30am registration opens to students in the following programs: BBA-Accounting - Bach Degree FT, Accounting Diploma, Cmpt Studies and Info Systems Diploma, Comm and Busn Admin Diploma, General Business Certificate, General Business Diploma, Accounting Post-Degree Diploma, BBA-Fin Serv & Admin-Bach Degree FT, Busn Mgmt Diploma – General Business, Marketing Diploma.Students should plan to be available on-line at scheduled course times. This course will include synchronous on-line activities."
+  },
+  {
+    "CRN": "23753",
+    "subject": "CSIS 2260 008",
+    "credit": "3",
+    "title": "Operating Systems",
+    "max": "10",
+    "enrolled": "0",
+    "remain": "10",
+    "wait": "0",
+    "status": "Open",
+    "startEnd": "10-MAY-2021 to 09-AUG-2021",
+    "campus": "O",
+    "instructor": "Michael Ma",
+    "prerequisites": "Yes",
+    "days": [
+      {
+        "day": "Thu",
+        "time": "10:30 - 12:20",
+        "buiding": "Building:",
+        "rom": "Room:"
+      },
+      {
+        "day": "Fri",
+        "time": "08:30 - 10:20",
+        "buiding": "Building:",
+        "rom": "Room:"
+      }
+    ],
+    "sessionnote": "Section Notes:: CSIS 2260 008 is restricted to students in the following programs: Cmpt Studies and Info Systems Diploma, Data and Analytics, Web and Mobile Computing, Emerging Technology PD Diploma, Information & Communication Technology PD Diploma, Data Analytics PD Diploma, and Emerging Technology PB Diploma.On Wednesday, March 24, 2021 at 10:30am registration opens to students in the following programs: BBA-Accounting - Bach Degree FT, Accounting Diploma, Cmpt Studies and Info Systems Diploma, Comm and Busn Admin Diploma, General Business Certificate, General Business Diploma, Accounting Post-Degree Diploma, BBA-Fin Serv & Admin-Bach Degree FT, Busn Mgmt Diploma – General Business, Marketing Diploma.Students should plan to be available on-line at scheduled course times. This course will include synchronous on-line activities."
+  },
 ]
 
 const afterProcessCourse = {
@@ -128,7 +217,7 @@ const afterProcessCourse = {
       "rom": "Room:",
       "numCourseInGroup": 1,
       "indexInGroup": 0,
-      "offset": 7, 
+      "offset": 7,
       "duration": 4
     },
     {

@@ -4,7 +4,7 @@ import css from './Course.module.scss';
 import Overlay from 'react-bootstrap/Overlay';
 import Popover from 'react-bootstrap/Popover'
 
-const Course = ({ id, title, instructor, credit, subject, offset, duration, time, day, style }) => {
+const Course = ({ id, title, instructor, credit, subject, offset, duration, time, day, numInGroup, indexInGroup, style }) => {
 
   const [show, setShow] = useState(false);
   const [target, setTarget] = useState(null);
@@ -38,7 +38,7 @@ const Course = ({ id, title, instructor, credit, subject, offset, duration, time
               <Popover.Title as="h3">{"Course " + title}</Popover.Title>
               <Popover.Content>
                 <div className="course-details">
-                  <CourseDetails details={{instructor, credit, subject, time, day}} />
+                  <CourseDetails details={{instructor, credit, subject, time, day, offset, duration, numInGroup, indexInGroup}} />
                 </div>
               </Popover.Content>
             </Popover>

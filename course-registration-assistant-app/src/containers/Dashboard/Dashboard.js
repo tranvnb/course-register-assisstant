@@ -41,7 +41,10 @@ const Dashboard = () => {
   useEffect(() => {
     dispatch(getAllCourses());
     setTimeout(function(){ dispatch(selectCourse("23723")); }, 1000);
-    setTimeout(function(){ dispatch(selectCourse("23725")); }, 3000);
+    setTimeout(function(){ dispatch(selectCourse("23725")); }, 2000);
+    setTimeout(function(){ dispatch(selectCourse("23724")); }, 3000);
+    setTimeout(function(){ dispatch(selectCourse("23752")); }, 4000);
+    setTimeout(function(){ dispatch(selectCourse("23753")); }, 5000);
     // setTimeout(function(){ dispatch(selectCourse("6")); }, 6000);
   }, []);
 

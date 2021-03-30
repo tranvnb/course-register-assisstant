@@ -70,6 +70,8 @@ const Day = ({ dayOfWeek, courses }) => {
               offset={day.offset}
               time={day.time}
               day={day.day}
+              numInGroup={day.numCourseInGroup}
+              indexInGroup={day.indexInGroup}
               duration={day.duration} />)
         });
         
