@@ -4,7 +4,7 @@ import css from './Course.module.scss';
 import Overlay from 'react-bootstrap/Overlay';
 import Popover from 'react-bootstrap/Popover'
 
-const Course = ({ id, title, details, offset, duration, preCoursePos, style }) => {
+const Course = ({ id, title, instructor, credit, subject, offset, duration, time, day, style }) => {
 
   const [show, setShow] = useState(false);
   const [target, setTarget] = useState(null);
@@ -20,8 +20,8 @@ const Course = ({ id, title, details, offset, duration, preCoursePos, style }) =
   return (
     <div ref={ref}>
       <div className={css.courseBlockContent} style={style} onContextMenu={handleClick} >
-        <div className="course-title">{title}</div>
-        <div className="course-title"><b>{details.instructor}</b></div>
+        <div className="course-title">{subject}</div>
+        <div className="course-title"><b>{instructor}</b></div>
 
       </div>
       <div >
@@ -38,7 +38,7 @@ const Course = ({ id, title, details, offset, duration, preCoursePos, style }) =
               <Popover.Title as="h3">{"Course " + title}</Popover.Title>
               <Popover.Content>
                 <div className="course-details">
-                  <CourseDetails details={details} />
+                  <CourseDetails details={{instructor, credit, subject, time, day}} />
                 </div>
               </Popover.Content>
             </Popover>

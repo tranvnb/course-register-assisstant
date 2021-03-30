@@ -4,6 +4,31 @@ import style from './Week.module.scss';
 
 const Week = ({ timeFrames, days, courses = [] }) => {
 
+
+  (days.map(day => {
+
+    const data = courses.filter(course => {
+      // console.log(course);
+      return course.days
+        .filter(schedule => {
+          return schedule.day !== "" && schedule.day.toLowerCase() === day.toLowerCase();
+        })
+        .length > 0
+    })
+    console.log(day, data);
+    return data;
+  })
+  // .map((coursesOfDay, dayIndex) => {
+  //     return (
+  //       <td key={dayIndex}>
+  //         <div className={style.courseWrapper}>
+  //           <Day courses={coursesOfDay} />
+  //         </div>
+  //       </td>
+  //     )
+  //   })
+  )
+
   const table = timeFrames.map((time, timeIndex) => {
     return (
       <tr className={style.scheduleTimeFrame} key={timeIndex}>
@@ -19,7 +44,7 @@ const Week = ({ timeFrames, days, courses = [] }) => {
 
   return (
     <div >
-      <table style={{minWidth: "990px", minHeight: "780px", overflow: "auto"}}>
+      <table style={{ minWidth: "990px", minHeight: "780px", overflow: "auto" }}>
         <thead>
           <tr >
             <th></th>
@@ -33,7 +58,7 @@ const Week = ({ timeFrames, days, courses = [] }) => {
         </thead>
         <tbody>
           <tr>
-            <td style={{width: "40px", verticalAlign: "top"}}>
+            <td style={{ width: "40px", verticalAlign: "top" }}>
               {timeFrames[0]}
             </td>
             <td colSpan="6" rowSpan="13">
@@ -47,7 +72,27 @@ const Week = ({ timeFrames, days, courses = [] }) => {
                 <table className={style.courseTable}>
                   <tbody>
                     <tr>
-                      {courses.map((day, dayIndex) => {
+                      {days.map(day => {
+                        return {day, courses: courses.filter(course => {
+                          return course.days
+                            .filter(schedule => {
+                              return schedule.day !== "" && schedule.day.toLowerCase() === day.toLowerCase();
+                            })
+                            .length > 0
+                        })}
+                      }).map(({day, courses: coursesOfDay}, dayIndex) => {
+                          return (
+                            <td key={dayIndex}>
+                              <div className={style.courseWrapper}>
+                                <Day dayOfWeek={day} courses={coursesOfDay} />
+                              </div>
+                            </td>
+                          )
+                        })
+                      }
+
+
+                      {/* {courses.map((day, dayIndex) => {
                         return (
                           <td key={dayIndex}>
                             <div className={style.courseWrapper}>
@@ -55,20 +100,20 @@ const Week = ({ timeFrames, days, courses = [] }) => {
                             </div>
                           </td>
                         )
-                      })}
+                      })} */}
                     </tr>
                   </tbody>
                 </table>
               </div>
             </td>
-            <td style={{width: "40px", verticalAlign: "top"}}>{timeFrames[0]}</td>
+            <td style={{ width: "40px", verticalAlign: "top" }}>{timeFrames[0]}</td>
           </tr>
           {timeFrames.map((time, index) => {
             if (index > 0) {
               return (
                 <tr key={index}>
-                  <td style={{width: "40px", verticalAlign: "top"}}>{time}</td>
-                  <td style={{width: "40px", verticalAlign: "top"}}>{time}</td>
+                  <td style={{ width: "40px", verticalAlign: "top" }}>{time}</td>
+                  <td style={{ width: "40px", verticalAlign: "top" }}>{time}</td>
                 </tr>
               )
             }
