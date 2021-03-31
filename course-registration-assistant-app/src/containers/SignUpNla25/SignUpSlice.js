@@ -35,9 +35,7 @@ export const signupSlice = createSlice({
                 authenticating: false,
                 isAuthenticated: true,
                 userCredentials: {
-                name: state.userCredentials.name,
                 email: state.userCredentials.email,
-                studentId: state.userCredentials.studentId,
                 password: ""
                 }
             }

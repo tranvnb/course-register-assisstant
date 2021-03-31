@@ -9,9 +9,7 @@ function SignUpNla25()
 {
     const dispatch = useDispatch();
     const [validated, setValidated] = useState(false);
-    const [username, setUsername] = useState("");
-    const [name, setName] = useState("");
-    const [studentId, setStudentId] = useState("");
+    const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [hasError,setHasError] = useState(false);
 
@@ -30,9 +28,7 @@ function SignUpNla25()
         }else
         {
             const resultAction = await dispatch(userSignUp({
-                name: name, 
-                studentId: studentId,
-                 username: username, 
+                 email: email, 
                  password: password
             }))
             if(resultAction?.payload?.user) {
@@ -61,33 +57,14 @@ function SignUpNla25()
                       </Alert>
                   </Col>
               </Form.Group> ) : ""}
-               <Form.Group as={Row} controlId="name">
-                    <Col sm={10}>
-                        <Form.Control type="text" data-testid="name" placeholder="Full Name" value={name} 
-                        onChange={(e) => setName(e.target.value)}/>
-                    </Col>
-                    <Form.Control.Feedback type="invalid">
-                        Please enter your name.
-                    </Form.Control.Feedback>
-                </Form.Group>
 
                 <Form.Group as={Row} controlId="email">
                     <Col sm={10}>
-                        <Form.Control type="email" data-testid="email" placeholder="Email" value={username} 
-                        onChange={(e) => setUsername(e.target.value)}/>
+                        <Form.Control type="email" data-testid="email" placeholder="Email" value={email} 
+                        onChange={(e) => setEmail(e.target.value)}/>
                     </Col>
                     <Form.Control.Feedback type="invalid">
                         Please enter your email address.
-                    </Form.Control.Feedback>
-                </Form.Group>
-
-                <Form.Group as={Row} controlId="studentId">
-                    <Col sm={10}>
-                        <Form.Control type="text" data-testid="studentId" placeholder="Student ID" value={studentId} 
-                        onChange={(e) => setStudentId(e.target.value)}/>
-                    </Col>
-                    <Form.Control.Feedback type="invalid">
-                        Please enter your valid student ID.
                     </Form.Control.Feedback>
                 </Form.Group>
 
