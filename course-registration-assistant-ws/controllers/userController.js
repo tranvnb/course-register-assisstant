@@ -19,7 +19,6 @@ exports.login = async (req, res) => {
 exports.getAll = async (req, res) => {
   userService.findAll()
     .then(result => {
-      console.log('find all', result);
       res.json(result);
     })
 }

@@ -5,13 +5,11 @@ exports.getAll = async (req, res) => {
   if (req.query.crn !== undefined && req.query.crn !== "") {
     courseService.findByCRN(req.query.crn)
       .then(result => {
-        console.log('find by CRN', result);
         res.json(result);
       })
   } else { // else find all
     courseService.findAll()
       .then(result => {
-        console.log('find all', result);
         res.json(result);
       })
   }

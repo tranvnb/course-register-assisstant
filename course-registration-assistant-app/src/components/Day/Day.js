@@ -39,12 +39,11 @@ const Day = ({ dayOfWeek, courses }) => {
               instructor={course.instructor}
               credit={course.credit}
               title={course.title}
-              offset={day.offset}
+              campus={course.campus}
+              room={day.buiding + "-" + day.rom} // note the typo, this is from college website
               time={day.time}
               day={day.day}
-              numInGroup={day.numCourseInGroup}
-              indexInGroup={day.indexInGroup}
-              duration={day.duration} />)
+              />)
         });
         
       })

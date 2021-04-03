@@ -30,6 +30,7 @@ const Dashboard = () => {
     setTimeout(function(){ dispatch(selectCourse("23724")); }, 3000);
     setTimeout(function(){ dispatch(selectCourse("23752")); }, 4000);
     setTimeout(function(){ dispatch(selectCourse("23753")); }, 5000);
+    
     setTimeout(function(){ dispatch(deselectCourse("23724")); }, 7500);
     
   }, []);

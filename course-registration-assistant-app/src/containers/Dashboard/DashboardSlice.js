@@ -11,8 +11,8 @@ export const getAllCourses = createAsyncThunk('courses/getAll', (data = {}, thun
 });
 
 const initialState = {
-  courses: [],
-  selectedCourses: [],
+  courses: [], // all course that we have
+  selectedCourses: [], // selected courses for current building timetable
   error: null
 };
 
