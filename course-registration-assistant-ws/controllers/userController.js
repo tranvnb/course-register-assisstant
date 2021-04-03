@@ -38,7 +38,10 @@ exports.getById = async (req, res) => {
 exports.createUser = async (req, res, next) => {
   userService.createUser(req.body['username'], req.body['password'])
     .then(result => {
-      res.status(201).json();
+      if (result === null) {
+        res.status(400).json({error: "user already exists"})
+      }
+      res.status(201).json(result);
     })
     .catch((err, doc) => {
       console.error(err);

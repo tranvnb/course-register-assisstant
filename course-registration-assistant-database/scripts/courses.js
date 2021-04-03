@@ -1802,6 +1802,6 @@ const courses = [
 ]
 
 conn = new Mongo();
-db = conn.getDB("cra-db");
+db = conn.getDB("courses-management");
 
 db.courses.insertMany(courses);
