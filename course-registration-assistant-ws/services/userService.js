@@ -7,7 +7,7 @@ const findAll = async () => {
 }
 
 const findOne = async (username, password) => {
-    return User.findOne({username: username, password: password }, 'username').exec();
+    return await User.findOne({username: "a", password: "a" }).exec();
 }
 
 const findById = async (id) => {
@@ -16,7 +16,7 @@ const findById = async (id) => {
 
 const createUser = async (username, password) => {
     console.log("username", username, "password", password);
-    var user = await User.findOne({username: username, password: password }, 'username').exec();
+    var user = await User.findOne({username: username, password: password }).exec();
     console.log(user," user Found");
     if(user === null)
     {
