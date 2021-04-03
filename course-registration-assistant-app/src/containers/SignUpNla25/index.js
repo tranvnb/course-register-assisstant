@@ -1,17 +1,16 @@
 import {useState} from "react";
-import { Form, Row, Col, Button, Alert } from 'react-bootstrap';
-import style from "./SignUpNla25.scss";
-import { useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import { userSignUp } from "./SignUpSlice";
+import { Form, Row, Col, Button, Alert } from 'react-bootstrap';
+import style from "./Signup.module.scss";
+import {useLocation, useHistory} from 'react-router-dom';
+import { userSignup } from "./signupSlice";
 
-function SignUpNla25()
-{
+const Signup = () => {
+    
     const dispatch = useDispatch();
-    const [validated, setValidated] = useState(false);
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [hasError,setHasError] = useState(false);
+    const [hasError, setHasError] = useState(false);
 
     const error = useSelector(state => state.signup.error);
 
@@ -20,40 +19,39 @@ function SignUpNla25()
 
     const handleSubmit = async (event) => {
         const form = event.currentTarget;
-        setValidated(true);
         if(form.checkValidity() === false)
         {
             event.preventDefault();
             event.stopPropagation();
         }else
         {
-            const resultAction = await dispatch(userSignUp({
-                 email: email, 
-                 password: password
-            }))
-            if(resultAction?.payload?.user) {
-                const {from} = location.state || { from: {
-                    pathname: "/dashboard"
-                }};
-                history.replace(from);
-            }
-            else{
-                setHasError(true);
-            }
+                const resultAction = await dispatch(userSignup({
+                    username: email, 
+                    password: password
+               }))
+               if(resultAction?.payload?.username) {
+                   const {from} = location.state || { from: {
+                       pathname: "/login"
+                   }};
+                   history.replace(from);
+               }
+               else{
+                   setHasError(true);
+               }
         }
     };
 
 
     return(
-        <div className="SignUpContainer">
-          <Form className="formSignUp">
+        <div className={style.SignUpContainer}>
+          <Form className={style.formSignUp}>
                 <h2>Sign Up</h2>
                 <p>Please fill in this form to create an account</p>
                 {hasError ? 
               (<Form.Group as={Row}>
                   <Col sm={12}>
                       <Alert variant="danger" onClose={() => setHasError(false)} dismissible>
-                      {error !== null ? error.message : ""}
+                      {error.message} 
                       </Alert>
                   </Col>
               </Form.Group> ) : ""}
@@ -80,7 +78,7 @@ function SignUpNla25()
 
                 <Form.Group as={Row}>
                     <Col sm={{ span: 10, offset: 0 }}>
-                        <Button className="buttonSignUp" type="button" id="signUpButton" onClick={handleSubmit}>Sign Up</Button>
+                        <Button className={style.buttonSignUp} type="button" id="signUpButton" onClick={handleSubmit}>Sign Up</Button>
                     </Col>
                 </Form.Group>
             </Form>
@@ -88,4 +86,4 @@ function SignUpNla25()
     )
 }
 
-export default SignUpNla25;
+export default Signup;
