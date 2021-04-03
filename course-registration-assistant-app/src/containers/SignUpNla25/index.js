@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Form, Row, Col, Button, Alert } from 'react-bootstrap';
 import style from "./Signup.module.scss";
 import {useLocation, useHistory} from 'react-router-dom';
-import { userSignup } from "./signupSlice";
+import { userSignup } from "./SignUpSlice";
 
 const Signup = () => {
     
