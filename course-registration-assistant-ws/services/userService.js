@@ -15,11 +15,23 @@ const findById = async (id) => {
 }
 
 const createUser = async (username, password) => {
-    return User.create({ 
-        _id: new mongoose.Types.ObjectId(), 
-        username: username, 
-        password: password
-    });
+    console.log("username", username, "password", password);
+    var user = await User.findOne({username: username, password: password }, 'username').exec();
+    console.log(user," user Found");
+    if(user === null)
+    {
+        console.log("createing user");
+        return User.create({ 
+            // _id: new mongoose.Types.ObjectId(), 
+            username: username, 
+            password: password
+        });
+    }
+    else
+    {
+        console.log("Found already");
+        return null;
+    }
 }
 
 const updateUser = async (id, newUser) => {
