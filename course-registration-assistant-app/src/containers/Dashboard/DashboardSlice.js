@@ -13,6 +13,7 @@ export const getAllCourses = createAsyncThunk('courses/getAll', (data = {}, thun
 const initialState = {
   courses: [], // all course that we have
   selectedCourses: [], // selected courses for current building timetable
+  clickedCourseCRN: "",
   error: null
 };
 
@@ -84,6 +85,9 @@ const DashboardSlice = createSlice({
 
       // immer behind the scene otherwise, spread operator must be used 
       state.selectedCourses = newData;
+    },
+    clickCourseAnnimation: (state, action) => {
+      state.clickedCourseCRN = action.payload;
     }
   },
   extraReducers: {
@@ -99,6 +103,6 @@ const DashboardSlice = createSlice({
   }
 })
 
-export const { selectCourse, deselectCourse } = DashboardSlice.actions;
+export const { selectCourse, deselectCourse, clickCourseAnnimation } = DashboardSlice.actions;
 
 export default DashboardSlice.reducer;
