@@ -46,7 +46,7 @@ const Course = ({ id, title, instructor, credit, subject, room, campus, time, da
   };
 
   return (
-    <Transition in={inProp} timeout={duration} onEntered={e => dispatch(clickCourseAnnimation(""))}>
+    <Transition in={inProp} nodeRef={ref} timeout={duration} onEntered={e => dispatch(clickCourseAnnimation(""))}>
       {state => (
         <div ref={ref}>
           <div className={css.courseBlockContent} 
