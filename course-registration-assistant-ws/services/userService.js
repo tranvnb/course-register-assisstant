@@ -20,7 +20,7 @@ const createUser = async (username, password) => {
     console.log(user," user Found");
     if(user === null)
     {
-        console.log("createing user");
+        console.log("creating user");
         return User.create({ 
             // _id: new mongoose.Types.ObjectId(), 
             username: username, 

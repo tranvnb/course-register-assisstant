@@ -11,7 +11,7 @@ routes.use((req, res, next) => {
 });
 
 // This is a public api, dont need authentication and authorization
-routes.use('/signup', userController.createUser);
+// routes.use('/signup', userController.createUser);
 
 // Authentication & Authorization here
 routes.use((req, res, next)  => {
