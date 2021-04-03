@@ -22,29 +22,32 @@ const Day = ({ dayOfWeek, courses }) => {
         if (day.numCourseInGroup > 1) {
           paddingWidth = 100 / day.numCourseInGroup;
         }
+
+        const backgroundColor = day.numCourseInGroup === 1 ? "rgba(112, 136, 158, 0.64)" : "#ff00007a"
+
         const style = {
           inset: (BLOCK_HEIGHT * day.offset) + "px " // top
             + (paddingWidth * (day.numCourseInGroup - day.indexInGroup - 1)) + "% " // padding right
             + (DAY_MAX_WORKING_TIME_BLOCK - day.offset - day.duration) * BLOCK_HEIGHT + "px " // bottom
             + (day.indexInGroup * paddingWidth) + "%" // left
           , zIndex: (day.indexInGroup + 1)
-          , backgroundColor: day.numCourseInGroup === 1 ? "rgba(112, 136, 158, 0.64)" : "#ff00007a"
+          // , backgroundColor: backgroundColor
         };
         courseRender.push(
             <Course
               key={course.CRN+ "-" + dayIndex}
               style={style}
               id={course.CRN}
+              backgroundColor={backgroundColor}
               subject={course.subject}
               instructor={course.instructor}
               credit={course.credit}
               title={course.title}
-              offset={day.offset}
+              campus={course.campus}
+              room={day.buiding + "-" + day.rom} // note the typo, this is from college website
               time={day.time}
               day={day.day}
-              numInGroup={day.numCourseInGroup}
-              indexInGroup={day.indexInGroup}
-              duration={day.duration} />)
+              />)
         });
         
       })
