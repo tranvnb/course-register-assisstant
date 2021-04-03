@@ -26,6 +26,28 @@ export const logUserIn = async (loginData) => {
     })
 }
 
+const signupUser = async (signupData) => {
+    //when a user logs in for the first time 
+    return fetch(process.env.REACT_APP_WEB_SERVICE_URL + '/users/signup', {
+        method: 'POST',
+        headers: {
+            'Content-type': 'application/json',
+            'Access-Control-Allow-Origin': '*'
+        },
+        body: JSON.stringify(signupData)
+    }).then(response => {
+        if (!response.ok) {
+            throw Error(response.statusText);
+        }
+        const jsonData = response.json();
+        return jsonData;
+    }).then(json => {
+        return json;
+    }).catch(error => {
+        throw error;
+    })
+}
+
 export const logUserOut = () => {
     localStorage.removeItem("user");
 }
@@ -38,7 +60,8 @@ const UserService = {
     isUserLogin,
     logUserIn,
     logUserOut,
-    getUser
+    getUser,
+    signupUser
 };
 
 export default UserService;
