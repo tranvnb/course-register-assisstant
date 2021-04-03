@@ -9,7 +9,7 @@ if (process.env.NODE_ENV !== 'production') {
 // Whenever a service is called, 
 // express will create a particular database connection for that request
 const mongoose = require('mongoose');
-const connection = mongoose.connect(process.env.MONGO_URI, {
+const connection = mongoose.connect("mongodb://localhost:27017/", {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
