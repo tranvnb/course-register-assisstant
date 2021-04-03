@@ -26,7 +26,8 @@ export const userSignup = createAsyncThunk(
         .then(data => {
             return data;
         }).catch(error => {
-            return thunkAPI.rejectWithValue({ message: 'Already a signed up user. '})
+          console.log(error+"jkk");
+            return thunkAPI.rejectWithValue({ message: 'Already a signed up user. ', error: error})
         });
     }
 );
