@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router';
+import CourseSummary from '../../components/CourseSummary';
 import Week from '../../components/Week';
 import { userLogout } from '../Login/loginSlice';
 import { getAllCourses, selectCourse, deselectCourse } from './DashboardSlice';
@@ -41,8 +42,11 @@ const Dashboard = () => {
           <div className="col-3">
             This is sidebar
             </div>
-          <div className="col-9">
+          <div className="col-7">
             <Week timeFrames={timeTableLabel} days={weekDays} courses={courses}/>
+          </div>
+          <div className="col-2">
+            <CourseSummary />
           </div>
         </div>
       </div>
