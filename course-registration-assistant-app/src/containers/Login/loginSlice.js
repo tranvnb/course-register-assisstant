@@ -23,6 +23,7 @@ export const userLogin = createAsyncThunk(
 
   });
 
+// localStorage.setItem("user", JSON.stringify({user: "brian"}));
 const user = JSON.parse(localStorage.getItem("user"));
 
 export const loginSlice = createSlice({
