@@ -7,7 +7,7 @@ const findAll = async () => {
 }
 
 const findOne = async (username, password) => {
-    return await User.findOne({username: "a", password: "a" }).exec();
+    return await User.findOne({username: username, password: password }).exec();
 }
 
 const findById = async (id) => {
