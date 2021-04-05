@@ -11,8 +11,9 @@ export const getAllCourses = createAsyncThunk('courses/getAll', (data = {}, thun
 });
 
 const initialState = {
-  courses: [],
-  selectedCourses: [],
+  courses: [], // all course that we have
+  selectedCourses: [], // selected courses for current building timetable
+  clickedCourseCRN: "",
   error: null
 };
 
@@ -23,14 +24,6 @@ const DashboardSlice = createSlice({
     selectCourse: (state, action) => {
       if (state.courses.length > 0) {
         const addedCourse = state.courses.find(c => c.CRN === action.payload);
-        // ADD and RE ARRANGE at the same time IF REMOVE then remove first, then re-arrange but decrease the number/index
-        //each day1 in recent added course's days
-        // each day2 in already selected courses' days
-        // if day1 overlap day2 => increase day2 numCourseInGroup 
-        //        day1.numCourseInGroup = day2.numCourseInGroup & day1.indexInGroup = day2.indexInGroup + 1
-
-
-        // REMOVE : filter selectedList then if overlap numGroup-- & then if index >=x => x-- else do nothing
         let newData = []
         if (state.selectedCourses.length === 0) {
           newData.push(addedCourse);
@@ -46,28 +39,16 @@ const DashboardSlice = createSlice({
                     if (addCourseDay.numCourseInGroup < currCourseDay.numCourseInGroup) {
                       addCourseDay.numCourseInGroup = currCourseDay.numCourseInGroup;
                     }
-
                     if (addCourseDay.indexInGroup <= currCourseDay.indexInGroup) {
                       addCourseDay.indexInGroup = currCourseDay.indexInGroup + 1;
                     }
-
-
                   }
                 }
-                // if ((addCourseDay.offset <= currCourseDay.offset && addCourseDay.duration >= currCourseDay.duration) // added one include/equal curr one
-                //  || (addCourseDay.offset < currCourseDay.offset && addCourseDay.offset + addCourseDay.duration >= currCourseDay.)) 
               })
             })
           });
           newData.push(addedCourse);
         }
-
-        console.log(newData);
-
-        // newData = state.courses.map((course) => {
-        //   return { ...course, isSelected: course.CRN === action.payload || course.isSelected }
-        // });
-
         state.selectedCourses = newData;
       }
     },
@@ -104,6 +85,9 @@ const DashboardSlice = createSlice({
 
       // immer behind the scene otherwise, spread operator must be used 
       state.selectedCourses = newData;
+    },
+    clickCourseAnnimation: (state, action) => {
+      state.clickedCourseCRN = action.payload;
     }
   },
   extraReducers: {
@@ -119,6 +103,6 @@ const DashboardSlice = createSlice({
   }
 })
 
-export const { selectCourse, deselectCourse } = DashboardSlice.actions;
+export const { selectCourse, deselectCourse, clickCourseAnnimation } = DashboardSlice.actions;
 
 export default DashboardSlice.reducer;
