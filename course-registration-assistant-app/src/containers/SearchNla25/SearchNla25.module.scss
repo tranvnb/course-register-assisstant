@@ -1,0 +1,27 @@
+.SearchContainer {
+    height: auto;
+    position: relative;
+    min-height: 86vh;
+    display: flex;
+    flex-direction: column;
+    // justify-content: center;
+}
+
+
+.buttonSearch{
+    background: white;
+          color: #8C30F5;
+          border: 5px 5px #8C30F5 ;
+          font-size: 16px;
+          width: 100%;
+}
+
+.underlineText{
+    color: #8C30F5;
+}
+
+.row2{
+    margin-top: 10px;
+}
+
+
