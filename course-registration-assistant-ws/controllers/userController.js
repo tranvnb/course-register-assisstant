@@ -5,10 +5,11 @@ exports.login = async (req, res) => {
   const password = req.body["password"];
   userService.findOne(username, password)
     .then(result => {
+      console.log(result);
       if (result) {
         res.json({ message: 'success', user: result });
       } else {
-        res.status(401).json();
+        res.status(401).json({message: "can not find any user"});
       }
     })
     .catch((err, doc) => {

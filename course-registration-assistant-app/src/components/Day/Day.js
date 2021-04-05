@@ -30,7 +30,7 @@ const Day = ({ dayOfWeek, courses }) => {
             + (paddingWidth * (day.numCourseInGroup - day.indexInGroup - 1)) + "% " // padding right
             + (DAY_MAX_WORKING_TIME_BLOCK - day.offset - day.duration) * BLOCK_HEIGHT + "px " // bottom
             + (day.indexInGroup * paddingWidth) + "%" // left
-          , zIndex: (day.indexInGroup + 1)
+          , zIndex: (day.indexInGroup + 1),
           // , backgroundColor: backgroundColor
         };
         courseRender.push(
