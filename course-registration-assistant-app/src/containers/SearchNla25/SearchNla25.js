@@ -124,7 +124,6 @@ const SearchNla25 = () => {
   }
 
   useEffect(() => {
-    console.log(location);
     setCurrScheduleIdentifier(location.state.prevPath);
   }, [])
 

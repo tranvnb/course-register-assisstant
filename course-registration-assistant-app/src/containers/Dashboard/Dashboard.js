@@ -56,7 +56,7 @@ const Dashboard = () => {
       </div>
       <div className={classNames("col-3", { [style.courses_margin]: true })}>
         <Button className={style.buttonSearch}>
-          <Link to="/search">Search Page</Link>
+          <Link to={{pathname: '/search', state: { prevPath: location.pathname }}}>Search Page</Link>
         </Button>
         <CourseSummary />
       </div>
