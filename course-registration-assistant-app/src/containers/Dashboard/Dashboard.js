@@ -7,6 +7,7 @@ import Week from '../../components/Week';
 import { userLogout } from '../Login/loginSlice';
 import { getAllCourses, selectCourse, deselectCourse } from './DashboardSlice';
 import SearchNla25 from '../SearchNla25/SearchNla25'
+import { Button } from 'react-bootstrap';
 
 const timeTableLabel = ["7:00", "8:00", "9:00", "10:00","11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00"];
 const weekDays = ["MON", "TUE", "WED", "THU", "FRI", "SAT"];
@@ -37,7 +38,7 @@ const Dashboard = () => {
       <div className="col">
         <div className="row">
           <div className="col-3">
-            <SearchNla25></SearchNla25>
+            <Link to="/search">Search Page</Link>
             </div>
           <div className="col-7">
             <Week timeFrames={timeTableLabel} days={weekDays} courses={courses}/>

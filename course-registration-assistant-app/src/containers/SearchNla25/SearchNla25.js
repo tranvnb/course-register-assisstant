@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Form, Row, Col, Button, Alert, FormControl, Container, } from "react-bootstrap";
 import SearchCourseNla25 from "../../components/SearchCourseNla25/SearchCourseNla25";
 import { selectCourse } from '../Dashboard/DashboardSlice';
+import { Link } from "react-router-dom";
 
 const SearchNla25 = () => {
   const dispatch = useDispatch();
@@ -21,7 +22,6 @@ const SearchNla25 = () => {
 
   const handleSearch = () => {
     console.log(allMyCourses, "  ", advancedSearch);
-    // const searchResult = "";
 
     const searchResult = allMyCourses.filter((course) => {
       return (
@@ -175,6 +175,9 @@ const SearchNla25 = () => {
                   Advanced Search
             </u>
               </Col>
+              <Col md={{ span: 1, offset: 11 }}>
+          <Link to="/">Back----&gt;</Link>
+          </Col>
             </Row>
           </Col></Row>
 
