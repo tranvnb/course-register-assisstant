@@ -6,6 +6,16 @@ const findByUsername = async (username) => {
     return Schedule.find({ username: username }).exec();
 }
 
-const scheduleService = { findByUsername };
+const createNewSchedule = async (username, name, semester) => {
+  const schedule = new Schedule({
+    username: username,
+    name: name,
+    semester: semester,
+    courses: []
+  });
+  return schedule.save();
+}
+
+const scheduleService = { findByUsername, createNewSchedule };
 
 module.exports = scheduleService;
