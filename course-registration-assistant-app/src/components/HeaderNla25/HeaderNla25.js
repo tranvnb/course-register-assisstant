@@ -41,7 +41,7 @@ const HeaderNla25 = () => {
         <Navbar.Collapse id="basic-navbar-nav">
           {user != null ?
             <Nav className="mr-auto">
-              <Nav.Link href="#home"> Create Schedule</Nav.Link>
+              <Nav.Link href="/schedule"> Create Schedule</Nav.Link>
               <Nav.Link href="#link">Saved Schedule</Nav.Link>
             </Nav>
             : <Nav className="mr-auto"></Nav>}

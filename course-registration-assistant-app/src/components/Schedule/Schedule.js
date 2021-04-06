@@ -4,6 +4,7 @@ import { getUserSchedules, createSchedule } from '../../services/ScheduleService
 
 import ScheduleList from './ScheduleList/ScheduleList';
 import CreateNewScheduleForm from './CreateNewScheduleForm/CreateNewScheduleForm';
+import { useSelector } from 'react-redux';
 
 class Schedule extends Component {
 
@@ -42,6 +43,8 @@ class Schedule extends Component {
     });
   }
 
+  
+
   createNewSchedule() {
     if (this.state.newSchedule.name === "") {
       alert("You need to add a name for the new schdule");
@@ -64,13 +67,24 @@ class Schedule extends Component {
   }
 
   componentDidMount() {
+    const user = JSON.parse(localStorage.getItem("user"));
+    this.setState({
+      newSchedule: {
+        ...this.state.newSchedule,
+        username: user.username
+      }
+    });
     // call get timetabe service
-    getUserSchedules()
+    getUserSchedules(user.username)
       .then(json => {
+        if (json === undefined) {
+          json = []
+        }
         this.setState({
           ...this.state,
           schedules: json
         })
+        console.log("courses JSON", json);
       })
       .catch(error => {
         console.log("Error Setting State");

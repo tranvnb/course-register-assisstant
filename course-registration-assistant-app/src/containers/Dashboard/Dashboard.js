@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useHistory } from 'react-router';
+import { useHistory, useParams } from 'react-router';
 import { Link } from 'react-router-dom';
 import CourseSummary from '../../components/CourseSummary';
 import Week from '../../components/Week';
@@ -13,6 +13,8 @@ const weekDays = ["MON", "TUE", "WED", "THU", "FRI", "SAT"];
 
 const Dashboard = () => {
 
+  const params = useParams();
+  const [scheduleId, setScheduleId] = useState("");
   const dispatch = useDispatch();
   const courses = useSelector(state => {
     return state.dashboard.selectedCourses;
@@ -20,14 +22,7 @@ const Dashboard = () => {
 
   useEffect(() => {
     dispatch(getAllCourses());
-    setTimeout(function(){ dispatch(selectCourse("23723")); }, 1000);
-    setTimeout(function(){ dispatch(selectCourse("23725")); }, 2000);
-    setTimeout(function(){ dispatch(selectCourse("23724")); }, 3000);
-    setTimeout(function(){ dispatch(selectCourse("23752")); }, 4000);
-    setTimeout(function(){ dispatch(selectCourse("23753")); }, 5000);
-    
-    setTimeout(function(){ dispatch(deselectCourse("23724")); }, 7500);
-    
+    setScheduleId(params.scheduleId);
   }, []);
 
   const history = useHistory();
@@ -43,7 +38,6 @@ const Dashboard = () => {
         <div className="row">
           <div className="col-3">
             <SearchNla25></SearchNla25>
-            {/* <Link to="/search">Search Page</Link> */}
             </div>
           <div className="col-7">
             <Week timeFrames={timeTableLabel} days={weekDays} courses={courses}/>
