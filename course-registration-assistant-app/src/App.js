@@ -8,6 +8,7 @@ import Dashboard from "./containers/Dashboard";
 import FooterNla25 from './components/FooterNla25/FooterNla25';
 import HeaderNla25 from './components/HeaderNla25/HeaderNla25';
 import Signup from './containers/SignUpNla25';
+import Schedule from './components/Schedule/Schedule';
 
 function App() {
   return (
@@ -24,7 +25,8 @@ function App() {
           {/* <PublicRoute isRestricted={true} path="/login" component={Signup} /> */}
           <PublicRoute isRestricted={true} path="/signup" component={Signup} />
           <PublicRoute isRestricted={true} path="/login" component={Login} />
-          {/* everyboday can access */}          
+          {/* everyboday can access */}
+          <PublicRoute path="/schedule" component={Schedule} />          
           <PublicRoute path="/not-found" component={NotFound} />
           <Redirect to="/not-found" />
         </Switch>

@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router';
 import Week from '../../components/Week';
-import { userLogout } from '../Login/loginSlice';
+import { userLogout } from '../Login/LoginSlice';
 import { getAllCourses, selectCourse, deselectCourse } from './DashboardSlice';
 
 const timeTableLabel = ["7:00", "8:00", "9:00", "10:00","11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00"];
