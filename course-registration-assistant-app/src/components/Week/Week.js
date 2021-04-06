@@ -19,7 +19,7 @@ const Week = ({ timeFrames, days, courses = [] }) => {
 
   return (
     <div >
-      <table style={{ minWidth: "990px", minHeight: "780px", overflow: "auto" }}>
+      <table style={{ minWidth: "990px", minHeight: "760px", overflow: "auto" }}>
         <thead>
           <tr >
             <th></th>
@@ -70,13 +70,11 @@ const Week = ({ timeFrames, days, courses = [] }) => {
                 </table>
               </div>
             </td>
-            <td style={{ width: "40px", verticalAlign: "top" }}>{timeFrames[0]}</td>
           </tr>
           {timeFrames.map((time, index) => {
             if (index > 0) {
               return (
                 <tr key={index}>
-                  <td style={{ width: "40px", verticalAlign: "top" }}>{time}</td>
                   <td style={{ width: "40px", verticalAlign: "top" }}>{time}</td>
                 </tr>
               )

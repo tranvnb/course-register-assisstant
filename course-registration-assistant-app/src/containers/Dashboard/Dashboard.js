@@ -6,6 +6,8 @@ import CourseSummary from '../../components/CourseSummary';
 import Week from '../../components/Week';
 import { userLogout } from '../Login/loginSlice';
 import { getAllCourses, selectCourse, deselectCourse } from './DashboardSlice';
+import classNames from 'classnames';
+import style from './Dashboard.module.scss';
 import SearchNla25 from '../SearchNla25/SearchNla25'
 import { Button } from 'react-bootstrap';
 
@@ -39,22 +41,23 @@ const Dashboard = () => {
   }
 
   return (
-    <div className="row">
-      <div className="col">
-        <div className="row">
-          <div className="col-3">
-            {/* <SearchNla25></SearchNla25> */}
-            <Link to="/search">Search Page</Link>
-            </div>
+    <div className={classNames('row', {[style.timetable]: true})}>
+      {/* <div className="col">
+        <div className="row"> */}
           <div className="col-7">
             <Week timeFrames={timeTableLabel} days={weekDays} courses={courses}/>
           </div>
-          <div className="col-2">
+          <div className={classNames('col-3', {[style.courses_margin]: true})} >
+          <Button className={style.buttonSearch}><Link to="/search">Search Page</Link></Button>
             <CourseSummary />
           </div>
+          <div className="col-2">
+            {/* <SearchNla25></SearchNla25> */}
+            
+            </div>
         </div>
-      </div>
-    </div>
+    //   </div>
+    // </div>
   )
 }
 
