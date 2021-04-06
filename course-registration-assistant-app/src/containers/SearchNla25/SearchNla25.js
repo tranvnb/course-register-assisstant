@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import style from "./SearchNla25.module.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { Form, Row, Col, Button, Alert, FormControl, Container, } from "react-bootstrap";
 import SearchCourseNla25 from "../../components/SearchCourseNla25/SearchCourseNla25";
 import { selectCourse } from '../Dashboard/DashboardSlice';
-import { Link } from "react-router-dom";
+import { Link, useHistory, useLocation } from "react-router-dom";
 
 const SearchNla25 = () => {
   const dispatch = useDispatch();
@@ -19,6 +19,9 @@ const SearchNla25 = () => {
 
   // debugger;
   const allMyCourses = useSelector((state) => state.dashboard.courses);
+
+  const location = useLocation();
+  const [currScheduleIdentifier, setCurrScheduleIdentifier] = useState("");
 
   const handleSearch = () => {
     console.log(allMyCourses, "  ", advancedSearch);
@@ -120,6 +123,11 @@ const SearchNla25 = () => {
     dispatch(selectCourse(e.target.value));
   }
 
+  useEffect(() => {
+    console.log(location);
+    setCurrScheduleIdentifier(location.state.prevPath);
+  }, [])
+
   return (
     <div className={style.SearchContainer}>
       <Container>
@@ -176,7 +184,7 @@ const SearchNla25 = () => {
             </u>
               </Col>
               <Col md={{ span: 1, offset: 11 }}>
-          <Link to="/">Back----&gt;</Link>
+          <Link to={currScheduleIdentifier}>Back----&gt;</Link>
           </Col>
             </Row>
           </Col></Row>

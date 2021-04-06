@@ -1,12 +1,13 @@
-const userRoute = require('./userRoute.js');
-const courseRoute = require('./courseRoute.js');
+const userRoute = require('./userRoute');
+const courseRoute = require('./courseRoute');
+const scheduleRoute = require('./scheduleRoute');
 const express = require('express');
 const { userController } = require('../controllers/index.js');
 const routes = express.Router();
 
 // This should be use to log all in-comming request
 routes.use((req, res, next) => {
-    console.log('%s %s %s', req.method, req.url, req.path);
+    console.log('%s %s %s', req.method, req.url, req.path, req.params);
     next();
 });
 
@@ -27,5 +28,6 @@ routes.use((req, res, next)  => {
 // The rest routes will be put from here.
 routes.use('/users', userRoute);
 routes.use('/courses', courseRoute);
+routes.use('/schedule', scheduleRoute);
 
 module.exports = routes;
