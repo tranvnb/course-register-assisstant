@@ -19,7 +19,7 @@ const daysSchema = new Schema({
     }
 });
 
-var courseSchema = new Schema({
+const courseSchema = new Schema({
     crn: {
         type: Schema.Types.String,
         required: [true, "Please provide unique UUID or the CRN"]
@@ -82,7 +82,24 @@ var courseSchema = new Schema({
     }
 });
 
+const scheduleSchema = new Schema({
+  username: {
+    type: Schema.Types.String,
+    required: true
+  },
+  name: { // Serves as the name for this schedule
+    type: String,
+    required: false
+  },
+  semester: {
+    type: Schema.Types.String,
+    required: true
+  },
+  courses: [courseSchema]
+});
 
 const Course = model('Course', courseSchema);
 
-module.exports = Course;
+const Schedule = model('Schedule', scheduleSchema);
+
+module.exports = { Course, Schedule };
