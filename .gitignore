@@ -121,7 +121,3 @@ dist
 .yarn/install-state.gz
 .pnp.*
 >>>>>>> develop
-
-
-# Pesrsonal db files
-**/scripts/schedules.js
