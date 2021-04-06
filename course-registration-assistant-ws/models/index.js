@@ -1,7 +1,8 @@
-const User = require('./user.js');
-const Course = require('./course.js');
+const User = require('./user');
+const { Course, Schedule } = require('./course');
 
 module.exports = {
     User,
-    Course
+    Course,
+    Schedule
 }

@@ -1,5 +1,5 @@
 import store from '../../app/store';
-import { startAuthenticating, successAuthenticating, failureAuthenticating } from './loginSlice';
+import { startAuthenticating, successAuthenticating, failureAuthenticating } from './LoginSlice';
 
 
 describe("login reducer test", () => {
