@@ -70,3 +70,26 @@ exports.updateById = async (req, res) => {
       res.status(500).send('Internal Server Error');
     });
 }
+
+exports.createTimeTable = async(req, res) => {
+  userService.createTimeTable(req.body["id"],req.body['name'], req.body['year'], req.body['semester'])
+  .then(result => {
+    res.status(201).json(result);
+  })
+   .catch((err, doc) => {
+    console.error(err);
+    res.status(500).send('Internal Server Error');
+  });
+}
+
+exports.addCourse = async(req, res) => {
+  console.log("aaaaa");
+  userService.addCourseInTimetable(req.body['id'], req.body['course'], req.body['timeTableId'])
+  .then(result => {
+    res.status(201).json(result);
+  })
+  .catch((err, doc) => {
+    console.log(err);
+    res.status(500).send('Internal Server error');
+  });
+}

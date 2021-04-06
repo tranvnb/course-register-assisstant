@@ -85,4 +85,6 @@ var courseSchema = new Schema({
 
 const Course = model('Course', courseSchema);
 
-module.exports = Course;
+exports.courseSchema = courseSchema;
+
+module.exports = Course

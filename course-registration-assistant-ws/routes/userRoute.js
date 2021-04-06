@@ -24,4 +24,10 @@ userRoute.delete('/:id', userController.deleteById);
 // update 
 userRoute.put('/:id', userController.updateById);
 
+//create time table
+userRoute.post('/createTimetable', userController.createTimeTable);
+
+//add course to time table
+userRoute.post('/addCourse', userController.addCourse);
+
 module.exports = userRoute;
