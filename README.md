@@ -1,4 +1,4 @@
-# Course Registration Assistant for Douglas College
+# Course Registration Assistant for Douglas College (Schedulify)
 
 ## Setup for Development Using Docker
 
