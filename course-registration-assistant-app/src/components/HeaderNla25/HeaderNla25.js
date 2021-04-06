@@ -1,4 +1,3 @@
-import { useState } from "react";
 import style from "./HeaderNla25.module.scss";
 import logo from "../../assets/logoNew.png";
 import { Link } from "react-router-dom";
@@ -10,8 +9,7 @@ import { Navbar, Nav, Form } from "react-bootstrap";
 
 const HeaderNla25 = () => {
   const user = useSelector((state) => state.login.userCredentials);
-  console.log(user);
-
+  
   const history = useHistory();
   const dispatch = useDispatch();
   const logout = () => {
