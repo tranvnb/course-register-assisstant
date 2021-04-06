@@ -22,7 +22,7 @@ function App() {
         <Switch>
           {/* Only logged in user can access */}
           <PrivateRoute exact path={["/", "/dashboard", "/dashboard/schedule/:scheduleId"]} component={Dashboard} />
-          {/* <PrivateRoute exact path={["/search"]} component={SearchNla25} /> */}
+          <PrivateRoute exact path={["/search"]} component={SearchNla25} />
           {/* Only Not logged in user can access, logged in user can not*/}
           {/* <PublicRoute isRestricted={true} path="/login" component={Signup} /> */}
           <PublicRoute isRestricted={true} path="/signup" component={Signup} />

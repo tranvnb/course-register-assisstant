@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useHistory, useParams } from 'react-router';
+import { useHistory, useLocation, useParams } from 'react-router';
 import { Link } from 'react-router-dom';
 import CourseSummary from '../../components/CourseSummary';
 import Week from '../../components/Week';
@@ -27,6 +27,7 @@ const Dashboard = () => {
   }, []);
 
   const history = useHistory();
+  const location = useLocation();
 
   const logout = () => {
     dispatch(userLogout());
@@ -38,7 +39,7 @@ const Dashboard = () => {
       <div className="col">
         <div className="row">
           <div className="col-3">
-            <Link to="/search">Search Page</Link>
+            <Link to={{pathname: '/search', state: { prevPath: location.pathname }}}>Search Page</Link>
             </div>
           <div className="col-7">
             <Week timeFrames={timeTableLabel} days={weekDays} courses={courses}/>
