@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import style from "./SearchNla25.module.scss";
 import { useDispatch, useSelector } from "react-redux";
-import { Form, Row, Col, Button, Alert, FormControl, Container,} from "react-bootstrap";
+import { Form, Row, Col, Button, Alert, FormControl, Container, } from "react-bootstrap";
 import SearchCourseNla25 from "../../components/SearchCourseNla25/SearchCourseNla25";
-import {  selectCourse } from '../Dashboard/DashboardSlice';
+import { selectCourse } from '../Dashboard/DashboardSlice';
 
 const SearchNla25 = () => {
   const dispatch = useDispatch();
@@ -90,7 +90,7 @@ const SearchNla25 = () => {
       } else {
         const array = allMyCourses.filter((course) => {
           return course.days.every(
-            (d) => 
+            (d) =>
               (dayOfweek !== "" &&
                 d.day.toLowerCase().includes(dayOfweek.toLowerCase())) ||
               (timeTo !== "" &&
@@ -116,7 +116,7 @@ const SearchNla25 = () => {
   }
 
   function handleCardClicked(e) {
-      console.log(e.target.value);
+    console.log(e.target.value);
     dispatch(selectCourse(e.target.value));
   }
 
@@ -125,41 +125,33 @@ const SearchNla25 = () => {
       <Container>
         <Row>
           <Col>
-            <FormControl  type="text" placeholder="Search Course ID" className="mr-sm-2" id="id"  value={searchByid}
-              onChange={(e) => setSearchById(e.target.value)}
-            />
-          </Col>
-          <Col>
-            <FormControl type="text"  placeholder="Search Course Name" className="mr-sm-2" id="courseName" value={searchByName}
-              onChange={(e) => setSearchByName(e.target.value)}
-            />
-          </Col>
-          <Col>
-            <FormControl type="text"   placeholder="Search Instructor"  className="mr-sm-2" id="instructor" value={searchByInstructor}
-              onChange={(e) => setSearchByInstructor(e.target.value)}
-            />
-          </Col>
-          <Col sm={{ span: 1.5, offset: 0 }}>
-            <Button  className={style.buttonSearch}  type="button" id="searchButton" onClick={handleSearch}>
-              Search
-            </Button>
-          </Col>
-          <Col>
-            <u className={style.underlineText} id="aSearch" onClick={aSearchClicked}>
-              Advanced Search
-            </u>
-          </Col>
-        </Row>
+            <Row className="mt-3">
+              <Col>
+                <FormControl type="text" placeholder="Search Course ID" className="mr-sm-2" id="id" value={searchByid}
+                  onChange={(e) => setSearchById(e.target.value)}
+                />
+              </Col>
+              <Col>
+                <FormControl type="text" placeholder="Search Course Name" className="mr-sm-2" id="courseName" value={searchByName}
+                  onChange={(e) => setSearchByName(e.target.value)}
+                />
+              </Col>
+              <Col>
+                <FormControl type="text" placeholder="Search Instructor" className="mr-sm-2" id="instructor" value={searchByInstructor}
+                  onChange={(e) => setSearchByInstructor(e.target.value)}
+                />
+              </Col>
 
-        {advancedSearch ? (
-          <Row className={style.row2}>
+            </Row>
+            {advancedSearch ? (
+          <Row className="mt-1">
             <Col>
               <FormControl type="text" placeholder="Day of week" className="mr-sm-2" id="dow" value={dayOfweek}
                 onChange={(e) => setDow(e.target.value)}
               />
             </Col>
             <Col>
-              <FormControl type="text" placeholder="Time from"  className="mr-sm-2" id="timeF" value={timeFrom}
+              <FormControl type="text" placeholder="Time from" className="mr-sm-2" id="timeF" value={timeFrom}
                 onChange={(e) => setfTime(e.target.value)}
               />
             </Col>
@@ -172,19 +164,34 @@ const SearchNla25 = () => {
         ) : (
           ""
         )}
-        <Row className={style.row2}>
+            <Row className="mt-3">
+              <Col>
+                <Button className={style.buttonSearch} type="button" id="searchButton" onClick={handleSearch}>
+                  Search
+            </Button>
+              </Col>
+              <Col>
+                <u className={style.underlineText} id="aSearch" onClick={aSearchClicked}>
+                  Advanced Search
+            </u>
+              </Col>
+            </Row>
+          </Col></Row>
+
+
+        <Row className={style.searchResult}>
           {searchArray.length > 0
             ? searchArray.map((course, key) => (
-                <SearchCourseNla25
-                  key={key} 
-                  crn={course.CRN} 
-                  courseId={course.subject} 
-                  title={course.title} 
-                  intructor={course.instructor} 
-                   daysData={course.days}
-                  cardClicked={handleCardClicked}
-                />
-              ))
+              <SearchCourseNla25
+                key={key}
+                crn={course.CRN}
+                courseId={course.subject}
+                title={course.title}
+                intructor={course.instructor}
+                daysData={course.days}
+                cardClicked={handleCardClicked}
+              />
+            ))
             : ""}
         </Row>
       </Container>
