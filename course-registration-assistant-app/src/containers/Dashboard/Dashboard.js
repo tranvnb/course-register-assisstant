@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router';
+import { Link } from 'react-router-dom';
 import Week from '../../components/Week';
-import { userLogout } from '../Login/LoginSlice';
+import { userLogout } from '../Login/loginSlice';
 import { getAllCourses, selectCourse, deselectCourse } from './DashboardSlice';
 
 const timeTableLabel = ["7:00", "8:00", "9:00", "10:00","11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00"];
@@ -40,6 +41,7 @@ const Dashboard = () => {
         <div className="row">
           <div className="col-3">
             This is sidebar
+            <Link to="/search">Search Page</Link>
             </div>
           <div className="col-9">
             <Week timeFrames={timeTableLabel} days={weekDays} courses={courses}/>
