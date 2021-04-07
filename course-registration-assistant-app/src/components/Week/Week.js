@@ -70,13 +70,11 @@ const Week = ({ timeFrames, days, courses = [] }) => {
                 </table>
               </div>
             </td>
-            <td style={{ width: "40px", verticalAlign: "top" }}>{timeFrames[0]}</td>
           </tr>
           {timeFrames.map((time, index) => {
             if (index > 0) {
               return (
                 <tr key={index}>
-                  <td style={{ width: "40px", verticalAlign: "top" }}>{time}</td>
                   <td style={{ width: "40px", verticalAlign: "top" }}>{time}</td>
                 </tr>
               )
