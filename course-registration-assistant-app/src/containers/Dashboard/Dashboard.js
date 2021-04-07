@@ -42,18 +42,12 @@ const Dashboard = () => {
   });
 
   useEffect(() => {
-    dispatch(getAllCourses());
+    const promiseResult = dispatch(getAllCourses());
+    setScheduleId(params.scheduleId);
     if (params.scheduleId !== undefined) {
-      setScheduleId(params.scheduleId);
-      dispatch(selectTimetableId(params.scheduleId));
+      dispatch(getUserTimetable(params.scheduleId));
     }
   }, []);
-
-  // useEffect(() => {
-  //   if (allCourses.length > 0) {
-  //     dispatch(getUserTimetable());
-  //   }
-  // }, [allCourses])
 
   const history = useHistory();
   const location = useLocation();
