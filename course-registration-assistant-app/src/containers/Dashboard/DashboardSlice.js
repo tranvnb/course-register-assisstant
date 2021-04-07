@@ -1,19 +1,41 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import CourseService from "../../services/CourseService";
+import ScheduleService from "../../services/ScheduleService";
+import {processCourse} from '../../services/CourseService/courseUtils'
 
 export const getAllCourses = createAsyncThunk('courses/getAll', (data = {}, thunkAPI) => {
   // Skipping check duplicated requests
   return CourseService.getAllCourses()
     .then(courses => courses)
+    .then(courses => {
+      thunkAPI.dispatch(getUserTimetable());  
+      return courses;
+    })
     .catch(error => {
       return thunkAPI.rejectWithValue({ message: error });
     })
 });
 
+export const getUserTimetable = createAsyncThunk('courses/selected', (data = {}, thunkAPI) => {
+  return ScheduleService.getUserSchedules(thunkAPI.getState().login.userCredentials._id)
+    .then(timetable => {
+      const selectedTimetable = timetable.timetable.find(item => item._id === thunkAPI.getState().dashboard.selectedTimetableId);
+      return selectedTimetable.courses.map(item => {
+        thunkAPI.dispatch(selectCourse(item.CRN));
+        return item;
+      });
+    })
+    .catch(error => {
+      return thunkAPI.rejectWithValue({ message: error });
+    })
+})
+
+
 const initialState = {
   courses: [], // all course that we have
   selectedCourses: [], // selected courses for current building timetable
   clickedCourseCRN: "",
+  selectedTimetableId: "",
   error: null
 };
 
@@ -24,6 +46,7 @@ const DashboardSlice = createSlice({
     selectCourse: (state, action) => {
       if (state.courses.length > 0) {
         const addedCourse = state.courses.find(c => c.CRN === action.payload);
+        if (addedCourse !== undefined) {
         let newData = []
         if (state.selectedCourses.length === 0) {
           newData.push(addedCourse);
@@ -50,6 +73,7 @@ const DashboardSlice = createSlice({
           newData.push(addedCourse);
         }
         state.selectedCourses = newData;
+      }
       }
     },
     deselectCourse: (state, action) => {
@@ -88,21 +112,31 @@ const DashboardSlice = createSlice({
     },
     clickCourseAnnimation: (state, action) => {
       state.clickedCourseCRN = action.payload;
+    },
+    selectTimetableId: (state, action) => {
+      state.selectedTimetableId = action.payload;
     }
   },
   extraReducers: {
     [getAllCourses.fulfilled]: (state, action) => {
-      console.log("course has result");
       // immer behind the scene, so go a head and change the state
       state.courses = action.payload;
       state.error = null;
     },
     [getAllCourses.rejected]: (state, action) => {
       state.error = action.payload;
+    },
+    [getUserTimetable.fulfilled]: (state, action) => {
+      if (action.payload !== null) {
+        // state.selectedCourses = action.payload;
+      }
+    },
+    [getUserTimetable.rejected]: (state, action) => {
+      console.log(action.payload)
     }
   }
 })
 
-export const { selectCourse, deselectCourse, clickCourseAnnimation } = DashboardSlice.actions;
+export const { selectCourse, deselectCourse, clickCourseAnnimation, selectTimetableId } = DashboardSlice.actions;
 
 export default DashboardSlice.reducer;

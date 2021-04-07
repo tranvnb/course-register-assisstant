@@ -9,4 +9,6 @@ userTimetableRoute.put("/:timetableid", userTimetableController.updateTimetable)
 
 userTimetableRoute.get("/", userTimetableController.getAllTimetable)
 
+userTimetableRoute.get("/:userId", userTimetableController.getAllTimetableByUserId)
+
 module.exports = userTimetableRoute;

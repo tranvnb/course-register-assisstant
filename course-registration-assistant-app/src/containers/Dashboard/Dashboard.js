@@ -5,11 +5,12 @@ import { Link } from "react-router-dom";
 import CourseSummary from "../../components/CourseSummary";
 import Week from "../../components/Week";
 import { userLogout } from "../Login/loginSlice";
-import { getAllCourses, selectCourse, deselectCourse } from "./DashboardSlice";
+import { getAllCourses, selectCourse, deselectCourse, getUserTimetable, selectTimetableId } from "./DashboardSlice";
 import classNames from "classnames";
 import style from "./Dashboard.module.scss";
 import SearchNla25 from "../SearchNla25/SearchNla25";
 import { Button } from "react-bootstrap";
+import ScheduleService from "../../services/ScheduleService/index";
 
 const timeTableLabel = [
   "7:00",
@@ -36,10 +37,23 @@ const Dashboard = () => {
     return state.dashboard.selectedCourses;
   });
 
+  const allCourses = useSelector((state) => {
+    return state.dashboard.courses;
+  });
+
   useEffect(() => {
     dispatch(getAllCourses());
-    setScheduleId(params.scheduleId);
+    if (params.scheduleId !== undefined) {
+      setScheduleId(params.scheduleId);
+      dispatch(selectTimetableId(params.scheduleId));
+    }
   }, []);
+
+  // useEffect(() => {
+  //   if (allCourses.length > 0) {
+  //     dispatch(getUserTimetable());
+  //   }
+  // }, [allCourses])
 
   const history = useHistory();
   const location = useLocation();
@@ -49,6 +63,14 @@ const Dashboard = () => {
     history.replace("/login");
   };
 
+  const saveCurrentTimeTable = (timeTableId) => {
+    ScheduleService.updateTimetable(timeTableId, courses)
+    .then(json => json)
+    .catch(error => {
+      console.log(error);
+    })
+  }
+
   return (
     <div className={classNames("row", { [style.timetable]: true })}>
       <div className="col-7">
@@ -57,6 +79,9 @@ const Dashboard = () => {
       <div className={classNames("col-3", { [style.courses_margin]: true })}>
         <Button className={style.buttonSearch}>
           <Link to={{pathname: '/search', state: { prevPath: location.pathname }}}>Search Page</Link>
+        </Button>
+        <Button className={style.buttonSearch} onClick={() => saveCurrentTimeTable(scheduleId)}>
+          Save timetable
         </Button>
         <CourseSummary />
       </div>

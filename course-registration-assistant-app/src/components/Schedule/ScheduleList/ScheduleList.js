@@ -4,8 +4,9 @@ import ScheduleListItem from '../ScheduleListItem/ScheduleListItem';
 function ScheduleList(props) {
 
   function displayScheduleListItems() {
-    if (props.schedules !== undefined) {
-      return props.schedules.map(element => <ScheduleListItem schedule={element} />)
+    console.log("props.schedules:", props.schedules);
+    if (props.schedules?.timetable !== undefined) {
+      return props.schedules.timetable.map(element => <ScheduleListItem schedule={element} />)
     }
   }
 

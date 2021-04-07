@@ -1,6 +1,6 @@
 
-export const getUserSchedules = (username) => {
-  return fetch(`${process.env.REACT_APP_WEB_SERVICE_URL}/schedule/${username}`)
+export const getUserSchedules = (userId) => {
+  return fetch(`${process.env.REACT_APP_WEB_SERVICE_URL}/timetable/${userId}`)
     .then(response => {
       return response.json();
     })
@@ -12,11 +12,27 @@ export const getUserSchedules = (username) => {
     })
 }
 
-export const createSchedule = (username, name, semester) => {
-  let details = JSON.stringify({ username: username, name: name, semester: semester });
-  return fetch(`${process.env.REACT_APP_WEB_SERVICE_URL}/schedule/`,
+export const createSchedule = (userId, username, name, semester) => {
+  let details = JSON.stringify({ userId: userId, username: username, name: name, semester: semester, courses:[] });
+  return fetch(`${process.env.REACT_APP_WEB_SERVICE_URL}/timetable/${userId}`,
     {
       method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: details
+    })
+    .then(response => response.json())
+    .then(json => json)
+    .catch(error => {
+      console.log(error);
+    });
+}
+
+export const updateTimetable = (timetableId, courses) => {
+  let details = JSON.stringify({courses: courses});
+  debugger;
+  return fetch(`${process.env.REACT_APP_WEB_SERVICE_URL}/timetable/${timetableId}`,
+    {
+      method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: details
     })

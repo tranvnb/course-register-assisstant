@@ -4,7 +4,7 @@ import { getUserSchedules, createSchedule } from '../../services/ScheduleService
 
 import ScheduleList from './ScheduleList/ScheduleList';
 import CreateNewScheduleForm from './CreateNewScheduleForm/CreateNewScheduleForm';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 class Schedule extends Component {
 
@@ -12,9 +12,10 @@ class Schedule extends Component {
 
     super(props);
     this.state = {
-      schedules: [],
+      schedules: {},
       newSchedule: {
-        username: "johndoe@example.com",
+        userId: "",
+        username: "",
         name: "",
         semester: "Winter 2021"
       }
@@ -43,24 +44,22 @@ class Schedule extends Component {
     });
   }
 
-  
 
   createNewSchedule() {
     if (this.state.newSchedule.name === "") {
       alert("You need to add a name for the new schdule");
     } else {
 
+      let userId = this.state.newSchedule.userId;
       let username = this.state.newSchedule.username;
       let name = this.state.newSchedule.name;
       let semester = this.state.newSchedule.semester;
 
-      createSchedule(username, name, semester)
+      createSchedule(userId, username, name, semester)
         .then(json => {
           this.setState({
-            schedules: [
-              ...this.state.schedules,
-              json
-            ]
+            ...this.state,
+            schedules: json
           });
         });
     }
@@ -71,15 +70,13 @@ class Schedule extends Component {
     this.setState({
       newSchedule: {
         ...this.state.newSchedule,
-        username: user.username
+        username: user.username,
+        userId: user._id
       }
     });
     // call get timetabe service
-    getUserSchedules(user.username)
+    getUserSchedules(user._id)
       .then(json => {
-        if (json === undefined) {
-          json = []
-        }
         this.setState({
           ...this.state,
           schedules: json
@@ -99,7 +96,7 @@ class Schedule extends Component {
 
 
         {
-          this.state.schedules.length < 5 &&
+          // this.state.schedules?.timetable?.length < 5 &&
 
           <CreateNewScheduleForm handleChange={(event) => this.handleName(event)}
           handleSelect={(event) => this.handleSemester(event)}

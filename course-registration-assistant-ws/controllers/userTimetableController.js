@@ -2,9 +2,8 @@ const { userTimetableService } = require('../services/index');
 
 exports.addNewTimetable = async (req, res) => {
   const userId = req.params.userid;
-  const newCourse = req.body;
-  console.log(newCourse);
-  userTimetableService.createNewTimetable(newCourse)
+  const newTimetable = req.body;
+  userTimetableService.createNewTimetable(newTimetable)
     .then(result => {
       res.status(200).json(result);
     })
@@ -15,6 +14,17 @@ exports.addNewTimetable = async (req, res) => {
 
 exports.getAllTimetable = async (req, res) => {
   userTimetableService.getAllTimetable()
+    .then(result => {
+      res.status(200).json(result);
+    })
+    .catch(error => {
+      res.status(400).json(error);
+    })
+}
+
+exports.getAllTimetableByUserId = async (req, res) => {
+  const userId = req.params.userId;
+  userTimetableService.getAllTimetableByUserId(userId)
     .then(result => {
       res.status(200).json(result);
     })

@@ -1,24 +1,44 @@
 const { UserTimetable} = require('../models/index')
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
+const { updateOne } = require('../models/timetable');
 
-const createNewTimetable = async (newCourse) => {
+const createNewTimetable = async (newTimetable) => {
+  const userTimetable = await UserTimetable.findOne({
+    userId: new mongoose.Types.ObjectId(newTimetable.userId)
+  });
+  console.log("found user:", userTimetable);
+  if (userTimetable !== null) {
+    
+    userTimetable.timetable.push(newTimetable);
+    await UserTimetable.updateOne(userTimetable);
+  } else {
+    const newUserTimetable = await UserTimetable.create(newTimetable);
+    newUserTimetable.timetable.push(newTimetable);
+    await UserTimetable.updateOne(newUserTimetable);
+  }
 
-  return UserTimetable.create(newCourse);
+  return UserTimetable.findOne({
+    userId: new mongoose.Types.ObjectId(newTimetable.userId)
+  });
 }
 
 const getAllTimetable = async () => {
   return UserTimetable.find();
 }
 
+const getAllTimetableByUserId = async (userId) => {
+  return UserTimetable.findOne({"userId": new mongoose.Types.ObjectId(userId)});
+}
+
 const updateTimetable = async(id, newTimetable) => {
-  return UserTimetable.update({
+  return UserTimetable.updateOne({
     timetable: { $elemMatch: {"_id": new mongoose.Types.ObjectId(id)}}
   }, {
     $set: {
       "timetable.$.courses": newTimetable.courses,
-      "timetable.$.name": newTimetable.name,
-      "timetable.$.year": newTimetable.year,
-      "timetable.$.semester": newTimetable.semester
+      // "timetable.$.name": newTimetable.name,
+      // "timetable.$.year": newTimetable.year,
+      // "timetable.$.semester": newTimetable.semester
     }
   })
 
@@ -27,5 +47,6 @@ const updateTimetable = async(id, newTimetable) => {
 module.exports = {
   createNewTimetable,
   getAllTimetable,
+  getAllTimetableByUserId,
   updateTimetable
 }

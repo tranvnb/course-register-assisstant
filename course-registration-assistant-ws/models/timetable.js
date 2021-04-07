@@ -19,7 +19,8 @@ const timetableItemSchema = Schema({
     required: false
   },
   courses: {
-    type: [courseSchema]
+    type: [courseSchema],
+    required: false
   }
 })
 
