@@ -26,7 +26,7 @@ export const userLogin = createAsyncThunk(
 // localStorage.setItem("user", JSON.stringify({user: "brian"}));
 const user = JSON.parse(localStorage.getItem("user"));
 
-export const loginSlice = createSlice({
+export const LoginSlice = createSlice({
 
   name: 'login',
   initialState: {
@@ -108,6 +108,6 @@ export const loginSlice = createSlice({
   }
 });
 
-export const { startAuthenticating, successAuthenticating, failureAuthenticating, userLogout } = loginSlice.actions
+export const { startAuthenticating, successAuthenticating, failureAuthenticating, userLogout } = LoginSlice.actions
 
-export default loginSlice.reducer;
+export default LoginSlice.reducer;
