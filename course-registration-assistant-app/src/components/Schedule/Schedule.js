@@ -1,48 +1,35 @@
-import { Component } from 'react';
-
-import { getUserSchedules, createSchedule } from '../../services/ScheduleService/ScheduleService';
+import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+//import { useHistory } from 'react-router';
+import { getUserSchedules } from './ScheduleSlice';
 
 import ScheduleList from './ScheduleList/ScheduleList';
 import CreateNewScheduleForm from './CreateNewScheduleForm/CreateNewScheduleForm';
 
-class Schedule extends Component {
+const Schedule = () => {
+  
+  const dispatch = useDispatch();
+  const schedules = useSelector(state => state.schedule.schedules);
+  const username = useSelector(state => state.login.userCredentials.username);
 
-  constructor(props) {
+  const [name, setName] = useState({});
+  const [semester, setSemester] = useState("Winter 2021");
 
-    super(props);
-    this.state = {
-      schedules: [],
-      newSchedule: {
-        username: "johndoe@example.com",
-        name: "",
-        semester: "Winter 2021"
-      }
-    }
+  useEffect(() => {
+    console.log(`The current username is ${username}`);
+    dispatch(getUserSchedules(username));
+  });
 
-    this.handleName = this.handleName.bind(this);
-    this.handleSemester = this.handleSemester.bind(this);
-    this.createNewSchedule = this.createNewSchedule.bind(this);
-  }
-
-  handleName(event) {
-    this.setState({
-      newSchedule: {
-        ...this.state.newSchedule,
-        name: event.target.value
-      }
-    });
+  const handleName = (event) => {
+    setName(event.target.value);
   };
 
-  handleSemester(event) {
-    this.setState({
-      newSchedule: {
-        ...this.state.newSchedule,
-        semester: event.target.value
-      }
-    });
+  const handleSemester = (event) => {
+    setSemester(event.target.value);
   }
 
-  createNewSchedule() {
+  /*
+  const createNewSchedule = () => {
     if (this.state.newSchedule.name === "") {
       alert("You need to add a name for the new schdule");
     } else {
@@ -62,41 +49,24 @@ class Schedule extends Component {
         });
     }
   }
+  */
 
-  componentDidMount() {
-    // call get timetabe service
-    getUserSchedules()
-      .then(json => {
-        this.setState({
-          ...this.state,
-          schedules: json
-        })
-      })
-      .catch(error => {
-        console.log("Error Setting State");
-        console.log(error);
-      })
-  }
+  return (
+    <div>
 
-  render() {
-    return (
-      <div>
-        <ScheduleList schedules={this.state.schedules} />
+      <ScheduleList schedules={schedules} />
 
+      {
+        schedules.length < 5 &&
+        <CreateNewScheduleForm handleChange={(event) => handleName(event)}
+          handleSelect={(event) => handleSemester(event)}
+          // *handleClick={this.createNewSchedule} 
+          />
+      }
+    
 
-        {
-          this.state.schedules.length < 5 &&
-
-          <CreateNewScheduleForm handleChange={(event) => this.handleName(event)}
-          handleSelect={(event) => this.handleSemester(event)}
-          handleClick={this.createNewSchedule} />
-
-        }
-
-
-      </div>
-    )
-  }
+    </div>
+  )
 
 }
 
