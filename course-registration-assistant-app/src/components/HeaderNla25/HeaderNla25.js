@@ -42,7 +42,7 @@ const HeaderNla25 = () => {
           {user != null ?
             <Nav className="mr-auto">
               <Nav.Link href="#home"> Create Schedule</Nav.Link>
-              <Nav.Link href="#link">Saved Schedule</Nav.Link>
+              <Nav.Link href="/schedule">Saved Schedule</Nav.Link>
             </Nav>
             : <Nav className="mr-auto"></Nav>}
           <Form inline>
