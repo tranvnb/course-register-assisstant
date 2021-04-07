@@ -24,7 +24,6 @@ const SearchNla25 = () => {
   const [currScheduleIdentifier, setCurrScheduleIdentifier] = useState("");
 
   const handleSearch = () => {
-    console.log(allMyCourses, "  ", advancedSearch);
 
     const searchResult = allMyCourses.filter((course) => {
       return (
@@ -72,11 +71,8 @@ const SearchNla25 = () => {
       );
     });
 
-    console.log("Result12324--", searchResult);
 
     if (dayOfweek !== "" || timeFrom !== "" || timeTo !== "") {
-      const l = searchResult.length;
-      console.log(l);
       if (searchResult.length > 0) {
         const array = searchResult.filter((course) => {
           return course.days.every(
@@ -88,7 +84,6 @@ const SearchNla25 = () => {
                 d.time.toLowerCase().includes(timeFrom.toLowerCase()))
           );
         });
-        console.log("Dayssss1", array);
         setSearchArray(array);
       } else {
         const array = allMyCourses.filter((course) => {
@@ -102,11 +97,9 @@ const SearchNla25 = () => {
                 d.time.toLowerCase().includes(timeFrom.toLowerCase()))
           );
         });
-        console.log("Dayssss", array);
         setSearchArray(array);
       }
     } else {
-      console.log("Complete array", searchResult);
       setSearchArray(searchResult);
     }
 
@@ -119,7 +112,6 @@ const SearchNla25 = () => {
   }
 
   function handleCardClicked(e) {
-    console.log(e.target.value);
     dispatch(selectCourse(e.target.value));
   }
 
