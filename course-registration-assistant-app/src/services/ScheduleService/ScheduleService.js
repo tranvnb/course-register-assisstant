@@ -29,7 +29,6 @@ export const createSchedule = (userId, username, name, semester) => {
 
 export const updateTimetable = (timetableId, courses) => {
   let details = JSON.stringify({courses: courses});
-  debugger;
   return fetch(`${process.env.REACT_APP_WEB_SERVICE_URL}/timetable/${timetableId}`,
     {
       method: 'PUT',

@@ -66,7 +66,7 @@ const courseSchema = new Schema({
     },
     instructor: {
         type: Schema.Types.String,
-        required: [true, "Instructor is required"]
+        required: false
     },
     prerequisites: {
         type: Schema.Types.String,
