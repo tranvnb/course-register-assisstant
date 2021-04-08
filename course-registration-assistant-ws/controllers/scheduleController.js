@@ -31,4 +31,16 @@ exports.createNewSchedule = async (req, res) => {
       console.log(`Error creating new schedule for username: ${req.body.username}, name: ${req.body.name}, semester: ${req.body.semester}`);
       console.log(error);
     });
+
+}
+
+exports.updateSchedule = async (req, res) => {
+  scheduleService.updateSchedule(req.body)
+    .then(result => {
+      res.json(result);
+    })
+    .catch(error => {
+      console.log(`Error updating schedule for schedule id: ${req.body._id}`);
+      console.log(error);
+    });
 }

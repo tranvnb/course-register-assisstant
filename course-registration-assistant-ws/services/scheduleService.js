@@ -16,6 +16,10 @@ const createNewSchedule = async (username, name, semester) => {
   return schedule.save();
 }
 
-const scheduleService = { findByUsername, createNewSchedule };
+const updateSchedule = async (schedule) => {
+  return Schedule.updateOne({ _id: mongoose.Types.ObjectId(schedule._id) }, schedule);
+}
+
+const scheduleService = { findByUsername, createNewSchedule, updateSchedule };
 
 module.exports = scheduleService;
