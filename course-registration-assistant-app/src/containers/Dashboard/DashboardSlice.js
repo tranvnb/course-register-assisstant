@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import CourseService from "../../services/CourseService";
+import ScheduleService from "../../services/ScheduleService/index";
 
 export const getAllCourses = createAsyncThunk('courses/getAll', (data = {}, thunkAPI) => {
   // Skipping check duplicated requests
@@ -10,9 +11,19 @@ export const getAllCourses = createAsyncThunk('courses/getAll', (data = {}, thun
     })
 });
 
+export const getUserSchedules = createAsyncThunk('user/getSchedules', (username, thunkAPI) => {
+  // Skipping check duplicated requests
+  return ScheduleService.getUserSchedules(username)
+    .then(schedules => schedules)
+    .catch(error => {
+      return thunkAPI.rejectWithValue({ message: error });
+    })
+});
+
 const initialState = {
   courses: [], // all course that we have
-  selectedCourses: [], // selected courses for current building timetable
+  current_schedule: [], // selected courses for current building timetable
+  schedules: [], // all the schedules/timetables the user has built
   clickedCourseCRN: "",
   error: null
 };
@@ -25,11 +36,11 @@ const DashboardSlice = createSlice({
       if (state.courses.length > 0) {
         const addedCourse = state.courses.find(c => c.CRN === action.payload);
         let newData = []
-        if (state.selectedCourses.length === 0) {
+        if (state.current_schedule.length === 0) {
           newData.push(addedCourse);
         } else {
-          newData = state.selectedCourses;
-          state.selectedCourses.forEach(currCourse => {
+          newData = state.current_schedule;
+          state.current_schedule.forEach(currCourse => {
             currCourse.days.forEach(currCourseDay => {
               addedCourse.days.forEach(addCourseDay => {
                 if (addCourseDay.day.toLowerCase() === currCourseDay.day.toLowerCase()) {
@@ -49,21 +60,21 @@ const DashboardSlice = createSlice({
           });
           newData.push(addedCourse);
         }
-        state.selectedCourses = newData;
+        state.current_schedule = newData;
       }
     },
     deselectCourse: (state, action) => {
 
       // re-arrange the other courses
       let newData = [];
-      if (state.selectedCourses.length >= 1) {
-        const removeCourseIndex = state.selectedCourses.findIndex(c => c.CRN === action.payload);
+      if (state.current_schedule.length >= 1) {
+        const removeCourseIndex = state.current_schedule.findIndex(c => c.CRN === action.payload);
         let removeCourse;
         // only remove and re-arrange if the deselected course had been selected before
         if (removeCourseIndex !== -1) {
-          removeCourse = state.selectedCourses.splice(removeCourseIndex, 1)[0];
-          newData = state.selectedCourses;
-          state.selectedCourses.forEach(currCourse => {
+          removeCourse = state.current_schedule.splice(removeCourseIndex, 1)[0];
+          newData = state.current_schedule;
+          state.current_schedule.forEach(currCourse => {
             currCourse.days.forEach(currCourseSchedule => {
               removeCourse.days.forEach(removeCourseSchedule => {
                 if (removeCourseSchedule.day.toLowerCase() === currCourseSchedule.day.toLowerCase()) {
@@ -84,7 +95,7 @@ const DashboardSlice = createSlice({
       }
 
       // immer behind the scene otherwise, spread operator must be used 
-      state.selectedCourses = newData;
+      state.current_schedule = newData;
     },
     clickCourseAnnimation: (state, action) => {
       state.clickedCourseCRN = action.payload;
@@ -99,6 +110,14 @@ const DashboardSlice = createSlice({
     },
     [getAllCourses.rejected]: (state, action) => {
       state.error = action.payload;
+    },
+    [getUserSchedules.fulfilled]: (state, action) => {
+      state.status = 'succeeded';
+      state.schedules = action.payload;
+    },
+    [getUserSchedules.rejected]: (state, action) => {
+      state.status = 'failed';
+      state.error = action.error.message;
     }
   }
 })

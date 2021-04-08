@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 //import { useHistory } from 'react-router';
-import { getUserSchedules } from './ScheduleSlice';
+import { getUserSchedules } from '../../containers/Dashboard/DashboardSlice';
 
 import ScheduleList from './ScheduleList/ScheduleList';
 import CreateNewScheduleForm from './CreateNewScheduleForm/CreateNewScheduleForm';
@@ -9,7 +9,7 @@ import CreateNewScheduleForm from './CreateNewScheduleForm/CreateNewScheduleForm
 const Schedule = () => {
   
   const dispatch = useDispatch();
-  const schedules = useSelector(state => state.schedule.schedules);
+  const schedules = useSelector(state => state.dashboard.schedules);
   const username = useSelector(state => state.login.userCredentials.username);
 
   const [name, setName] = useState({});
@@ -18,7 +18,7 @@ const Schedule = () => {
   useEffect(() => {
     console.log(`The current username is ${username}`);
     dispatch(getUserSchedules(username));
-  });
+  }, []);
 
   const handleName = (event) => {
     setName(event.target.value);

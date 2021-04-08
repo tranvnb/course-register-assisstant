@@ -5,7 +5,7 @@ import style from './CourseSummary.module.scss';
 
 const CourseSummary = () => {
 
-  const selectedCourses = useSelector(state => state.dashboard.selectedCourses);
+  const current_schedule = useSelector(state => state.dashboard.current_schedule);
   return (
     <div className={style.summaryTable}>
       <Table striped bordered hover >
@@ -17,7 +17,7 @@ const CourseSummary = () => {
           </tr>
         </thead>
         <tbody>
-          {selectedCourses.map(course => {
+          {current_schedule.map(course => {
             return (
               <tr>
                 <td>{course.CRN}</td>

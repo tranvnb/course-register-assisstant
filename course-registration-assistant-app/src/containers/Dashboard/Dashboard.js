@@ -30,8 +30,9 @@ const Dashboard = () => {
   const params = useParams();
   const [scheduleId, setScheduleId] = useState("");
   const dispatch = useDispatch();
-  const courses = useSelector((state) => {
-    return state.dashboard.selectedCourses;
+  const location = useLocation();
+  const schedule = useSelector((state) => {
+    return state.dashboard.current_schedule;
   });
 
   useEffect(() => {
@@ -39,12 +40,11 @@ const Dashboard = () => {
     setScheduleId(params.scheduleId);
   }, []);
 
-  const location = useLocation();
 
   return (
     <div className={classNames("row", { [style.timetable]: true })}>
       <div className="col-7">
-        <Week timeFrames={timeTableLabel} days={weekDays} courses={courses} />
+        <Week timeFrames={timeTableLabel} days={weekDays} courses={schedule} />
       </div>
       <div className={classNames("col-3", { [style.courses_margin]: true })}>
         <Button variant="light">
