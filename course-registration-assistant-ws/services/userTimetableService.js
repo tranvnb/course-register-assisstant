@@ -1,4 +1,4 @@
-const { UserTimetable} = require('../models/index')
+const { UserTimetable } = require('../models/index')
 const mongoose = require('mongoose');
 const { updateOne } = require('../models/timetable');
 
@@ -8,27 +8,29 @@ const createNewTimetable = async (newTimetable) => {
   });
   console.log("found user:", userTimetable);
   if (userTimetable !== null) {
-    
+
     userTimetable.timetable.push(newTimetable);
     await UserTimetable.updateOne({
       "_id": new mongoose.Types.ObjectId(userTimetable._id)
-    }, {$set: userTimetable});
+    }, { $set: userTimetable });
     console.log("updated:");
     return UserTimetable.findOne({
       userId: new mongoose.Types.ObjectId(newTimetable.userId)
     });
   } else {
+
     const newUserTimetable = await UserTimetable.create(newTimetable);
+    console.log("newUserTimetable", newUserTimetable);
     newUserTimetable.timetable.push(newTimetable);
     await UserTimetable.updateOne({
-      "_id": new mongoose.Types.ObjectId(userTimetable._id)
-    }, {$set: userTimetable});
+      "_id": new mongoose.Types.ObjectId(newUserTimetable._id)
+    }, { $set: newUserTimetable });
     console.log("updated:");
     return UserTimetable.findOne({
-      userId: new mongoose.Types.ObjectId(newTimetable.userId)
+      "_id": new mongoose.Types.ObjectId(newUserTimetable._id)
     });
   }
-  
+
 }
 
 const getAllTimetable = async () => {
@@ -36,12 +38,12 @@ const getAllTimetable = async () => {
 }
 
 const getAllTimetableByUserId = async (userId) => {
-  return UserTimetable.findOne({"userId": new mongoose.Types.ObjectId(userId)});
+  return UserTimetable.findOne({ "userId": new mongoose.Types.ObjectId(userId) });
 }
 
-const updateTimetable = async(id, newTimetable) => {
+const updateTimetable = async (id, newTimetable) => {
   return UserTimetable.updateOne({
-    timetable: { $elemMatch: {"_id": new mongoose.Types.ObjectId(id)}}
+    timetable: { $elemMatch: { "_id": new mongoose.Types.ObjectId(id) } }
   }, {
     $set: {
       "timetable.$.courses": newTimetable.courses,
