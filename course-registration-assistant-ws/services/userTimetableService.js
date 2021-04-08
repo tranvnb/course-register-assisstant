@@ -6,17 +6,24 @@ const createNewTimetable = async (newTimetable) => {
   const userTimetable = await UserTimetable.findOne({
     userId: new mongoose.Types.ObjectId(newTimetable.userId)
   });
+  console.log("found user:", userTimetable);
   if (userTimetable !== null) {
     
     userTimetable.timetable.push(newTimetable);
-    await UserTimetable.findOneAndUpdate(userTimetable);
+    await UserTimetable.updateOne({
+      "_id": new mongoose.Types.ObjectId(userTimetable._id)
+    }, {$set: userTimetable});
+    console.log("updated:");
     return UserTimetable.findOne({
       userId: new mongoose.Types.ObjectId(newTimetable.userId)
     });
   } else {
     const newUserTimetable = await UserTimetable.create(newTimetable);
     newUserTimetable.timetable.push(newTimetable);
-    await UserTimetable.findOneAndUpdate(newUserTimetable);
+    await UserTimetable.updateOne({
+      "_id": new mongoose.Types.ObjectId(userTimetable._id)
+    }, {$set: userTimetable});
+    console.log("updated:");
     return UserTimetable.findOne({
       userId: new mongoose.Types.ObjectId(newTimetable.userId)
     });
