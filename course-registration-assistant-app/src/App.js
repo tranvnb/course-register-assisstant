@@ -28,7 +28,7 @@ function App() {
           <PublicRoute isRestricted={true} path="/signup" component={Signup} />
           <PublicRoute isRestricted={true} path="/login" component={Login} />
           {/* everyboday can access */}
-          <PublicRoute path="/schedule" component={Schedule} />          
+          <PrivateRoute path="/schedule" component={Schedule} />          
           <PublicRoute path="/not-found" component={NotFound} />
           <Redirect to="/not-found" />
         </Switch>
