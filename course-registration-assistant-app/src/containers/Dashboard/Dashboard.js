@@ -36,15 +36,11 @@ const Dashboard = () => {
     return state.dashboard.current_schedule;
   });
 
-  const [name, setName] = useState({});
-  const [semester, setSemester] = useState("Winter 2021");
+  const [name, setName] = useState(schedule.name);
+  const [semester, setSemester] = useState(schedule.semester);
 
   useEffect(() => {
     dispatch(getAllCourses());
-    console.log(`${schedule.name}`);
-    console.log(`${schedule.semester}`);
-    setName(schedule.name);
-    setSemester(schedule.semester);
   }, []);
 
   const handleName = (event) => {
@@ -56,6 +52,8 @@ const Dashboard = () => {
   }
 
   const saveSchedule = (schedule) => {
+    dispatch(setCurrentScheduleName(name));
+    dispatch(setCurrentScheduleSemester(semester));
     dispatch(updateSchedule(schedule));
   }
 

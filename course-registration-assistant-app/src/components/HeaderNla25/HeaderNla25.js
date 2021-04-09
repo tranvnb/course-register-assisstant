@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { userLogout } from '../../containers/Login/loginSlice';
 import { useHistory } from 'react-router';
 import { Navbar, Nav, Form } from "react-bootstrap";
+import { createNewSchedule } from "../../containers/Dashboard/DashboardSlice";
 
 
 const HeaderNla25 = () => {
@@ -26,11 +27,16 @@ const HeaderNla25 = () => {
   )
 
   const LoggedIn = () => (
-    <div >
+    <div>
       <label>{user.username}</label>
       <button type="button" onClick={logout}>Sign out</button>
     </div>
   )
+
+  const createSchedule = () => {
+    dispatch(createNewSchedule(user.username));
+    history.push("/dashboard");
+  }
 
 
   return (
@@ -41,7 +47,7 @@ const HeaderNla25 = () => {
         <Navbar.Collapse id="basic-navbar-nav">
           {user != null ?
             <Nav className="mr-auto">
-              <Nav.Link href="#home"> Create Schedule</Nav.Link>
+              <Nav.Link onClick={createSchedule}> Create Schedule</Nav.Link>
               <Nav.Link href="/schedule">Saved Schedule</Nav.Link>
             </Nav>
             : <Nav className="mr-auto"></Nav>}

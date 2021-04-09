@@ -28,6 +28,14 @@ export const updateSchedule = createAsyncThunk("user/updateSchedule", (schedule,
     })
 });
 
+export const createNewSchedule = createAsyncThunk("user/createSchedule", (username , thunkAPI) => {
+  return ScheduleService.createSchedule(username)
+    .then(response => response)
+    .catch(error => {
+      return thunkAPI.rejectWithValue({ message: error });
+    })
+});
+
 const initialState = {
   courses: [], // all course that we have
   current_schedule: {
@@ -142,6 +150,13 @@ const DashboardSlice = createSlice({
     },
     [updateSchedule.rejected]: (state, action) => {
       state.status = 'failed';
+    },
+    [createNewSchedule.fulfilled]: (state, action) => {
+      state.status = 'succeeded'
+      state.current_schedule = action.payload
+    },
+    [createNewSchedule.rejected]: (state, action) => {
+      state.status = 'failed'
     }
   }
 })

@@ -22,13 +22,12 @@ exports.getAllSchedulesByUsername = async (req, res) => {
  * @return Returns the newly created schedule document
  */
 exports.createNewSchedule = async (req, res) => {
-
-  scheduleService.createNewSchedule(req.body.username, req.body.name, req.body.semester)
+  scheduleService.createNewSchedule(req.body.username)
     .then(result => {
       res.json(result); 
     })
     .catch(err => {
-      console.log(`Error creating new schedule for username: ${req.body.username}, name: ${req.body.name}, semester: ${req.body.semester}`);
+      console.log(`Error creating new schedule for username: ${req.body.username}`);
       console.log(error);
     });
 

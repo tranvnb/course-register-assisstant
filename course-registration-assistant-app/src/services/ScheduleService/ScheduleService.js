@@ -9,9 +9,9 @@ export const getUserSchedules = (username) => {
     })
 }
 
-export const createSchedule = (username, name, semester) => {
-  let details = JSON.stringify({ username: username, name: name, semester: semester });
-  return fetch(`${process.env.REACT_APP_WEB_SERVICE_URL}/schedule/`,
+export const createSchedule = (username) => {
+  let details = JSON.stringify({ username: username });
+  return fetch(`${process.env.REACT_APP_WEB_SERVICE_URL}/schedule/create`,
     {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },

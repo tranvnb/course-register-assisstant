@@ -7,7 +7,7 @@ const scheduleRoute = express.Router();
 // get a list of all schedules by username 
 scheduleRoute.get('/:username', scheduleController.getAllSchedulesByUsername);
 
-scheduleRoute.post('/', scheduleController.createNewSchedule);
+scheduleRoute.post('/create', scheduleController.createNewSchedule);
 
 scheduleRoute.post('/update', scheduleController.updateSchedule);
 
