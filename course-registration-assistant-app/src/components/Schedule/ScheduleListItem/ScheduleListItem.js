@@ -1,3 +1,4 @@
+import { Button } from 'react-bootstrap';
 
 function ScheduleListItem(props) {
 
@@ -6,6 +7,8 @@ function ScheduleListItem(props) {
       <td>{props.schedule.name}</td>
       <td>{props.schedule.semester}</td>
       <td>{props.schedule.courses.length}</td>
+      <td><Button onClick={ () => props.getSchedule(props.schedule)}>View</Button></td>
+      {/* <td><button onClick={ () => props.getSchedule(props.schedule)}>View</button></td> */}
     </tr>
   )
 }

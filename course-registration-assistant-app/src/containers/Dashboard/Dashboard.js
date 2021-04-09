@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {  useLocation, useParams } from "react-router";
+import { useLocation, useParams } from "react-router";
 import { Link } from "react-router-dom";
 import CourseSummary from "../../components/CourseSummary";
 import Week from "../../components/Week";
-import { getAllCourses} from "./DashboardSlice";
+import { getAllCourses, updateSchedule } from "./DashboardSlice";
 import classNames from "classnames";
 import style from "./Dashboard.module.scss";
 import { Button } from "react-bootstrap";
@@ -40,17 +40,21 @@ const Dashboard = () => {
     setScheduleId(params.scheduleId);
   }, []);
 
+  const saveSchedule = (schedule) => {
+    console.log(schedule.username);
+    dispatch(updateSchedule(schedule));
+  }
 
   return (
     <div className={classNames("row", { [style.timetable]: true })}>
       <div className="col-7">
-        <Week timeFrames={timeTableLabel} days={weekDays} courses={schedule} />
+        <Week timeFrames={timeTableLabel} days={weekDays} courses={schedule.courses} />
       </div>
       <div className={classNames("col-3", { [style.courses_margin]: true })}>
         <Button variant="light">
           <Link to={{pathname: '/search', state: { prevPath: location.pathname }}}>Search Course</Link>
         </Button>
-        <Button variant="dark">Save Timetable</Button>
+        <Button variant="dark" onClick={() => saveSchedule(schedule)}>Save Schedule</Button>
         <CourseSummary />
       </div>
     </div>

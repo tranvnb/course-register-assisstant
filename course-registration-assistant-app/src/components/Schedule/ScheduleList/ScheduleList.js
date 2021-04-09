@@ -5,7 +5,8 @@ function ScheduleList(props) {
 
   function displayScheduleListItems() {
     if (props.schedules !== undefined) {
-      return props.schedules.map(element => <ScheduleListItem schedule={element} />)
+      return props.schedules.map(element => <ScheduleListItem schedule={element}
+                                                              getSchedule={props.getSchedule} />)
     }
   }
 

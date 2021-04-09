@@ -22,3 +22,17 @@ export const createSchedule = (username, name, semester) => {
       console.log(error);
     });
 }
+
+export const updateSchedule = (schedule) => {
+  let body = JSON.stringify(schedule);
+  return fetch(`${process.env.REACT_APP_WEB_SERVICE_URL}/schedule/update`,
+    {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: body
+    })
+    .then(response => response.json())
+    .catch(error => {
+      console.log(error);
+    });
+}

@@ -17,7 +17,7 @@ const CourseSummary = () => {
           </tr>
         </thead>
         <tbody>
-          {current_schedule.map(course => {
+          {current_schedule.courses.map(course => {
             return (
               <tr>
                 <td>{course.CRN}</td>
