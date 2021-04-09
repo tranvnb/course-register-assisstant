@@ -22,7 +22,7 @@ export const getUserSchedules = createAsyncThunk('user/getSchedules', (username,
 
 export const updateSchedule = createAsyncThunk("user/updateSchedule", (schedule, thunkAPI) => {
   return ScheduleService.updateSchedule(schedule)
-    .then()
+    .then(response => response)
     .catch(error => {
       return thunkAPI.rejectWithValue({ message: error });
     })
@@ -112,11 +112,16 @@ const DashboardSlice = createSlice({
     },
     setCurrentSchedule: (state, action) => {
       state.current_schedule = action.payload;
+    },
+    setCurrentScheduleName: (state, action) => {
+      state.current_schedule.name = action.payload
+    },
+    setCurrentScheduleSemester: (state, action) => {
+      state.current_schedule.semester= action.payload
     }
   },
   extraReducers: {
     [getAllCourses.fulfilled]: (state, action) => {
-      console.log("course has result");
       // immer behind the scene, so go a head and change the state
       state.courses = action.payload;
       state.error = null;
@@ -133,16 +138,14 @@ const DashboardSlice = createSlice({
       state.error = action.error.message;
     },
     [updateSchedule.fulfilled]: (state, action) => {
-      console.log("Successfully updated schedule");
       state.status = 'succeeded';
     },
     [updateSchedule.rejected]: (state, action) => {
-      console.log("Failed to save schedule");
       state.status = 'failed';
     }
   }
 })
 
-export const { selectCourse, deselectCourse, clickCourseAnnimation, setCurrentSchedule } = DashboardSlice.actions;
+export const { selectCourse, deselectCourse, clickCourseAnnimation, setCurrentSchedule, setCurrentScheduleName, setCurrentScheduleSemester } = DashboardSlice.actions;
 
 export default DashboardSlice.reducer;

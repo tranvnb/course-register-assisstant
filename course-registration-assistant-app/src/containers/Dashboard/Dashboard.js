@@ -3,8 +3,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { useLocation, useParams } from "react-router";
 import { Link } from "react-router-dom";
 import CourseSummary from "../../components/CourseSummary";
+import ScheduleDetailsForm from "../../components/ScheduleDetailsForm/ScheduleDetailsForm";
 import Week from "../../components/Week";
-import { getAllCourses, updateSchedule } from "./DashboardSlice";
+import { getAllCourses, updateSchedule, setCurrentScheduleName, setCurrentScheduleSemester } from "./DashboardSlice";
 import classNames from "classnames";
 import style from "./Dashboard.module.scss";
 import { Button } from "react-bootstrap";
@@ -27,32 +28,49 @@ const timeTableLabel = [
 const weekDays = ["MON", "TUE", "WED", "THU", "FRI", "SAT"];
 
 const Dashboard = () => {
+
   const params = useParams();
-  const [scheduleId, setScheduleId] = useState("");
   const dispatch = useDispatch();
   const location = useLocation();
   const schedule = useSelector((state) => {
     return state.dashboard.current_schedule;
   });
 
+  const [name, setName] = useState({});
+  const [semester, setSemester] = useState("Winter 2021");
+
   useEffect(() => {
     dispatch(getAllCourses());
-    setScheduleId(params.scheduleId);
+    console.log(`${schedule.name}`);
+    console.log(`${schedule.semester}`);
+    setName(schedule.name);
+    setSemester(schedule.semester);
   }, []);
 
+  const handleName = (event) => {
+    setName(event.target.value);
+  };
+
+  const handleSemester = (event) => {
+    setSemester(event.target.value);
+  }
+
   const saveSchedule = (schedule) => {
-    console.log(schedule.username);
     dispatch(updateSchedule(schedule));
   }
 
   return (
     <div className={classNames("row", { [style.timetable]: true })}>
+      <ScheduleDetailsForm name={name}
+        semester={semester}
+        handleChange={(event) => handleName(event)}
+        handleSelect={(event) => handleSemester(event)} />
       <div className="col-7">
         <Week timeFrames={timeTableLabel} days={weekDays} courses={schedule.courses} />
       </div>
       <div className={classNames("col-3", { [style.courses_margin]: true })}>
         <Button variant="light">
-          <Link to={{pathname: '/search', state: { prevPath: location.pathname }}}>Search Course</Link>
+          <Link to={{ pathname: '/search', state: { prevPath: location.pathname } }}>Search Course</Link>
         </Button>
         <Button variant="dark" onClick={() => saveSchedule(schedule)}>Save Schedule</Button>
         <CourseSummary />
