@@ -28,8 +28,8 @@ export const updateSchedule = createAsyncThunk("user/updateSchedule", (schedule,
     })
 });
 
-export const createNewSchedule = createAsyncThunk("user/createSchedule", (username , thunkAPI) => {
-  return ScheduleService.createSchedule(username)
+export const createNewSchedule = createAsyncThunk("user/createSchedule", (new_schedule_form, thunkAPI) => {
+  return ScheduleService.createSchedule(new_schedule_form)
     .then(response => response)
     .catch(error => {
       return thunkAPI.rejectWithValue({ message: error });
@@ -120,12 +120,6 @@ const DashboardSlice = createSlice({
     },
     setCurrentSchedule: (state, action) => {
       state.current_schedule = action.payload;
-    },
-    setCurrentScheduleName: (state, action) => {
-      state.current_schedule.name = action.payload
-    },
-    setCurrentScheduleSemester: (state, action) => {
-      state.current_schedule.semester= action.payload
     }
   },
   extraReducers: {

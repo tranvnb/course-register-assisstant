@@ -10,6 +10,7 @@ import HeaderNla25 from './components/HeaderNla25/HeaderNla25';
 import Signup from './containers/SignUpNla25';
 import Schedule from './components/Schedule/Schedule';
 import SearchNla25 from './containers/SearchNla25/SearchNla25';
+import CreateSchedule from './components/CreateSchedule/CreateSchedule';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <PrivateRoute exact path={["/", "/dashboard"]} component={Dashboard} />
           <PrivateRoute exact path={["/search"]} component={SearchNla25} />
           <PrivateRoute exact path={["/schedule"]} component={Schedule} />
+          <PrivateRoute exact path={["/create"]} component={CreateSchedule} />
           {/* Only Not logged in user can access, logged in user can not*/}
           {/* <PublicRoute isRestricted={true} path="/login" component={Signup} /> */}
           <PublicRoute isRestricted={true} path="/signup" component={Signup} />

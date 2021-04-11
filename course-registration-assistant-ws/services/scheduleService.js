@@ -6,13 +6,14 @@ const findByUsername = async (username) => {
     return Schedule.find({ username: username }).exec();
 }
 
-const createNewSchedule = async (username) => {
-  const schedule = new Schedule({
-    username: username,
-    name: "Schedule",
+const createNewSchedule = async (schedule) => {
+  const new_schedule = new Schedule({
+    username: schedule.username,
+    name: schedule.name,
+    semester: schedule.semester,
     courses: []
   });
-  return schedule.save();
+  return new_schedule.save();
 }
 
 const updateSchedule = async (schedule) => {

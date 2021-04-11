@@ -9,8 +9,8 @@ export const getUserSchedules = (username) => {
     })
 }
 
-export const createSchedule = (username) => {
-  let details = JSON.stringify({ username: username });
+export const createSchedule = (new_schedule_details) => {
+  let details = JSON.stringify(new_schedule_details);
   return fetch(`${process.env.REACT_APP_WEB_SERVICE_URL}/schedule/create`,
     {
       method: 'POST',

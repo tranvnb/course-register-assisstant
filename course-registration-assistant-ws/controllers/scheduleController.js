@@ -22,7 +22,7 @@ exports.getAllSchedulesByUsername = async (req, res) => {
  * @return Returns the newly created schedule document
  */
 exports.createNewSchedule = async (req, res) => {
-  scheduleService.createNewSchedule(req.body.username)
+  scheduleService.createNewSchedule(req.body)
     .then(result => {
       res.json(result); 
     })
