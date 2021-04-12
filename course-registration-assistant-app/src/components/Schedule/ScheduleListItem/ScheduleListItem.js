@@ -2,7 +2,6 @@ import { Button } from 'react-bootstrap';
 
 function ScheduleListItem(props) {
   
-  let history = useHistory();
 
   const gotoDashboard = () => {
     console.log("props._id", props.schedule._id)

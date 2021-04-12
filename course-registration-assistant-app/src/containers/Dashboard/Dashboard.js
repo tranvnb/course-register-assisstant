@@ -1,18 +1,3 @@
-<<<<<<< HEAD
-import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useHistory, useLocation, useParams } from "react-router";
-import { Link } from "react-router-dom";
-import CourseSummary from "../../components/CourseSummary";
-import Week from "../../components/Week";
-import { userLogout } from "../Login/loginSlice";
-import { getAllCourses, selectCourse, deselectCourse, getUserTimetable, selectTimetableId } from "./DashboardSlice";
-import classNames from "classnames";
-import style from "./Dashboard.module.scss";
-import SearchNla25 from "../SearchNla25/SearchNla25";
-import { Button } from "react-bootstrap";
-import ScheduleService from "../../services/ScheduleService/index";
-=======
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation } from "react-router";
@@ -23,7 +8,6 @@ import { getAllCourses, selectCourse, updateSchedule } from "./DashboardSlice";
 import classNames from "classnames";
 import style from "./Dashboard.module.scss";
 import { Button } from "react-bootstrap";
->>>>>>> develop
 
 const timeTableLabel = [
   "7:00",
