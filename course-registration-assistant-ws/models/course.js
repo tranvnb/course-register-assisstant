@@ -93,7 +93,7 @@ const scheduleSchema = new Schema({
   },
   semester: {
     type: Schema.Types.String,
-    required: true
+    required: false
   },
   courses: [courseSchema]
 });

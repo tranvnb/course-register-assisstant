@@ -6,8 +6,8 @@ const findAll = async () => {
     return User.find({});
 }
 
-const findOne = async (username, password) => {
-    return await User.findOne({username: username, password: password }).exec();
+const findOne = async (username) => {
+    return await User.findOne({username: username }).exec();
 }
 
 const findById = async (id) => {
@@ -15,14 +15,12 @@ const findById = async (id) => {
 }
 
 const createUser = async (username, password) => {
-    console.log("username", username, "password", password);
-    var user = await User.findOne({username: username, password: password }).exec();
+    var user = await User.findOne({username: username }).exec();
     console.log(user," user Found");
     if(user === null)
     {
         console.log("creating user");
-        return User.create({ 
-            // _id: new mongoose.Types.ObjectId(), 
+        return User.create({
             username: username, 
             password: password
         });

@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, {useEffect, useState } from "react";
 import style from "./SearchNla25.module.scss";
 import { useDispatch, useSelector } from "react-redux";
-import { Form, Row, Col, Button, Alert, FormControl, Container, } from "react-bootstrap";
+import { Row, Col, Button, FormControl, Container,} from "react-bootstrap";
 import SearchCourseNla25 from "../../components/SearchCourseNla25/SearchCourseNla25";
 import { selectCourse } from '../Dashboard/DashboardSlice';
-import { Link, useHistory, useLocation } from "react-router-dom";
+import {Link, useLocation } from "react-router-dom";
 
 const SearchNla25 = () => {
   const dispatch = useDispatch();
@@ -24,7 +24,6 @@ const SearchNla25 = () => {
   const [currScheduleIdentifier, setCurrScheduleIdentifier] = useState("");
 
   const handleSearch = () => {
-    console.log(allMyCourses, "  ", advancedSearch);
 
     const searchResult = allMyCourses.filter((course) => {
       return (
@@ -72,11 +71,8 @@ const SearchNla25 = () => {
       );
     });
 
-    console.log("Result12324--", searchResult);
 
     if (dayOfweek !== "" || timeFrom !== "" || timeTo !== "") {
-      const l = searchResult.length;
-      console.log(l);
       if (searchResult.length > 0) {
         const array = searchResult.filter((course) => {
           return course.days.every(
@@ -88,7 +84,6 @@ const SearchNla25 = () => {
                 d.time.toLowerCase().includes(timeFrom.toLowerCase()))
           );
         });
-        console.log("Dayssss1", array);
         setSearchArray(array);
       } else {
         const array = allMyCourses.filter((course) => {
@@ -102,11 +97,9 @@ const SearchNla25 = () => {
                 d.time.toLowerCase().includes(timeFrom.toLowerCase()))
           );
         });
-        console.log("Dayssss", array);
         setSearchArray(array);
       }
     } else {
-      console.log("Complete array", searchResult);
       setSearchArray(searchResult);
     }
 
@@ -119,7 +112,6 @@ const SearchNla25 = () => {
   }
 
   function handleCardClicked(e) {
-    console.log(e.target.value);
     dispatch(selectCourse(e.target.value));
   }
 
@@ -194,7 +186,7 @@ const SearchNla25 = () => {
             ? searchArray.map((course, key) => (
               <SearchCourseNla25
                 key={key}
-                crn={course.CRN}
+                CRN={course.CRN}
                 courseId={course.subject}
                 title={course.title}
                 intructor={course.instructor}

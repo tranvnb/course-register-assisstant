@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory, useLocation, useParams } from "react-router";
@@ -11,6 +12,18 @@ import style from "./Dashboard.module.scss";
 import SearchNla25 from "../SearchNla25/SearchNla25";
 import { Button } from "react-bootstrap";
 import ScheduleService from "../../services/ScheduleService/index";
+=======
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useLocation } from "react-router";
+import { Link } from "react-router-dom";
+import CourseSummary from "../../components/CourseSummary";
+import Week from "../../components/Week";
+import { getAllCourses, selectCourse, updateSchedule } from "./DashboardSlice";
+import classNames from "classnames";
+import style from "./Dashboard.module.scss";
+import { Button } from "react-bootstrap";
+>>>>>>> develop
 
 const timeTableLabel = [
   "7:00",
@@ -33,50 +46,38 @@ const Dashboard = () => {
   const params = useParams();
   const [scheduleId, setScheduleId] = useState("");
   const dispatch = useDispatch();
-  const courses = useSelector((state) => {
-    return state.dashboard.selectedCourses;
-  });
+  const location = useLocation();
 
-  const allCourses = useSelector((state) => {
-    return state.dashboard.courses;
+  const schedule = useSelector((state) => {
+    return state.dashboard.current_schedule;
   });
 
   useEffect(() => {
-    const promiseResult = dispatch(getAllCourses());
-    setScheduleId(params.scheduleId);
-    if (params.scheduleId !== undefined) {
-      dispatch(getUserTimetable(params.scheduleId));
-    }
+    dispatch(getAllCourses());
   }, []);
 
-  const history = useHistory();
-  const location = useLocation();
+  // useEffect(() => {
+  //   if (schedule.courses !== null && schedule.courses.length > 0) {
+  //     schedule.courses.forEach(course => {
+  //       dispatch(selectCourse(course.CRN));
+  //     });
+  //   }
+  // }, [schedule])
 
-  const logout = () => {
-    dispatch(userLogout());
-    history.replace("/login");
-  };
-
-  const saveCurrentTimeTable = (timeTableId) => {
-    ScheduleService.updateTimetable(timeTableId, courses)
-    .then(json => json)
-    .catch(error => {
-      console.log(error);
-    })
+  const saveSchedule = (schedule) => {
+    dispatch(updateSchedule(schedule));
   }
 
   return (
     <div className={classNames("row", { [style.timetable]: true })}>
       <div className="col-7">
-        <Week timeFrames={timeTableLabel} days={weekDays} courses={courses} />
+        <Week timeFrames={timeTableLabel} days={weekDays} courses={schedule.courses} />
       </div>
       <div className={classNames("col-3", { [style.courses_margin]: true })}>
-        <Button className={style.buttonSearch}>
-          <Link to={{pathname: '/search', state: { prevPath: location.pathname }}}>Search Page</Link>
+        <Button variant="light">
+          <Link to={{ pathname: '/search', state: { prevPath: location.pathname } }}>Search Course</Link>
         </Button>
-        <Button className={style.buttonSearch} onClick={() => saveCurrentTimeTable(scheduleId)}>
-          Save timetable
-        </Button>
+        <Button variant="dark" onClick={() => saveSchedule(schedule)}>Save Schedule</Button>
         <CourseSummary />
       </div>
     </div>
