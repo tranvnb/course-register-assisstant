@@ -119,7 +119,37 @@ const DashboardSlice = createSlice({
       state.clickedCourseCRN = action.payload;
     },
     setCurrentSchedule: (state, action) => {
-      state.current_schedule = action.payload;
+
+      const savedCourses = action.payload.courses;
+      let newData = []
+      savedCourses.forEach(item => {
+        const addedCourse = item;
+        if (newData.length === 0) {
+          newData.push(addedCourse);
+        } else {
+          newData.forEach(currCourse => {
+            currCourse.days.forEach(currCourseDay => {
+              addedCourse.days.forEach(addCourseDay => {
+                if (addCourseDay.day.toLowerCase() === currCourseDay.day.toLowerCase()) {
+                  // Please note the exclamation mark
+                  if (!(addCourseDay.offset + addCourseDay.duration <= currCourseDay.offset || addCourseDay.offset >= currCourseDay.offset + currCourseDay.duration)) {
+                    currCourseDay.numCourseInGroup++
+                    if (addCourseDay.numCourseInGroup < currCourseDay.numCourseInGroup) {
+                      addCourseDay.numCourseInGroup = currCourseDay.numCourseInGroup;
+                    }
+                    if (addCourseDay.indexInGroup <= currCourseDay.indexInGroup) {
+                      addCourseDay.indexInGroup = currCourseDay.indexInGroup + 1;
+                    }
+                  }
+                }
+              })
+            })
+          });
+          newData.push(addedCourse);
+        }
+      })
+
+      state.current_schedule = {...action.payload, courses: newData};
     }
   },
   extraReducers: {

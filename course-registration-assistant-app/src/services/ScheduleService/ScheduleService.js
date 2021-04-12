@@ -1,8 +1,16 @@
+import {processCourse} from "../CourseService/courseUtils";
 
 export const getUserSchedules = (username) => {
   return fetch(`${process.env.REACT_APP_WEB_SERVICE_URL}/schedule/${username}`)
     .then(response => {
       return response.json();
+    })
+    .then(data => {
+      const schedule = data;
+      const processedSchedule = schedule.map(sch => {
+        return {...sch, courses: sch.courses.map(course => processCourse(course))}
+      })
+      return processedSchedule;
     })
     .catch(error => {
       console.log(error);
