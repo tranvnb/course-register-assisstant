@@ -1,12 +1,12 @@
-import {useState} from "react";
+import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Form, Row, Col, Button, Alert } from 'react-bootstrap';
 import style from "./Signup.module.scss";
-import {useLocation, useHistory} from 'react-router-dom';
-import { userSignup } from "./SignUpSlice";
+import { useLocation, useHistory } from 'react-router-dom';
+import { userSignup, checkUserEmailValidity } from "./SignUpSlice";
 
 const Signup = () => {
-    
+
     const dispatch = useDispatch();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -19,47 +19,56 @@ const Signup = () => {
 
     const handleSubmit = async (event) => {
         const form = event.currentTarget;
-        if(form.checkValidity() === false)
-        {
+        if (form.checkValidity() === false) {
             event.preventDefault();
             event.stopPropagation();
-        }else
-        {
-                const resultAction = await dispatch(userSignup({
-                    username: email, 
-                    password: password
-               }))
-               if(resultAction?.payload?.username) {
-                   const {from} = location.state || { from: {
-                       pathname: "/login"
-                   }};
-                   history.replace(from);
-               }
-               else{
-                   setHasError(true);
-               }
+        } else {
+            dispatch(checkUserEmailValidity(email))
+                .then(async (payload) => {
+                    console.log(payload);
+                    if (checkUserEmailValidity.fulfilled.match(payload)) {
+                        const resultAction = await dispatch(userSignup({
+                            username: email,
+                            password: password
+                        }))
+                        if (resultAction?.payload?.username) {
+                            const { from } = location.state || {
+                                from: {
+                                    pathname: "/login"
+                                }
+                            };
+                            history.replace(from);
+                        }
+                        else {
+                            setHasError(true);
+                        }
+                    } else {
+                        setHasError(true);
+                    }
+                }).catch(error => console.log(error))
+
         }
     };
 
 
-    return(
+    return (
         <div className={style.SignUpContainer}>
-          <Form className={style.formSignUp}>
+            <Form className={style.formSignUp}>
                 <h2>Sign Up</h2>
                 <p>Please fill in this form to create an account</p>
-                {hasError ? 
-              (<Form.Group as={Row}>
-                  <Col sm={12}>
-                      <Alert variant="danger" onClose={() => setHasError(false)} dismissible>
-                      {error.message} 
-                      </Alert>
-                  </Col>
-              </Form.Group> ) : ""}
+                {hasError ?
+                    (<Form.Group as={Row}>
+                        <Col sm={12}>
+                            <Alert variant="danger" onClose={() => setHasError(false)} dismissible>
+                                {error?.message}
+                            </Alert>
+                        </Col>
+                    </Form.Group>) : ""}
 
                 <Form.Group as={Row} controlId="email">
                     <Col sm={10}>
-                        <Form.Control type="email" data-testid="email" placeholder="Email" value={email} 
-                        onChange={(e) => setEmail(e.target.value)}/>
+                        <Form.Control type="email" data-testid="email" placeholder="Email" value={email}
+                            onChange={(e) => setEmail(e.target.value)} />
                     </Col>
                     <Form.Control.Feedback type="invalid">
                         Please enter your email address.
@@ -68,8 +77,8 @@ const Signup = () => {
 
                 <Form.Group as={Row} controlId="password">
                     <Col sm={10}>
-                        <Form.Control type="password" data-testid="password" placeholder="Password" value={password} 
-                        onChange={(e) => setPassword(e.target.value)} />
+                        <Form.Control type="password" data-testid="password" placeholder="Password" value={password}
+                            onChange={(e) => setPassword(e.target.value)} />
                     </Col>
                     <Form.Control.Feedback type="invalid">
                         Please enter password.

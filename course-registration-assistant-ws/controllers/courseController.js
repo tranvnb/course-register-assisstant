@@ -21,7 +21,6 @@ exports.getById = async (req, res) => {
       res.json(result);
     })
     .catch((err, doc) => {
-      console.error(err);
       res.status(500).send('Internal Server Error');
     });
 }
@@ -32,7 +31,6 @@ exports.getByCRN = async (req, res) => {
       res.json(result);
     })
     .catch((err, doc) => {
-      console.error(err);
       res.status(500).send('Internal Server Error');
     });
 }

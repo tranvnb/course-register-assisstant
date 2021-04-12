@@ -7,7 +7,6 @@ const CourseDetails = ({ details: {id, instructor, credit, subject, time, day, r
   const dispatch = useDispatch();
 
   const removeCourse = (id) => {
-    console.log(id);
     dispatch(deselectCourse(id));
   }
 

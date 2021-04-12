@@ -26,11 +26,23 @@ export const userSignup = createAsyncThunk(
         .then(data => {
             return data;
         }).catch(error => {
-          console.log(error+"jkk");
             return thunkAPI.rejectWithValue({ message: 'Already a signed up user. ', error: error})
         });
     }
 );
+
+export const checkUserEmailValidity = createAsyncThunk("user/signup/checkEmail", (username, thunkAPI) => {
+  return UserService.checkUserEmailValidity(username)
+  .then(res => {
+    if (res.block) {
+      throw Error("Your email is not genuine.")
+    }
+    return true;
+  })
+  .catch(error => {
+    return thunkAPI.rejectWithValue({message: error.message})
+  })
+})
 
 export const signupSlice = createSlice({
 
@@ -70,6 +82,9 @@ export const signupSlice = createSlice({
               }
             }
     
+          })
+          .addCase(checkUserEmailValidity.rejected, (state, action) => {
+            state.error = {message: action.payload.message};
           })
       }
 });
