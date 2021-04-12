@@ -18,7 +18,7 @@ const SearchCourseNla25 = (props) => {
           <Card.Text>
             {props.title} by {props.intructor}
           </Card.Text>
-          <Button onClick={props.cardClicked} value={props.crn} variant="dark">Add</Button>
+          <Button onClick={props.cardClicked} value={props.CRN} variant="dark">Add</Button>
         </Card.Body>
       </Card>
 

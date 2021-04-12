@@ -1,15 +1,27 @@
 const { userService } = require('../services/index');
+const passwordUtil = require('../utilities/passwordUtil');
 
 exports.login = async (req, res) => {
-  const username = req.body["username"];
-  const password = req.body["password"];
-  userService.findOne(username, password)
-    .then(result => {
-      console.log(result);
-      if (result) {
-        res.json({ message: 'success', user: result });
+
+  const username = req.body.username;
+  const password = req.body.password;
+  
+  let auth_user;
+
+  userService.findOne(username)
+    .then(user => {
+      if(user) {
+        auth_user = user;
+        return passwordUtil.validatePassword(password, user.password);
       } else {
-        res.status(401).json({message: "can not find any user"});
+        res.status(401).json({message: "Invalid login credentials"});
+      }
+    })
+    .then(isPasswordValid => {
+      if(isPasswordValid === true) {
+        res.json({ message: 'success', user: auth_user });
+      } else {
+        res.status(401).json({message: "Invalid login credentials"});
       }
     })
     .catch((err, doc) => {
@@ -36,7 +48,10 @@ exports.getById = async (req, res) => {
 }
 
 exports.createUser = async (req, res, next) => {
-  userService.createUser(req.body['username'], req.body['password'])
+  // Hash the password first
+  const password = await passwordUtil.hashPassword(req.body.password);
+
+  userService.createUser(req.body.username, password)
     .then(result => {
       if (result === null) {
         res.status(400).json({error: "user already exists"})

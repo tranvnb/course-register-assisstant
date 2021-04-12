@@ -20,7 +20,7 @@ const daysSchema = new Schema({
 });
 
 const courseSchema = new Schema({
-    crn: {
+    CRN: {
         type: Schema.Types.String,
         required: [true, "Please provide unique UUID or the CRN"]
     },
@@ -93,7 +93,7 @@ const scheduleSchema = new Schema({
   },
   semester: {
     type: Schema.Types.String,
-    required: true
+    required: false
   },
   courses: [courseSchema]
 });
