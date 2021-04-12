@@ -29,7 +29,7 @@ const Login = () => {
         } else {
             const resultAction = await dispatch(userLogin({username: username, password: password}))
             if (resultAction?.payload?.user)  {
-                const { from } = location.state || { from: { pathname: "/dashboard" } };
+                const { from } = location.state || { from: { pathname: "/schedule" } };
                 history.replace(from);
             } else {
                 setHasError(true);
