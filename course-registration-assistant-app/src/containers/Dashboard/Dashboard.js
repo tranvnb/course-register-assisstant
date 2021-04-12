@@ -27,8 +27,6 @@ const timeTableLabel = [
 const weekDays = ["MON", "TUE", "WED", "THU", "FRI", "SAT"];
 
 const Dashboard = () => {
-  const params = useParams();
-  const [scheduleId, setScheduleId] = useState("");
   const dispatch = useDispatch();
   const location = useLocation();
 
