@@ -123,22 +123,22 @@ const DashboardSlice = createSlice({
       const savedCourses = action.payload.courses;
       let newData = []
       savedCourses.forEach(item => {
-        const addedCourse = item;
+        let addedCourse = {...item};
         if (newData.length === 0) {
           newData.push(addedCourse);
         } else {
           newData.forEach(currCourse => {
-            currCourse.days.forEach(currCourseDay => {
+            currCourse.days.forEach((currCourseDay, cidx) => {
               addedCourse.days.forEach(addCourseDay => {
                 if (addCourseDay.day.toLowerCase() === currCourseDay.day.toLowerCase()) {
                   // Please note the exclamation mark
                   if (!(addCourseDay.offset + addCourseDay.duration <= currCourseDay.offset || addCourseDay.offset >= currCourseDay.offset + currCourseDay.duration)) {
-                    currCourseDay.numCourseInGroup++
+                    currCourseDay = {...currCourseDay, numCourseInGroup: currCourseDay.numCourseInGroup + 1};
                     if (addCourseDay.numCourseInGroup < currCourseDay.numCourseInGroup) {
-                      addCourseDay.numCourseInGroup = currCourseDay.numCourseInGroup;
+                      addCourseDay = {...addCourseDay, numCourseInGroup: currCourseDay.numCourseInGroup};
                     }
                     if (addCourseDay.indexInGroup <= currCourseDay.indexInGroup) {
-                      addCourseDay.indexInGroup = currCourseDay.indexInGroup + 1;
+                      addCourseDay = {...addCourseDay, numCourseInGroup: currCourseDay.indexInGroup + 1};
                     }
                   }
                 }
