@@ -51,7 +51,7 @@ const Signup = () => {
               (<Form.Group as={Row}>
                   <Col sm={12}>
                       <Alert variant="danger" onClose={() => setHasError(false)} dismissible>
-                      {error.message} 
+                      {error?.message} 
                       </Alert>
                   </Col>
               </Form.Group> ) : ""}
