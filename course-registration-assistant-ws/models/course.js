@@ -66,7 +66,7 @@ const courseSchema = new Schema({
     },
     instructor: {
         type: Schema.Types.String,
-        required: [true, "Instructor is required"]
+        required: false
     },
     prerequisites: {
         type: Schema.Types.String,
@@ -74,7 +74,7 @@ const courseSchema = new Schema({
     },
     days: {
         type: [daysSchema],
-        required: [true, "Day is required"]
+        required: false
     },
     sessionnote: {
         type: Schema.Types.String,
@@ -102,4 +102,4 @@ const Course = model('Course', courseSchema);
 
 const Schedule = model('Schedule', scheduleSchema);
 
-module.exports = { Course, Schedule };
+module.exports = { Course, Schedule, courseSchema };

@@ -27,7 +27,6 @@ const timeTableLabel = [
 const weekDays = ["MON", "TUE", "WED", "THU", "FRI", "SAT"];
 
 const Dashboard = () => {
-
   const dispatch = useDispatch();
   const location = useLocation();
 

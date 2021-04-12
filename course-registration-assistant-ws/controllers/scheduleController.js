@@ -9,6 +9,7 @@ exports.getAllSchedulesByUsername = async (req, res) => {
   // Get schedule by username
   scheduleService.findByUsername(req.params.username)
     .then(result => {
+      console.log("getAllSchedulesByUsername",result);
       res.json(result);
     })
     .catch(err => {

@@ -19,7 +19,7 @@ const Week = ({ timeFrames, days, courses = [] }) => {
 
   return (
     <div >
-      <table style={{ minWidth: "990px", minHeight: "780px", overflow: "auto" }}>
+      <table style={{ minWidth: "990px", minHeight: "760px", overflow: "auto" }}>
         <thead>
           <tr >
             <th></th>

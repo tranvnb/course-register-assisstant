@@ -26,6 +26,7 @@ export const createSchedule = (new_schedule_details) => {
       body: details
     })
     .then(response => response.json())
+    .then(json => json)
     .catch(error => {
       console.log(error);
     });

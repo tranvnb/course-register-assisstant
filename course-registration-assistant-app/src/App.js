@@ -22,7 +22,7 @@ function App() {
       <HeaderNla25/>
         <Switch>
           {/* Only logged in user can access */}
-          <PrivateRoute exact path={["/", "/dashboard"]} component={Dashboard} />
+          <PrivateRoute exact path={["/", "/dashboard", "/dashboard/schedule/:scheduleId"]} component={Dashboard} />
           <PrivateRoute exact path={["/search"]} component={SearchNla25} />
           <PrivateRoute exact path={["/schedule"]} component={Schedule} />
           <PrivateRoute exact path={["/create"]} component={CreateSchedule} />
