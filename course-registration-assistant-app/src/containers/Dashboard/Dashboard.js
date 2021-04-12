@@ -4,7 +4,7 @@ import { useLocation } from "react-router";
 import { Link } from "react-router-dom";
 import CourseSummary from "../../components/CourseSummary";
 import Week from "../../components/Week";
-import { getAllCourses, updateSchedule } from "./DashboardSlice";
+import { getAllCourses, selectCourse, updateSchedule } from "./DashboardSlice";
 import classNames from "classnames";
 import style from "./Dashboard.module.scss";
 import { Button } from "react-bootstrap";
@@ -38,6 +38,14 @@ const Dashboard = () => {
   useEffect(() => {
     dispatch(getAllCourses());
   }, []);
+
+  // useEffect(() => {
+  //   if (schedule.courses !== null && schedule.courses.length > 0) {
+  //     schedule.courses.forEach(course => {
+  //       dispatch(selectCourse(course.CRN));
+  //     });
+  //   }
+  // }, [schedule])
 
   const saveSchedule = (schedule) => {
     dispatch(updateSchedule(schedule));
