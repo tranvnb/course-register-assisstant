@@ -1,6 +1,5 @@
 
-export const getUserSchedules = () => {
-  let username = "johndoe@example.com";
+export const getUserSchedules = (username) => {
   return fetch(`${process.env.REACT_APP_WEB_SERVICE_URL}/schedule/${username}`)
     .then(response => {
       return response.json();
@@ -10,13 +9,27 @@ export const getUserSchedules = () => {
     })
 }
 
-export const createSchedule = (username, name, semester) => {
-  let details = JSON.stringify({ username: username, name: name, semester: semester });
-  return fetch(`${process.env.REACT_APP_WEB_SERVICE_URL}/schedule/`,
+export const createSchedule = (new_schedule_details) => {
+  let details = JSON.stringify(new_schedule_details);
+  return fetch(`${process.env.REACT_APP_WEB_SERVICE_URL}/schedule/create`,
     {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: details
+    })
+    .then(response => response.json())
+    .catch(error => {
+      console.log(error);
+    });
+}
+
+export const updateSchedule = (schedule) => {
+  let body = JSON.stringify(schedule);
+  return fetch(`${process.env.REACT_APP_WEB_SERVICE_URL}/schedule/update`,
+    {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: body
     })
     .then(response => response.json())
     .catch(error => {
