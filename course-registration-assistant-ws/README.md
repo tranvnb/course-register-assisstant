@@ -7,6 +7,6 @@ This project was using [ExpressJs](http://expressjs.com/), [Mongoose](https://mo
 ````shell
     $ touch .env
     $ echo MONGO_URI='mongodb://[yourmongourl]:27017/[yourmongodbcollection]' >> .env
-    $ echo "PORT: 8080" >> .env
+    $ echo "PORT=8080" >> .env
     $ npm start
 ````

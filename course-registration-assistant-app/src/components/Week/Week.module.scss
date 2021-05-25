@@ -1,36 +1,34 @@
-$colwidth: 150px;
+$colwidth: 16.66%;
 $cellHeight: 60px;
 .scheduleDay {
   display: inline-block;
   width: $colwidth;
   height: $cellHeight;
-  // border: 1px solid #e6e6e6;
   padding: 0 5px 0 5px;
+}
+.scheduleBoard{ 
+  width: 100%;
 } 
 .tableArea {
-  // min-width: $colwidth * 6;
-  // position: absolute;
   display: inline-block;
   position: relative;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
+  width: 100%;
+  height: 100%;
   .table {
     border-collapse: separate;
-    display: block;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+
   .scheduleTimeFrame {  
-      // .scheduleDay {
-      //   position: relative;        
-      // }
       .scheduleDay:nth-child(odd) {
           background-color: #e1e1e1;    
       }
-
       .scheduleDay:nth-child(even) {
           background-color: #c1c1c1;    
       }
@@ -50,4 +48,5 @@ $cellHeight: 60px;
       top: 0px;
     }
   }
+
 }

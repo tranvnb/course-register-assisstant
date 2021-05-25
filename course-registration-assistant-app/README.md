@@ -5,7 +5,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Development
 
 ````shell
-    $ touch .env-example .env
-    $ echo REACT_APP_WEB_SESRVICE_URL='http://yourlocalwebservice' > .env
+    $ touch .env
+    $ echo REACT_APP_WEB_SERVICE_URL='http://yourlocalwebservice' > .env
     $ npm start
 ````

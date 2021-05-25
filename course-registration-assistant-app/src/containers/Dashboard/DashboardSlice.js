@@ -92,7 +92,6 @@ const DashboardSlice = createSlice({
   },
   extraReducers: {
     [getAllCourses.fulfilled]: (state, action) => {
-      console.log("course has result");
       // immer behind the scene, so go a head and change the state
       state.courses = action.payload;
       state.error = null;

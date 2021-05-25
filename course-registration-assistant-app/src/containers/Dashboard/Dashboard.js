@@ -4,10 +4,11 @@ import {  useLocation, useParams } from "react-router";
 import { Link } from "react-router-dom";
 import CourseSummary from "../../components/CourseSummary";
 import Week from "../../components/Week";
-import { getAllCourses} from "./DashboardSlice";
+import { getAllCourses, selectCourse} from "./DashboardSlice";
 import classNames from "classnames";
 import style from "./Dashboard.module.scss";
 import { Button } from "react-bootstrap";
+import Sidebar from "../../components/Sidebar/Sidebar";
 
 const timeTableLabel = [
   "7:00",
@@ -34,25 +35,44 @@ const Dashboard = () => {
     return state.dashboard.selectedCourses;
   });
 
+  const [sidebarSize, setSidebarSize] = useState("col-3");
+  const [mainboardSize, setMainboardSize] = useState("col-9");
+
   useEffect(() => {
-    dispatch(getAllCourses());
-    setScheduleId(params.scheduleId);
+
+    /// set sidebar => maybe should use annimation
+    setTimeout(() =>{
+      setSidebarSize("col-0");
+      setMainboardSize("col-12")
+    }, 2000)
+
+    dispatch(getAllCourses())
+    .then(() => {
+      dispatch(selectCourse("22371"))
+      dispatch(selectCourse("22368"))
+      dispatch(selectCourse("23852"))
+    });
+    
   }, []);
 
   const location = useLocation();
 
   return (
     <div className={classNames("row", { [style.timetable]: true })}>
-      <div className="col-7">
+      <div className={sidebarSize}>
+        <Sidebar/>
+      </div>
+      <div className={mainboardSize}>
+
         <Week timeFrames={timeTableLabel} days={weekDays} courses={courses} />
       </div>
-      <div className={classNames("col-3", { [style.courses_margin]: true })}>
-        <Button variant="light">
+      {/* <div className={classNames("col-3", { [style.courses_margin]: true })}> */}
+        {/* <Button variant="light">
           <Link to={{pathname: '/search', state: { prevPath: location.pathname }}}>Search Course</Link>
-        </Button>
-        <Button variant="dark">Save Timetable</Button>
-        <CourseSummary />
-      </div>
+        </Button> */}
+        {/* <Button variant="dark">Save Timetable</Button> */}
+        {/* <CourseSummary /> */}
+      {/* </div> */}
     </div>
   );
 };
