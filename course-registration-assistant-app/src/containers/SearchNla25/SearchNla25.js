@@ -116,7 +116,7 @@ const SearchNla25 = () => {
   }
 
   useEffect(() => {
-    setCurrScheduleIdentifier(location.state.prevPath);
+    setCurrScheduleIdentifier("/");
   }, [])
 
   return (
@@ -124,45 +124,32 @@ const SearchNla25 = () => {
       <Container>
         <Row>
           <Col>
-            <Row className="mt-3">
-              <Col>
                 <FormControl type="text" placeholder="Search Course ID" className="mr-sm-2" id="id" value={searchByid}
                   onChange={(e) => setSearchById(e.target.value)}
                 />
-              </Col>
-              <Col>
                 <FormControl type="text" placeholder="Search Course Name" className="mr-sm-2" id="courseName" value={searchByName}
                   onChange={(e) => setSearchByName(e.target.value)}
                 />
-              </Col>
-              <Col>
                 <FormControl type="text" placeholder="Search Instructor" className="mr-sm-2" id="instructor" value={searchByInstructor}
                   onChange={(e) => setSearchByInstructor(e.target.value)}
                 />
-              </Col>
-
-            </Row>
-            {advancedSearch ? (
-          <Row className="mt-1">
-            <Col>
+            {advancedSearch ? (<>
               <FormControl type="text" placeholder="Day of week" className="mr-sm-2" id="dow" value={dayOfweek}
                 onChange={(e) => setDow(e.target.value)}
               />
-            </Col>
-            <Col>
               <FormControl type="text" placeholder="Time from" className="mr-sm-2" id="timeF" value={timeFrom}
                 onChange={(e) => setfTime(e.target.value)}
               />
-            </Col>
-            <Col>
               <FormControl type="text" placeholder="Time to" className="mr-sm-2" id="timeE" value={timeTo}
                 onChange={(e) => seteTime(e.target.value)}
               />
-            </Col>
-          </Row>
+              </>
         ) : (
           ""
         )}
+            </Col>
+          </Row>
+
             <Row className="mt-3">
               <Col>
                 <Button className={style.buttonSearch} type="button" id="searchButton" onClick={handleSearch}>
@@ -174,11 +161,9 @@ const SearchNla25 = () => {
                   Advanced Search
             </u>
               </Col>
-              <Col md={{ span: 1, offset: 11 }}>
-          <Link to={currScheduleIdentifier}>Back----&gt;</Link>
+              <Col md={{ span: 1, offset: 11 }}>          
           </Col>
             </Row>
-          </Col></Row>
 
 
         <Row className={style.searchResult}>

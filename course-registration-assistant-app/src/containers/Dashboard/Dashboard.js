@@ -9,6 +9,7 @@ import classNames from "classnames";
 import style from "./Dashboard.module.scss";
 import { Button } from "react-bootstrap";
 import Sidebar from "../../components/Sidebar/Sidebar";
+import SearchNla25 from "../SearchNla25/SearchNla25";
 
 const timeTableLabel = [
   "7:00",
@@ -35,12 +36,12 @@ const Dashboard = () => {
     return state.dashboard.selectedCourses;
   });
 
-  const [sidebarSize, setSidebarSize] = useState("col-3");
-  const [mainboardSize, setMainboardSize] = useState("col-9");
-  const [showSidebar, setShowSidebar] = useState(true);
+  const [sidebarSize, setSidebarSize] = useState("col-0");
+  const [mainboardSize, setMainboardSize] = useState("col-12");
+  const [showSidebar, setShowSidebar] = useState(false);
 
   const toggleSidebar = () => {
-    if (showSidebar) {
+    if (!showSidebar) {
       setSidebarSize("col-3");
       setMainboardSize("col-9")
     } else {
@@ -67,11 +68,14 @@ const Dashboard = () => {
     <div className={classNames("row", { [style.timetable]: true })}>
       <div className={sidebarSize}>
         
-      <nav className={"navbar navbar-light float-sm-right"}>
-        <button aria-controls="navbarScroll" type="button" aria-label="Toggle navigation" className="navbar-toggler collapsed" onClick={toggleSidebar}>
-          <span className="navbar-toggler-icon"></span>
-        </button>
-      </nav>
+        <nav className={"navbar navbar-light"}>
+          <div className="container justify-content-sm-end">
+            <button type="button" aria-label="Toggle navigation" className="navbar-toggler" onClick={toggleSidebar}>
+              <span className="navbar-toggler-icon"></span>
+            </button>
+            {showSidebar ? <SearchNla25 /> : ""}          
+          </div>
+        </nav>
 
       </div>
       <div className={mainboardSize}>
