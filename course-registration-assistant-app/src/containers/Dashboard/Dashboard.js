@@ -37,15 +37,21 @@ const Dashboard = () => {
 
   const [sidebarSize, setSidebarSize] = useState("col-3");
   const [mainboardSize, setMainboardSize] = useState("col-9");
+  const [showSidebar, setShowSidebar] = useState(true);
 
-  useEffect(() => {
-
-    /// set sidebar => maybe should use annimation
-    setTimeout(() =>{
+  const toggleSidebar = () => {
+    if (showSidebar) {
+      setSidebarSize("col-3");
+      setMainboardSize("col-9")
+    } else {
       setSidebarSize("col-0");
       setMainboardSize("col-12")
-    }, 2000)
+    }
 
+    setShowSidebar(!showSidebar);
+  }
+
+  useEffect(() => {
     dispatch(getAllCourses())
     .then(() => {
       dispatch(selectCourse("22371"))
@@ -60,7 +66,13 @@ const Dashboard = () => {
   return (
     <div className={classNames("row", { [style.timetable]: true })}>
       <div className={sidebarSize}>
-        <Sidebar/>
+        
+      <nav className={"navbar navbar-light float-sm-right"}>
+        <button aria-controls="navbarScroll" type="button" aria-label="Toggle navigation" className="navbar-toggler collapsed" onClick={toggleSidebar}>
+          <span className="navbar-toggler-icon"></span>
+        </button>
+      </nav>
+
       </div>
       <div className={mainboardSize}>
 
