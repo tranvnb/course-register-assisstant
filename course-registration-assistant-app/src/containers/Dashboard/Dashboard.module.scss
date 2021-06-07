@@ -6,3 +6,25 @@
     padding-left:40px;
     margin-top: 20px;
 }
+
+.sidebarToggleButton {
+    border: 1px solid rgba(0,0,0,.1);
+    color: rgba(0,0,0,.55);
+    border-radius: .25rem;
+    position: fixed;
+    width: 49px;
+    font-weight: bold;
+    top: 30px;
+    left: 0px;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.stretchChildHeight {
+    display: flex;
+    flex-direction: column;
+}
+
+.height100 { 
+    height: 100%;
+}

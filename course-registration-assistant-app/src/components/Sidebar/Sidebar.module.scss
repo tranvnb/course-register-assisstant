@@ -1,0 +1,13 @@
+.searchResultContainer {
+    overflow-y: scroll;
+    scrollbar-width: thin;
+}
+
+.stretchChildHeight {
+    display: flex;
+    flex-direction: column;
+}
+
+.height100 {
+    height: 100%;
+}
