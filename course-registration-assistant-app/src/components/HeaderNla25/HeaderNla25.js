@@ -26,12 +26,11 @@ const HeaderNla25 = () => {
   )
 
   const LoggedIn = () => (
-    <div >
+    <div>
       <label>{user.username}</label>
       <button type="button" onClick={logout}>Sign out</button>
     </div>
   )
-
 
   return (
     <div className={style.header1}>
@@ -41,8 +40,8 @@ const HeaderNla25 = () => {
         <Navbar.Collapse id="basic-navbar-nav">
           {user != null ?
             <Nav className="mr-auto">
-              <Nav.Link href="/schedule"> Create Schedule</Nav.Link>
-              <Nav.Link href="#link">Saved Schedule</Nav.Link>
+              <Nav.Link href="/create"> Create Schedule</Nav.Link>
+              <Nav.Link href="/schedule">Saved Schedule</Nav.Link>
             </Nav>
             : <Nav className="mr-auto"></Nav>}
           <Form inline>

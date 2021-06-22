@@ -1,6 +1,7 @@
 const userRoute = require('./userRoute');
 const courseRoute = require('./courseRoute');
 const scheduleRoute = require('./scheduleRoute');
+const userTimetableRoute = require('./userTimetableRoute')
 const express = require('express');
 const { userController } = require('../controllers/index.js');
 const routes = express.Router();
@@ -29,5 +30,6 @@ routes.use((req, res, next)  => {
 routes.use('/users', userRoute);
 routes.use('/courses', courseRoute);
 routes.use('/schedule', scheduleRoute);
+routes.use('/timetable', userTimetableRoute);
 
 module.exports = routes;

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation, useParams } from "react-router";
 import { Link } from "react-router-dom";
@@ -29,11 +29,11 @@ const timeTableLabel = [
 const weekDays = ["MON", "TUE", "WED", "THU", "FRI", "SAT"];
 
 const Dashboard = () => {
-  const params = useParams();
-  const [scheduleId, setScheduleId] = useState("");
   const dispatch = useDispatch();
-  const courses = useSelector((state) => {
-    return state.dashboard.selectedCourses;
+  const location = useLocation();
+
+  const schedule = useSelector((state) => {
+    return state.dashboard.current_schedule;
   });
 
   const [sidebarSize, setSidebarSize] = useState("col-3");
@@ -60,7 +60,17 @@ const Dashboard = () => {
 
   }, []);
 
-  const location = useLocation();
+  // useEffect(() => {
+  //   if (schedule.courses !== null && schedule.courses.length > 0) {
+  //     schedule.courses.forEach(course => {
+  //       dispatch(selectCourse(course.CRN));
+  //     });
+  //   }
+  // }, [schedule])
+
+  const saveSchedule = (schedule) => {
+    dispatch(updateSchedule(schedule));
+  }
 
   return (
     <div className={classNames("row", { [style.timetable]: true })}>

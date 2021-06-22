@@ -10,6 +10,7 @@ import HeaderNla25 from './components/HeaderNla25/HeaderNla25';
 import Signup from './containers/SignUpNla25';
 import Schedule from './components/Schedule/Schedule';
 import SearchNla25 from './containers/SearchNla25/SearchNla25';
+import CreateSchedule from './components/CreateSchedule/CreateSchedule';
 
 function App() {
   return (
