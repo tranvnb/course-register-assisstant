@@ -19,7 +19,11 @@ const Week = ({ timeFrames, days, courses = [] }) => {
 
   return (
     <div >
+<<<<<<< HEAD
+      <table className={style.scheduleBoard}>
+=======
       <table style={{ minWidth: "990px", minHeight: "760px", overflow: "auto" }}>
+>>>>>>> 686762c096cbd988269bcf56f6ec854b856311db
         <thead>
           <tr >
             <th></th>

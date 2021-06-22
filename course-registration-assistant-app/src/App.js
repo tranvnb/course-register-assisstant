@@ -19,24 +19,25 @@ function App() {
       </header> */}
       <BrowserRouter>
       {/* Header Component */}
-      <HeaderNla25/>
+      {/* <HeaderNla25/> */}
         <Switch>
           {/* Only logged in user can access */}
-          <PrivateRoute exact path={["/", "/dashboard", "/dashboard/schedule/:scheduleId"]} component={Dashboard} />
-          <PrivateRoute exact path={["/search"]} component={SearchNla25} />
-          <PrivateRoute exact path={["/schedule"]} component={Schedule} />
-          <PrivateRoute exact path={["/create"]} component={CreateSchedule} />
+          {/* <PrivateRoute exact path={["/", "/dashboard"]} component={Dashboard} /> */}
+          <PublicRoute exact path={["/dashboard", "/"]} component={Dashboard} />
+          <PublicRoute exact path={["/search"]} component={SearchNla25} />
+          {/* <PrivateRoute exact path={["/search"]} component={SearchNla25} /> */}
           {/* Only Not logged in user can access, logged in user can not*/}
           {/* <PublicRoute isRestricted={true} path="/login" component={Signup} /> */}
-          <PublicRoute isRestricted={true} path="/signup" component={Signup} />
-          <PublicRoute isRestricted={true} path="/login" component={Login} />
+          {/* <PublicRoute isRestricted={true} path="/signup" component={Signup} /> */}
+          {/* <PublicRoute isRestricted={true} path="/login" component={Login} /> */}
           {/* everyboday can access */}
+          {/* <PublicRoute path="/schedule" component={Schedule} />           */}
           <PublicRoute path="/not-found" component={NotFound} />
           <Redirect to="/not-found" />
         </Switch>
       </BrowserRouter>
       {/* Footer Component */}
-      <FooterNla25/>
+      {/* <FooterNla25/> */}
     </div>
   );
 }
