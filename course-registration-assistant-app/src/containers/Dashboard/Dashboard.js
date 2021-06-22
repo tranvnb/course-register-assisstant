@@ -55,10 +55,7 @@ const Dashboard = () => {
   useEffect(() => {
     dispatch(getAllCourses())
       .then(() => {
-        dispatch(selectCourse("22371"))
-        dispatch(selectCourse("22368"))
-        dispatch(selectCourse("23852"))
-        dispatch(selectCourse("23382"))
+        dispatch(selectCourse("360761"))
       });
 
   }, []);
@@ -75,24 +72,27 @@ const Dashboard = () => {
       </div> : ""}
 
       {showSidebar ? <div className={sidebarSize} >
-          <Row>
-            <Col>
-              <Button variant="light"className={"float-sm-right"} onClick={toggleSidebar}>
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" className="bi bi-x-lg" viewBox="0 0 16 16">
-                  <path d="M1.293 1.293a1 1 0 0 1 1.414 0L8 6.586l5.293-5.293a1 1 0 1 1 1.414 1.414L9.414 8l5.293 5.293a1 1 0 0 1-1.414 1.414L8 9.414l-5.293 5.293a1 1 0 0 1-1.414-1.414L6.586 8 1.293 2.707a1 1 0 0 1 0-1.414z" />
-                </svg>
-            </Button>  
-            </Col>
-          </Row>
-          <Row className={style.stretchChildHeight, style.height100}>
-            <Col className={["mt-3", style.stretchChildHeight]}>
-              <Sidebar />
-            </Col>
-          </Row>
+        <Row>
+          <Col>
+            <Button variant="light" className={"float-sm-right"} onClick={toggleSidebar}>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" className="bi bi-x-lg" viewBox="0 0 16 16">
+                <path d="M1.293 1.293a1 1 0 0 1 1.414 0L8 6.586l5.293-5.293a1 1 0 1 1 1.414 1.414L9.414 8l5.293 5.293a1 1 0 0 1-1.414 1.414L8 9.414l-5.293 5.293a1 1 0 0 1-1.414-1.414L6.586 8 1.293 2.707a1 1 0 0 1 0-1.414z" />
+              </svg>
+            </Button>
+          </Col>
+        </Row>
+        <Row className={style.stretchChildHeight, style.height100}>
+          <Col className={["mt-3", style.stretchChildHeight]}>
+            <Sidebar />
+          </Col>
+        </Row>
       </div> : ""}
       <div className={mainboardSize}>
 
         <Week timeFrames={timeTableLabel} days={weekDays} courses={courses} />
+        <div>
+          <i><b style={{color:"green"}}>Note: Mouse right click to remove course</b></i>
+        </div>
       </div>
     </div>
   );

@@ -155,7 +155,7 @@ const Sidebar = () => {
 									cardClicked={handleCardClicked}
 								/>
 							))
-							: ""}
+							: "Result found:"}
 					</Row>
 				</Col>
 			</Row>

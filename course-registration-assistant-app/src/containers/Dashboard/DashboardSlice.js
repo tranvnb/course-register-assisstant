@@ -25,31 +25,33 @@ const DashboardSlice = createSlice({
       if (state.courses.length > 0) {
         const addedCourse = state.courses.find(c => c.CRN === action.payload);
         let newData = []
-        if (state.selectedCourses.length === 0) {
-          newData.push(addedCourse);
-        } else {
-          newData = state.selectedCourses;
-          state.selectedCourses.forEach(currCourse => {
-            currCourse.days.forEach(currCourseDay => {
-              addedCourse.days.forEach(addCourseDay => {
-                if (addCourseDay.day.toLowerCase() === currCourseDay.day.toLowerCase()) {
-                  // Please note the exclamation mark
-                  if (!(addCourseDay.offset + addCourseDay.duration <= currCourseDay.offset || addCourseDay.offset >= currCourseDay.offset + currCourseDay.duration)) {
-                    currCourseDay.numCourseInGroup++
-                    if (addCourseDay.numCourseInGroup < currCourseDay.numCourseInGroup) {
-                      addCourseDay.numCourseInGroup = currCourseDay.numCourseInGroup;
-                    }
-                    if (addCourseDay.indexInGroup <= currCourseDay.indexInGroup) {
-                      addCourseDay.indexInGroup = currCourseDay.indexInGroup + 1;
+        if (addedCourse) {
+          if (state.selectedCourses.length === 0) {
+            newData.push(addedCourse);
+          } else {
+            newData = state.selectedCourses;
+            state.selectedCourses.forEach(currCourse => {
+              currCourse.days.forEach(currCourseDay => {
+                addedCourse.days.forEach(addCourseDay => {
+                  if (addCourseDay.day.toLowerCase() === currCourseDay.day.toLowerCase()) {
+                    // Please note the exclamation mark
+                    if (!(addCourseDay.offset + addCourseDay.duration <= currCourseDay.offset || addCourseDay.offset >= currCourseDay.offset + currCourseDay.duration)) {
+                      currCourseDay.numCourseInGroup++
+                      if (addCourseDay.numCourseInGroup < currCourseDay.numCourseInGroup) {
+                        addCourseDay.numCourseInGroup = currCourseDay.numCourseInGroup;
+                      }
+                      if (addCourseDay.indexInGroup <= currCourseDay.indexInGroup) {
+                        addCourseDay.indexInGroup = currCourseDay.indexInGroup + 1;
+                      }
                     }
                   }
-                }
+                })
               })
-            })
-          });
-          newData.push(addedCourse);
+            });
+            newData.push(addedCourse);
+          }
+          state.selectedCourses = newData;
         }
-        state.selectedCourses = newData;
       }
     },
     deselectCourse: (state, action) => {
