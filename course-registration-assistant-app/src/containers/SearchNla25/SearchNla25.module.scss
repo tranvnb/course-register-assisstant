@@ -1,12 +1,10 @@
 .SearchContainer {
-    height: 100%;
+    height: auto;
     position: relative;
     min-height: 86vh;
     display: flex;
     flex-direction: column;
     // justify-content: center;
-    max-height: 780px;
-    // overflow-y: auto;
 }
 
 
@@ -22,9 +20,8 @@
     color: #8C30F5;
 }
 
-.searchResult{
-    max-height: 660px;
-    overflow-y: auto;
+.row2{
+    margin-top: 10px;
 }
 
 
