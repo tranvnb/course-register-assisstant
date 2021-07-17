@@ -3,7 +3,7 @@ import style from "./SearchNla25.module.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { Row, Col, Button, FormControl, Container,} from "react-bootstrap";
 import SearchCourseNla25 from "../../components/SearchCourseNla25/SearchCourseNla25";
-import { selectCourse } from '../Dashboard/DashboardSlice';
+import {  selectCourse } from '../Dashboard/DashboardSlice';
 import {Link, useLocation } from "react-router-dom";
 
 const SearchNla25 = () => {
@@ -186,7 +186,7 @@ const SearchNla25 = () => {
             ? searchArray.map((course, key) => (
               <SearchCourseNla25
                 key={key}
-                CRN={course.CRN}
+                crn={course.CRN}
                 courseId={course.subject}
                 title={course.title}
                 intructor={course.instructor}

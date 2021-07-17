@@ -56,23 +56,3 @@ export const logUserOut = () => {
 export const getUser = () => {
     return localStorage.getItem("user");
 }
-
-export const checkUserEmailValidity = (username) => {
-    return fetch(`https://mailcheck.p.rapidapi.com/?domain=${username}`, {
-        "method": "GET",
-        "headers": {
-            "x-rapidapi-key": "da12b3d28emshbd8c659b9eee3f5p19c3afjsn38d04108337c",
-            "x-rapidapi-host": "mailcheck.p.rapidapi.com"
-        }
-    })
-    .then(response => {
-        console.log(response);
-      return response.json();
-    })
-    .then(res => res)
-    .catch(err => {
-        console.error(err);
-    });
-
-    //block=false
-}
