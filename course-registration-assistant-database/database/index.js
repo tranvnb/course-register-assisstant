@@ -67,7 +67,19 @@ fs.readFile('data/index.html', 'utf8', function(err, data) {
                 case 2: // Days are in 2 rows
                     const day = extractDays($(info[1]).text().trim());
                     if (course.days == undefined) {
-                        course.days = [day];
+                        // check a special condition on HOSP program : Days: Tue Thu Time: 08:30 - 10:20 Building: Coquitlam - Bldg. A Room: A2290
+                        if (day.day.includes(' ')) {
+                            // split day of week
+                            const dayArr = day.day.split(' ').map(d => {return {
+                                day: d,
+                                time: day.time,
+                                buiding: day.buiding,
+                                rom: day.rom
+                            }})
+                            course.days = dayArr;
+                        } else {
+                            course.days = [day];
+                        }
                     } else {
                         course.days.push(day);
                     }

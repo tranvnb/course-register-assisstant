@@ -1,0 +1,2558 @@
+[
+    {
+        "CRN": "12005",
+        "subject": "BUSN 1200 001",
+        "credit": "3",
+        "title": "Fundamentals of Business",
+        "max": "35",
+        "enrolled": "0",
+        "remain": "35",
+        "wait": "0",
+        "status": "Open",
+        "startEnd": "04-JAN-2022 to 13-APR-2022",
+        "campus": "O",
+        "delivery_mode": "Online Synchronous Course",
+        "instructor": "Lisa Phillips",
+        "prerequisites": "No",
+        "days": [
+            {
+                "day": "Tue",
+                "time": "08:30 - 11:20",
+                "buiding": "Building:",
+                "rom": "Room:"
+            }
+        ]
+    },
+    {
+        "CRN": "12006",
+        "subject": "BUSN 1200 002",
+        "credit": "3",
+        "title": "Fundamentals of Business",
+        "max": "35",
+        "enrolled": "0",
+        "remain": "35",
+        "wait": "0",
+        "status": "Open",
+        "startEnd": "04-JAN-2022 to 13-APR-2022",
+        "campus": "N",
+        "delivery_mode": "In Person Day Course",
+        "instructor": "George Stroppa",
+        "prerequisites": "No",
+        "days": [
+            {
+                "day": "Tue",
+                "time": "12:30 - 15:20",
+                "buiding": "Building:",
+                "rom": "Room:"
+            }
+        ]
+    },
+    {
+        "CRN": "12561",
+        "subject": "BUSN 1200 003",
+        "credit": "3",
+        "title": "Fundamentals of Business",
+        "max": "35",
+        "enrolled": "0",
+        "remain": "35",
+        "wait": "0",
+        "status": "Open",
+        "startEnd": "04-JAN-2022 to 13-APR-2022",
+        "campus": "O",
+        "delivery_mode": "Online Synchronous Course",
+        "instructor": "Lisa Phillips",
+        "prerequisites": "No",
+        "days": [
+            {
+                "day": "Wed",
+                "time": "15:30 - 18:20",
+                "buiding": "Building:",
+                "rom": "Room:"
+            }
+        ]
+    },
+    {
+        "CRN": "14624",
+        "subject": "BUSN 1200 004",
+        "credit": "3",
+        "title": "Fundamentals of Business",
+        "max": "35",
+        "enrolled": "0",
+        "remain": "35",
+        "wait": "0",
+        "status": "Open",
+        "startEnd": "04-JAN-2022 to 13-APR-2022",
+        "campus": "N",
+        "delivery_mode": "In Person Day Course",
+        "instructor": "George Stroppa",
+        "prerequisites": "No",
+        "days": [
+            {
+                "day": "Thu",
+                "time": "15:30 - 18:20",
+                "buiding": "Building: Anvil Office Tower",
+                "rom": "Room: 709"
+            }
+        ]
+    },
+    {
+        "CRN": "15592",
+        "subject": "BUSN 1200 005",
+        "credit": "3",
+        "title": "Fundamentals of Business",
+        "max": "35",
+        "enrolled": "0",
+        "remain": "35",
+        "wait": "0",
+        "status": "Open",
+        "startEnd": "04-JAN-2022 to 13-APR-2022",
+        "campus": "N",
+        "delivery_mode": "In Person Day Course",
+        "instructor": "John Swain Jr.",
+        "prerequisites": "No",
+        "days": [
+            {
+                "day": "Fri",
+                "time": "12:30 - 15:20",
+                "buiding": "Building: Anvil Office Tower",
+                "rom": "Room: 709"
+            }
+        ]
+    },
+    {
+        "CRN": "12781",
+        "subject": "BUSN 1200 050",
+        "credit": "3",
+        "title": "Fundamentals of Business",
+        "max": "35",
+        "enrolled": "0",
+        "remain": "35",
+        "wait": "0",
+        "status": "Open",
+        "startEnd": "04-JAN-2022 to 13-APR-2022",
+        "campus": "N",
+        "delivery_mode": "In Person Evening Course",
+        "instructor": "John Swain Jr.",
+        "prerequisites": "No",
+        "days": [
+            {
+                "day": "Thu",
+                "time": "18:30 - 21:20",
+                "buiding": "Building: Anvil Office Tower",
+                "rom": "Room: 709"
+            }
+        ]
+    },
+    {
+        "CRN": "12007",
+        "subject": "BUSN 1210 001",
+        "credit": "3",
+        "title": "Management Essentials",
+        "max": "35",
+        "enrolled": "0",
+        "remain": "35",
+        "wait": "0",
+        "status": "Open",
+        "startEnd": "04-JAN-2022 to 13-APR-2022",
+        "campus": "N",
+        "delivery_mode": "In Person Day Course",
+        "instructor": "Ralph Ferens",
+        "prerequisites": "Yes",
+        "days": [
+            {
+                "day": "Tue",
+                "time": "12:30 - 15:20",
+                "buiding": "Building:",
+                "rom": "Room:"
+            }
+        ]
+    },
+    {
+        "CRN": "13337",
+        "subject": "BUSN 1210 004",
+        "credit": "3",
+        "title": "Management Essentials",
+        "max": "35",
+        "enrolled": "0",
+        "remain": "35",
+        "wait": "0",
+        "status": "Open",
+        "startEnd": "04-JAN-2022 to 13-APR-2022",
+        "campus": "N",
+        "delivery_mode": "In Person Day Course",
+        "instructor": "George Stroppa",
+        "prerequisites": "Yes",
+        "days": [
+            {
+                "day": "Wed",
+                "time": "12:30 - 15:20",
+                "buiding": "Building:",
+                "rom": "Room:"
+            }
+        ]
+    },
+    {
+        "CRN": "12011",
+        "subject": "BUSN 1210 005",
+        "credit": "3",
+        "title": "Management Essentials",
+        "max": "35",
+        "enrolled": "0",
+        "remain": "35",
+        "wait": "0",
+        "status": "Open",
+        "startEnd": "04-JAN-2022 to 13-APR-2022",
+        "campus": "N",
+        "delivery_mode": "In Person Day Course",
+        "instructor": "Aurora Faundo",
+        "prerequisites": "Yes",
+        "days": [
+            {
+                "day": "Wed",
+                "time": "15:30 - 18:20",
+                "buiding": "Building: Anvil Office Tower",
+                "rom": "Room: 709"
+            }
+        ]
+    },
+    {
+        "CRN": "13103",
+        "subject": "BUSN 1210 006",
+        "credit": "3",
+        "title": "Management Essentials",
+        "max": "35",
+        "enrolled": "0",
+        "remain": "35",
+        "wait": "0",
+        "status": "Open",
+        "startEnd": "04-JAN-2022 to 13-APR-2022",
+        "campus": "N",
+        "delivery_mode": "In Person Day Course",
+        "instructor": "Anish Bania",
+        "prerequisites": "Yes",
+        "days": [
+            {
+                "day": "Thu",
+                "time": "12:30 - 15:20",
+                "buiding": "Building: Anvil Office Tower",
+                "rom": "Room: 709"
+            }
+        ]
+    },
+    {
+        "CRN": "14189",
+        "subject": "BUSN 1210 007",
+        "credit": "3",
+        "title": "Management Essentials",
+        "max": "35",
+        "enrolled": "0",
+        "remain": "35",
+        "wait": "0",
+        "status": "Open",
+        "startEnd": "04-JAN-2022 to 13-APR-2022",
+        "campus": "O",
+        "delivery_mode": "Online Synchronous Course",
+        "instructor": "Adrienne Watt",
+        "prerequisites": "Yes",
+        "days": [
+            {
+                "day": "Fri",
+                "time": "12:30 - 15:20",
+                "buiding": "Building:",
+                "rom": "Room:"
+            }
+        ]
+    },
+    {
+        "CRN": "14273",
+        "subject": "BUSN 1210 008",
+        "credit": "3",
+        "title": "Management Essentials",
+        "max": "35",
+        "enrolled": "0",
+        "remain": "35",
+        "wait": "0",
+        "status": "Open",
+        "startEnd": "04-JAN-2022 to 13-APR-2022",
+        "campus": "O",
+        "delivery_mode": "Online Synchronous Course",
+        "instructor": "Russell Heritage",
+        "prerequisites": "Yes",
+        "days": [
+            {
+                "day": "Fri",
+                "time": "08:30 - 11:20",
+                "buiding": "Building:",
+                "rom": "Room:"
+            }
+        ]
+    },
+    {
+        "CRN": "14488",
+        "subject": "BUSN 1210 009",
+        "credit": "3",
+        "title": "Management Essentials",
+        "max": "35",
+        "enrolled": "0",
+        "remain": "35",
+        "wait": "0",
+        "status": "Open",
+        "startEnd": "04-JAN-2022 to 13-APR-2022",
+        "campus": "N",
+        "delivery_mode": "In Person Day Course",
+        "instructor": "Aurora Faundo",
+        "prerequisites": "Yes",
+        "days": [
+            {
+                "day": "Mon",
+                "time": "11:30 - 14:20",
+                "buiding": "Building: Anvil Office Tower",
+                "rom": "Room: 907"
+            }
+        ]
+    },
+    {
+        "CRN": "14642",
+        "subject": "BUSN 1210 010",
+        "credit": "3",
+        "title": "Management Essentials",
+        "max": "35",
+        "enrolled": "0",
+        "remain": "35",
+        "wait": "0",
+        "status": "Open",
+        "startEnd": "04-JAN-2022 to 13-APR-2022",
+        "campus": "N",
+        "delivery_mode": "In Person Day Course",
+        "instructor": "John Swain Jr.",
+        "prerequisites": "Yes",
+        "days": [
+            {
+                "day": "Mon",
+                "time": "15:30 - 18:20",
+                "buiding": "Building: Anvil Office Tower",
+                "rom": "Room: 709"
+            }
+        ]
+    },
+    {
+        "CRN": "14665",
+        "subject": "BUSN 1210 011",
+        "credit": "3",
+        "title": "Management Essentials",
+        "max": "35",
+        "enrolled": "0",
+        "remain": "35",
+        "wait": "0",
+        "status": "Open",
+        "startEnd": "04-JAN-2022 to 13-APR-2022",
+        "campus": "N",
+        "delivery_mode": "In Person Day Course",
+        "instructor": "Andrei Ribalkin",
+        "prerequisites": "Yes",
+        "days": [
+            {
+                "day": "Tue",
+                "time": "08:30 - 11:20",
+                "buiding": "Building: New Westminster - North Bldg.",
+                "rom": "Room: N4308"
+            }
+        ]
+    },
+    {
+        "CRN": "13563",
+        "subject": "BUSN 1210 050",
+        "credit": "3",
+        "title": "Management Essentials",
+        "max": "35",
+        "enrolled": "0",
+        "remain": "35",
+        "wait": "0",
+        "status": "Open",
+        "startEnd": "04-JAN-2022 to 13-APR-2022",
+        "campus": "N",
+        "delivery_mode": "In Person Evening Course",
+        "instructor": "George Stroppa",
+        "prerequisites": "Yes",
+        "days": [
+            {
+                "day": "Wed",
+                "time": "18:30 - 21:20",
+                "buiding": "Building: Anvil Office Tower",
+                "rom": "Room: 708"
+            }
+        ]
+    },
+    {
+        "CRN": "16094",
+        "subject": "BUSN 1210 052",
+        "credit": "3",
+        "title": "Management Essentials",
+        "max": "35",
+        "enrolled": "0",
+        "remain": "35",
+        "wait": "0",
+        "status": "Open",
+        "startEnd": "04-JAN-2022 to 13-APR-2022",
+        "campus": "N",
+        "delivery_mode": "In Person Evening Course",
+        "instructor": "Bassem Hamid",
+        "prerequisites": "Yes",
+        "days": [
+            {
+                "day": "Tue",
+                "time": "18:30 - 21:20",
+                "buiding": "Building: Anvil Office Tower",
+                "rom": "Room: 907"
+            }
+        ]
+    },
+    {
+        "CRN": "16097",
+        "subject": "BUSN 1210 053",
+        "credit": "3",
+        "title": "Management Essentials",
+        "max": "35",
+        "enrolled": "0",
+        "remain": "35",
+        "wait": "0",
+        "status": "Open",
+        "startEnd": "04-JAN-2022 to 13-APR-2022",
+        "campus": "N",
+        "delivery_mode": "In Person Evening Course",
+        "instructor": "Neil Brown",
+        "prerequisites": "Yes",
+        "days": [
+            {
+                "day": "Thu",
+                "time": "18:30 - 21:20",
+                "buiding": "Building: Anvil Office Tower",
+                "rom": "Room: 707"
+            }
+        ]
+    },
+    {
+        "CRN": "16098",
+        "subject": "BUSN 1210 070",
+        "credit": "3",
+        "title": "Management Essentials",
+        "max": "35",
+        "enrolled": "0",
+        "remain": "35",
+        "wait": "0",
+        "status": "Open",
+        "startEnd": "04-JAN-2022 to 13-APR-2022",
+        "campus": "O",
+        "delivery_mode": "Online Synchronous Course",
+        "instructor": "Russell Heritage",
+        "prerequisites": "Yes",
+        "days": [
+            {
+                "day": "Sat",
+                "time": "09:00 - 11:50",
+                "buiding": "Building:",
+                "rom": "Room:"
+            }
+        ],
+        "sessionnote": "Section Notes:: BUSN 1210 070 - This section is on Saturdays."
+    },
+    {
+        "CRN": "13597",
+        "subject": "BUSN 2275 001",
+        "credit": "3",
+        "title": "Business Strategy & Simulation",
+        "max": "24",
+        "enrolled": "0",
+        "remain": "24",
+        "wait": "0",
+        "status": "Open",
+        "startEnd": "04-JAN-2022 to 13-APR-2022",
+        "campus": "N",
+        "delivery_mode": "In Person Day Course",
+        "instructor": "Anish Bania",
+        "prerequisites": "Yes",
+        "days": [
+            {
+                "day": "Mon",
+                "time": "15:30 - 18:20",
+                "buiding": "Building: Anvil Office Tower",
+                "rom": "Room: 807"
+            }
+        ]
+    },
+    {
+        "CRN": "16127",
+        "subject": "BUSN 2290 002",
+        "credit": "3",
+        "title": "Quantitative Decision Making",
+        "max": "35",
+        "enrolled": "0",
+        "remain": "35",
+        "wait": "0",
+        "status": "Open",
+        "startEnd": "04-JAN-2022 to 13-APR-2022",
+        "campus": "N",
+        "delivery_mode": "In Person Day Course",
+        "instructor": "Andrei Ribalkin",
+        "prerequisites": "Yes",
+        "days": [
+            {
+                "day": "Wed",
+                "time": "08:30 - 11:20",
+                "buiding": "Building: New Westminster - North Bldg.",
+                "rom": "Room: N6105"
+            }
+        ]
+    },
+    {
+        "CRN": "12637",
+        "subject": "BUSN 2429 001",
+        "credit": "3",
+        "title": "Business Statistics",
+        "max": "35",
+        "enrolled": "0",
+        "remain": "35",
+        "wait": "0",
+        "status": "Open",
+        "startEnd": "04-JAN-2022 to 13-APR-2022",
+        "campus": "N",
+        "delivery_mode": "In Person Day Course",
+        "instructor": "Victor Law",
+        "prerequisites": "Yes",
+        "days": [
+            {
+                "day": "Mon",
+                "time": "11:30 - 14:20",
+                "buiding": "Building: Anvil Office Tower",
+                "rom": "Room: 809"
+            }
+        ]
+    },
+    {
+        "CRN": "12638",
+        "subject": "BUSN 2429 002",
+        "credit": "3",
+        "title": "Business Statistics",
+        "max": "35",
+        "enrolled": "0",
+        "remain": "35",
+        "wait": "0",
+        "status": "Open",
+        "startEnd": "04-JAN-2022 to 13-APR-2022",
+        "campus": "N",
+        "delivery_mode": "In Person Day Course",
+        "instructor": "Victor Law",
+        "prerequisites": "Yes",
+        "days": [
+            {
+                "day": "Mon",
+                "time": "15:30 - 18:20",
+                "buiding": "Building: Anvil Office Tower",
+                "rom": "Room: 809"
+            }
+        ]
+    },
+    {
+        "CRN": "12639",
+        "subject": "BUSN 2429 003",
+        "credit": "3",
+        "title": "Business Statistics",
+        "max": "35",
+        "enrolled": "0",
+        "remain": "35",
+        "wait": "0",
+        "status": "Open",
+        "startEnd": "04-JAN-2022 to 13-APR-2022",
+        "campus": "N",
+        "delivery_mode": "In Person Day Course",
+        "instructor": "Jeff Ha",
+        "prerequisites": "Yes",
+        "days": [
+            {
+                "day": "Wed",
+                "time": "08:30 - 10:20",
+                "buiding": "Building: Anvil Office Tower",
+                "rom": "Room: 807"
+            },
+            {
+                "day": "Fri",
+                "time": "08:30 - 10:20",
+                "buiding": "Building: Anvil Office Tower",
+                "rom": "Room: 807"
+            }
+        ]
+    },
+    {
+        "CRN": "12640",
+        "subject": "BUSN 2429 004",
+        "credit": "3",
+        "title": "Business Statistics",
+        "max": "35",
+        "enrolled": "0",
+        "remain": "35",
+        "wait": "0",
+        "status": "Open",
+        "startEnd": "04-JAN-2022 to 13-APR-2022",
+        "campus": "N",
+        "delivery_mode": "In Person Day Course",
+        "instructor": "Jeff Ha",
+        "prerequisites": "Yes",
+        "days": [
+            {
+                "day": "Wed",
+                "time": "10:30 - 12:20",
+                "buiding": "Building: Anvil Office Tower",
+                "rom": "Room: 807"
+            },
+            {
+                "day": "Fri",
+                "time": "10:30 - 12:20",
+                "buiding": "Building: Anvil Office Tower",
+                "rom": "Room: 807"
+            }
+        ]
+    },
+    {
+        "CRN": "14604",
+        "subject": "BUSN 2429 005",
+        "credit": "3",
+        "title": "Business Statistics",
+        "max": "35",
+        "enrolled": "0",
+        "remain": "35",
+        "wait": "0",
+        "status": "Open",
+        "startEnd": "04-JAN-2022 to 13-APR-2022",
+        "campus": "O",
+        "delivery_mode": "Online Synchronous Course",
+        "instructor": "Bassem Hamid",
+        "prerequisites": "Yes",
+        "days": [
+            {
+                "day": "Wed",
+                "time": "12:30 - 15:20",
+                "buiding": "Building:",
+                "rom": "Room:"
+            }
+        ]
+    },
+    {
+        "CRN": "14717",
+        "subject": "BUSN 2429 006",
+        "credit": "3",
+        "title": "Business Statistics",
+        "max": "35",
+        "enrolled": "0",
+        "remain": "35",
+        "wait": "0",
+        "status": "Open",
+        "startEnd": "04-JAN-2022 to 13-APR-2022",
+        "campus": "N",
+        "delivery_mode": "In Person Day Course",
+        "instructor": "Laura Matheson",
+        "prerequisites": "Yes",
+        "days": [
+            {
+                "day": "Thu",
+                "time": "12:30 - 15:20",
+                "buiding": "Building: Anvil Office Tower",
+                "rom": "Room: 909"
+            }
+        ]
+    },
+    {
+        "CRN": "16099",
+        "subject": "BUSN 2429 007",
+        "credit": "3",
+        "title": "Business Statistics",
+        "max": "35",
+        "enrolled": "0",
+        "remain": "35",
+        "wait": "0",
+        "status": "Open",
+        "startEnd": "04-JAN-2022 to 13-APR-2022",
+        "campus": "N",
+        "delivery_mode": "In Person Day Course",
+        "instructor": "Laura Matheson",
+        "prerequisites": "Yes",
+        "days": [
+            {
+                "day": "Fri",
+                "time": "08:30 - 11:20",
+                "buiding": "Building: Anvil Office Tower",
+                "rom": "Room: 808"
+            }
+        ]
+    },
+    {
+        "CRN": "15082",
+        "subject": "BUSN 2429 051",
+        "credit": "3",
+        "title": "Business Statistics",
+        "max": "35",
+        "enrolled": "0",
+        "remain": "35",
+        "wait": "0",
+        "status": "Open",
+        "startEnd": "04-JAN-2022 to 13-APR-2022",
+        "campus": "N",
+        "delivery_mode": "In Person Evening Course",
+        "instructor": "Nishant Kalia",
+        "prerequisites": "Yes",
+        "days": [
+            {
+                "day": "Tue",
+                "time": "18:30 - 21:20",
+                "buiding": "Building: Anvil Office Tower",
+                "rom": "Room: 809"
+            }
+        ]
+    },
+    {
+        "CRN": "16856",
+        "subject": "BUSN 2429 052",
+        "credit": "3",
+        "title": "Business Statistics",
+        "max": "35",
+        "enrolled": "0",
+        "remain": "35",
+        "wait": "0",
+        "status": "Open",
+        "startEnd": "04-JAN-2022 to 13-APR-2022",
+        "campus": "N",
+        "delivery_mode": "In Person Evening Course",
+        "instructor": "Bassem Hamid",
+        "prerequisites": "Yes",
+        "days": [
+            {
+                "day": "Wed",
+                "time": "18:30 - 21:20",
+                "buiding": "Building: Anvil Office Tower",
+                "rom": "Room: 816"
+            }
+        ]
+    },
+    {
+        "CRN": "14985",
+        "subject": "BUSN 2429 070",
+        "credit": "3",
+        "title": "Business Statistics",
+        "max": "35",
+        "enrolled": "0",
+        "remain": "35",
+        "wait": "0",
+        "status": "Open",
+        "startEnd": "04-JAN-2022 to 13-APR-2022",
+        "campus": "N",
+        "delivery_mode": "In Person Weekend Course",
+        "instructor": "Nishant Kalia",
+        "prerequisites": "Yes",
+        "days": [
+            {
+                "day": "Sat",
+                "time": "09:00 - 11:50",
+                "buiding": "Building: Anvil Office Tower",
+                "rom": "Room: 809"
+            }
+        ],
+        "sessionnote": "Section Notes:: BUSN 2429 070 - This section is on Saturdays."
+    },
+    {
+        "CRN": "15281",
+        "subject": "BUSN 3100 001",
+        "credit": "3",
+        "title": "Trade in the Global Market",
+        "max": "35",
+        "enrolled": "0",
+        "remain": "35",
+        "wait": "0",
+        "status": "Open",
+        "startEnd": "04-JAN-2022 to 13-APR-2022",
+        "campus": "N",
+        "delivery_mode": "In Person Day Course",
+        "instructor": "Anish Bania",
+        "prerequisites": "Yes",
+        "days": [
+            {
+                "day": "Mon",
+                "time": "11:30 - 14:20",
+                "buiding": "Building: Anvil Office Tower",
+                "rom": "Room: 626"
+            }
+        ]
+    },
+    {
+        "CRN": "15867",
+        "subject": "BUSN 3100 003",
+        "credit": "3",
+        "title": "Trade in the Global Market",
+        "max": "35",
+        "enrolled": "0",
+        "remain": "35",
+        "wait": "0",
+        "status": "Open",
+        "startEnd": "04-JAN-2022 to 13-APR-2022",
+        "campus": "N",
+        "delivery_mode": "In Person Day Course",
+        "instructor": "Simon Parker",
+        "prerequisites": "Yes",
+        "days": [
+            {
+                "day": "Fri",
+                "time": "08:30 - 11:20",
+                "buiding": "Building: Anvil Office Tower",
+                "rom": "Room: 626"
+            }
+        ]
+    },
+    {
+        "CRN": "16721",
+        "subject": "BUSN 3100 004",
+        "credit": "3",
+        "title": "Trade in the Global Market",
+        "max": "35",
+        "enrolled": "0",
+        "remain": "35",
+        "wait": "0",
+        "status": "Open",
+        "startEnd": "04-JAN-2022 to 13-APR-2022",
+        "campus": "N",
+        "delivery_mode": "In Person Day Course",
+        "instructor": "Simon Parker",
+        "prerequisites": "Yes",
+        "days": [
+            {
+                "day": "Tue",
+                "time": "12:30 - 15:20",
+                "buiding": "Building: New Westminster - North Bldg.",
+                "rom": "Room: N2201"
+            }
+        ]
+    },
+    {
+        "CRN": "16857",
+        "subject": "BUSN 3100 051",
+        "credit": "3",
+        "title": "Trade in the Global Market",
+        "max": "35",
+        "enrolled": "0",
+        "remain": "35",
+        "wait": "0",
+        "status": "Open",
+        "startEnd": "04-JAN-2022 to 13-APR-2022",
+        "campus": "N",
+        "delivery_mode": "In Person Evening Course",
+        "instructor": "Anish Bania",
+        "prerequisites": "Yes",
+        "days": [
+            {
+                "day": "Tue",
+                "time": "18:30 - 21:20",
+                "buiding": "Building: Anvil Office Tower",
+                "rom": "Room: 711"
+            }
+        ]
+    },
+    {
+        "CRN": "15776",
+        "subject": "BUSN 3200 001",
+        "credit": "3",
+        "title": "Global Trade Finance",
+        "max": "35",
+        "enrolled": "0",
+        "remain": "35",
+        "wait": "0",
+        "status": "Open",
+        "startEnd": "04-JAN-2022 to 13-APR-2022",
+        "campus": "N",
+        "delivery_mode": "In Person Day Course",
+        "instructor": "Simon Parker",
+        "prerequisites": "Yes",
+        "days": [
+            {
+                "day": "Mon",
+                "time": "11:30 - 14:20",
+                "buiding": "Building: Anvil Office Tower",
+                "rom": "Room: 609"
+            }
+        ],
+        "sessionnote": "Section Notes:: BUSN 3200 001 - This section is \nrestricted to Business Management Diplomas, BBA Management, PDD \nInternational Business, and PBD International Supply Chain Management \nuntil Friday, December 17, 2021 at 9 am."
+    },
+    {
+        "CRN": "16858",
+        "subject": "BUSN 3200 003",
+        "credit": "3",
+        "title": "Global Trade Finance",
+        "max": "35",
+        "enrolled": "0",
+        "remain": "35",
+        "wait": "0",
+        "status": "Open",
+        "startEnd": "04-JAN-2022 to 13-APR-2022",
+        "campus": "N",
+        "delivery_mode": "In Person Day Course",
+        "instructor": "Simon Parker",
+        "prerequisites": "Yes",
+        "days": [
+            {
+                "day": "Fri",
+                "time": "12:30 - 15:20",
+                "buiding": "Building: Anvil Office Tower",
+                "rom": "Room: 711"
+            }
+        ],
+        "sessionnote": "Section Notes:: BUSN 3200 003 - This section is \nrestricted to Business Management Diplomas, BBA Management, PDD \nInternational Business, and PBD International Supply Chain Management \nuntil Friday, December 17, 2021 at 9 am."
+    },
+    {
+        "CRN": "15081",
+        "subject": "BUSN 3253 001",
+        "credit": "3",
+        "title": "Entrepreneurship & New Venture",
+        "max": "35",
+        "enrolled": "0",
+        "remain": "35",
+        "wait": "0",
+        "status": "Open",
+        "startEnd": "04-JAN-2022 to 13-APR-2022",
+        "campus": "N",
+        "delivery_mode": "In Person Day Course",
+        "instructor": "Andrei Ribalkin",
+        "prerequisites": "Yes",
+        "days": [
+            {
+                "day": "Mon",
+                "time": "11:30 - 14:20",
+                "buiding": "Building: New Westminster - South Bldg.",
+                "rom": "Room: S1802"
+            }
+        ]
+    },
+    {
+        "CRN": "16129",
+        "subject": "BUSN 3253 002",
+        "credit": "3",
+        "title": "Entrepreneurship & New Venture",
+        "max": "35",
+        "enrolled": "0",
+        "remain": "35",
+        "wait": "0",
+        "status": "Open",
+        "startEnd": "04-JAN-2022 to 13-APR-2022",
+        "campus": "N",
+        "delivery_mode": "In Person Day Course",
+        "instructor": "Andrei Ribalkin",
+        "prerequisites": "Yes",
+        "days": [
+            {
+                "day": "Mon",
+                "time": "15:30 - 18:20",
+                "buiding": "Building: New Westminster - North Bldg.",
+                "rom": "Room: N4308"
+            }
+        ]
+    },
+    {
+        "CRN": "13763",
+        "subject": "BUSN 3310 001",
+        "credit": "3",
+        "title": "Organizational Management Skil",
+        "max": "35",
+        "enrolled": "0",
+        "remain": "35",
+        "wait": "0",
+        "status": "Open",
+        "startEnd": "04-JAN-2022 to 13-APR-2022",
+        "campus": "N",
+        "delivery_mode": "In Person Day Course",
+        "instructor": "Russell Heritage",
+        "prerequisites": "Yes",
+        "days": [
+            {
+                "day": "Wed",
+                "time": "12:30 - 15:20",
+                "buiding": "Building:",
+                "rom": "Room:"
+            }
+        ],
+        "sessionnote": "Section Notes:: BUSN 3310 001 - This section is \nrestricted to Business Management Diplomas, General Business Diploma, \nPDD Hospitality Marketing, BBA Management, BBA Financial Services & \nAdministration, PBD Finance, PBD Accounting & Finance, PDD \nHospitality Management, and PB Hospitality Services Management Diploma \nuntil Friday, December 17, 2021 at 9 am."
+    },
+    {
+        "CRN": "16213",
+        "subject": "BUSN 3310 002",
+        "credit": "3",
+        "title": "Organizational Management Skil",
+        "max": "35",
+        "enrolled": "0",
+        "remain": "35",
+        "wait": "0",
+        "status": "Open",
+        "startEnd": "04-JAN-2022 to 13-APR-2022",
+        "campus": "N",
+        "delivery_mode": "In Person Day Course",
+        "instructor": "Russell Heritage",
+        "prerequisites": "Yes",
+        "days": [
+            {
+                "day": "Fri",
+                "time": "12:30 - 15:20",
+                "buiding": "Building: Anvil Office Tower",
+                "rom": "Room: 607"
+            }
+        ],
+        "sessionnote": "Section Notes:: BUSN 3310 002 - This section is \nrestricted to Business Management Diplomas, General Business Diploma, \nPDD Hospitality Marketing, BBA Management, BBA Financial Services & \nAdministration, PBD Finance, PBD Accounting & Finance, PDD \nHospitality Management, and PB Hospitality Services Management Diploma \nuntil Friday, December 17, 2021 at 9 am."
+    },
+    {
+        "CRN": "13338",
+        "subject": "BUSN 3310 050",
+        "credit": "3",
+        "title": "Organizational Management Skil",
+        "max": "35",
+        "enrolled": "0",
+        "remain": "35",
+        "wait": "0",
+        "status": "Open",
+        "startEnd": "04-JAN-2022 to 13-APR-2022",
+        "campus": "N",
+        "delivery_mode": "In Person Evening Course",
+        "instructor": "Neil Brown",
+        "prerequisites": "Yes",
+        "days": [
+            {
+                "day": "Tue",
+                "time": "18:30 - 21:20",
+                "buiding": "Building:",
+                "rom": "Room:"
+            }
+        ],
+        "sessionnote": "Section Notes:: BUSN 3310 050 - This section is \nrestricted to Business Management Diplomas, General Business Diploma, \nPDD Hospitality Marketing, BBA Management, BBA Financial Services & \nAdministration, PBD Finance, PBD Accounting & Finance, PDD \nHospitality Management, and PB Hospitality Services Management Diploma \nuntil Friday, December 17, 2021 at 9 am."
+    },
+    {
+        "CRN": "16707",
+        "subject": "BUSN 3312 002",
+        "credit": "3",
+        "title": "Innovation and Change Mgmt",
+        "max": "35",
+        "enrolled": "0",
+        "remain": "35",
+        "wait": "0",
+        "status": "Open",
+        "startEnd": "04-JAN-2022 to 13-APR-2022",
+        "campus": "N",
+        "delivery_mode": "In Person Day Course",
+        "instructor": "Rachael Newton",
+        "prerequisites": "Yes",
+        "days": [
+            {
+                "day": "Mon",
+                "time": "16:30 - 18:20",
+                "buiding": "Building: Anvil Office Tower",
+                "rom": "Room: 712"
+            },
+            {
+                "day": "Wed",
+                "time": "16:30 - 18:20",
+                "buiding": "Building: Anvil Office Tower",
+                "rom": "Room: 712"
+            }
+        ],
+        "sessionnote": "Section Notes:: BUSN 3312 002 - This section is \nrestricted to Business Management Diplomas, BBA Management, and PBD \nAdvanced Human Resource Management until Friday, December 17, 2021 at \n9:00 am."
+    },
+    {
+        "CRN": "16869",
+        "subject": "BUSN 3312 003",
+        "credit": "3",
+        "title": "Innovation and Change Mgmt",
+        "max": "35",
+        "enrolled": "0",
+        "remain": "35",
+        "wait": "0",
+        "status": "Open",
+        "startEnd": "04-JAN-2022 to 13-APR-2022",
+        "campus": "N",
+        "delivery_mode": "In Person Day Course",
+        "instructor": "Rachael Newton",
+        "prerequisites": "Yes",
+        "days": [
+            {
+                "day": "Tue",
+                "time": "16:30 - 18:20",
+                "buiding": "Building: New Westminster - North Bldg.",
+                "rom": "Room: N4307"
+            },
+            {
+                "day": "Thu",
+                "time": "16:30 - 18:20",
+                "buiding": "Building: New Westminster - North Bldg.",
+                "rom": "Room: N4307"
+            }
+        ],
+        "sessionnote": "Section Notes:: BUSN 3312 003 - This section is \nrestricted to Business Management Diplomas, BBA Management, and PBD \nAdvanced Human Resource Management until Friday, December 17, 2021 at \n9:00 am."
+    },
+    {
+        "CRN": "16100",
+        "subject": "BUSN 3314 001",
+        "credit": "3",
+        "title": "Ethical Mgmt & Decision Making",
+        "max": "35",
+        "enrolled": "0",
+        "remain": "35",
+        "wait": "0",
+        "status": "Open",
+        "startEnd": "04-JAN-2022 to 13-APR-2022",
+        "campus": "O",
+        "delivery_mode": "Online Synchronous Course",
+        "instructor": "Rachael Newton",
+        "prerequisites": "Yes",
+        "days": [
+            {
+                "day": "Tue",
+                "time": "12:30 - 15:20",
+                "buiding": "Building:",
+                "rom": "Room:"
+            }
+        ],
+        "sessionnote": "Section Notes:: BUSN 3314 001 - This section is \nrestricted to Business Management Diplomas, BBA Management, and PBD \nAdvanced Human Resource Management until Friday, December 17, 2021 at \n9:00 am."
+    },
+    {
+        "CRN": "12363",
+        "subject": "BUSN 3350 001",
+        "credit": "3",
+        "title": "Human Resource Management",
+        "max": "35",
+        "enrolled": "0",
+        "remain": "35",
+        "wait": "0",
+        "status": "Open",
+        "startEnd": "04-JAN-2022 to 13-APR-2022",
+        "campus": "O",
+        "delivery_mode": "Online Synchronous Course",
+        "instructor": "Lisa Phillips",
+        "prerequisites": "No",
+        "days": [
+            {
+                "day": "Tue",
+                "time": "12:30 - 15:20",
+                "buiding": "Building:",
+                "rom": "Room:"
+            }
+        ],
+        "sessionnote": "Section Notes:: BUSN 3350 001 - This section is \nrestricted to Business Management Diplomas, Hospitality Diploma, BBA \nManagement, PDD Human Resource Management, PDD Hospitality Marketing, \nPDD Hospitality Management, PBD Advanced Human Resource Management, and \nPB Hospitality Services Management Diploma until Wednesday, December 01,\n 2021, at 9:00 am."
+    },
+    {
+        "CRN": "14872",
+        "subject": "BUSN 3350 002",
+        "credit": "3",
+        "title": "Human Resource Management",
+        "max": "35",
+        "enrolled": "0",
+        "remain": "35",
+        "wait": "0",
+        "status": "Open",
+        "startEnd": "04-JAN-2022 to 13-APR-2022",
+        "campus": "O",
+        "delivery_mode": "Online Synchronous Course",
+        "instructor": "Lisa Phillips",
+        "prerequisites": "No",
+        "days": [
+            {
+                "day": "Thu",
+                "time": "15:30 - 18:20",
+                "buiding": "Building:",
+                "rom": "Room:"
+            }
+        ],
+        "sessionnote": "Section Notes:: BUSN 3350 002 - This section is \nrestricted to Business Management Diplomas, Hospitality Diploma, BBA \nManagement, PDD Human Resource Management, PDD Hospitality Marketing, \nPDD Hospitality Management, PBD Advanced Human Resource Management, and \nPB Hospitality Services Management Diploma until Wednesday, December 01,\n 2021, at 9:00 am."
+    },
+    {
+        "CRN": "14986",
+        "subject": "BUSN 3350 003",
+        "credit": "3",
+        "title": "Human Resource Management",
+        "max": "35",
+        "enrolled": "0",
+        "remain": "35",
+        "wait": "0",
+        "status": "Open",
+        "startEnd": "04-JAN-2022 to 13-APR-2022",
+        "campus": "N",
+        "delivery_mode": "In Person Day Course",
+        "instructor": "Aurora Faundo",
+        "prerequisites": "No",
+        "days": [
+            {
+                "day": "Fri",
+                "time": "12:30 - 15:20",
+                "buiding": "Building:",
+                "rom": "Room:"
+            }
+        ],
+        "sessionnote": "Section Notes:: BUSN 3350 003 - This section is \nrestricted to Business Management Diplomas, Hospitality Diploma, BBA \nManagement, PDD Human Resource Management, PDD Hospitality Marketing, \nPDD Hospitality Management, PBD Advanced Human Resource Management, and \nPB Hospitality Services Management Diploma until Wednesday, December 01,\n 2021, at 9:00 am."
+    },
+    {
+        "CRN": "12782",
+        "subject": "BUSN 3350 050",
+        "credit": "3",
+        "title": "Human Resource Management",
+        "max": "35",
+        "enrolled": "0",
+        "remain": "35",
+        "wait": "0",
+        "status": "Open",
+        "startEnd": "04-JAN-2022 to 13-APR-2022",
+        "campus": "N",
+        "delivery_mode": "In Person Evening Course",
+        "instructor": "Aurora Faundo",
+        "prerequisites": "No",
+        "days": [
+            {
+                "day": "Mon",
+                "time": "18:30 - 21:20",
+                "buiding": "Building: Anvil Office Tower",
+                "rom": "Room: 709"
+            }
+        ],
+        "sessionnote": "Section Notes:: BUSN 3350 050 - This section is \nrestricted to Business Management Diplomas, Hospitality Diploma, BBA \nManagement, PDD Human Resource Management, PDD Hospitality Marketing, \nPDD Hospitality Management, PBD Advanced Human Resource Management, and \nPB Hospitality Services Management Diploma until Wednesday, December 01,\n 2021, at 9:00 am."
+    },
+    {
+        "CRN": "16216",
+        "subject": "BUSN 3351 001",
+        "credit": "3",
+        "title": "Training, Devt & Perf Mngt",
+        "max": "30",
+        "enrolled": "0",
+        "remain": "30",
+        "wait": "0",
+        "status": "Open",
+        "startEnd": "04-JAN-2022 to 13-APR-2022",
+        "campus": "N",
+        "delivery_mode": "In Person Day Course",
+        "instructor": "Jeff Ha",
+        "prerequisites": "Yes",
+        "days": [
+            {
+                "day": "Tue",
+                "time": "12:30 - 15:20",
+                "buiding": "Building:",
+                "rom": "Room:"
+            }
+        ],
+        "sessionnote": "Section Notes:: BUSN 3351 001 - This section is \nrestricted to Business Management Diplomas, BBA Management, PDD Human \nResource Management, and PBD Advanced Human Resource Management until \nFriday, December 17, 2021 at 9 am."
+    },
+    {
+        "CRN": "16217",
+        "subject": "BUSN 3352 001",
+        "credit": "3",
+        "title": "Planning & Managing Talent",
+        "max": "30",
+        "enrolled": "0",
+        "remain": "30",
+        "wait": "0",
+        "status": "Open",
+        "startEnd": "04-JAN-2022 to 13-APR-2022",
+        "campus": "N",
+        "delivery_mode": "In Person Day Course",
+        "instructor": "Charles Dickens",
+        "prerequisites": "Yes",
+        "days": [
+            {
+                "day": "Wed",
+                "time": "15:30 - 18:20",
+                "buiding": "Building: Anvil Office Tower",
+                "rom": "Room: 907"
+            }
+        ],
+        "sessionnote": "Section Notes:: BUSN 3352 001 - This section is \nrestricted to Business Management Diplomas, BBA Management, PDD Human \nResource Management, and PBD Advanced Human Resource Management until \nFriday, December 17, 2021 at 9 am."
+    },
+    {
+        "CRN": "15078",
+        "subject": "BUSN 3380 001",
+        "credit": "3",
+        "title": "Operations Management",
+        "max": "35",
+        "enrolled": "0",
+        "remain": "35",
+        "wait": "0",
+        "status": "Open",
+        "startEnd": "04-JAN-2022 to 13-APR-2022",
+        "campus": "N",
+        "delivery_mode": "In Person Day Course",
+        "instructor": "Jeff Ha",
+        "prerequisites": "Yes",
+        "days": [
+            {
+                "day": "Tue",
+                "time": "08:30 - 11:20",
+                "buiding": "Building: Anvil Office Tower",
+                "rom": "Room: 625"
+            }
+        ],
+        "sessionnote": "Section Notes:: BUSN 3380 001 - This section is \nrestricted to Business Management Diplomas, BBA Management, PBD \nInternational & PDD Supply Chain Management, PDD Hospitality \nManagement, PDD Hospitality Marketing, and both PBD Computer and \nInformation Systems - Data Analytics Stream & Emerging Technology \nStream until Friday, December 17, 2021 at 9 am."
+    },
+    {
+        "CRN": "15885",
+        "subject": "BUSN 3380 002",
+        "credit": "3",
+        "title": "Operations Management",
+        "max": "35",
+        "enrolled": "0",
+        "remain": "35",
+        "wait": "0",
+        "status": "Open",
+        "startEnd": "04-JAN-2022 to 13-APR-2022",
+        "campus": "N",
+        "delivery_mode": "In Person Day Course",
+        "instructor": "Bassem Hamid",
+        "prerequisites": "Yes",
+        "days": [
+            {
+                "day": "Tue",
+                "time": "15:30 - 18:20",
+                "buiding": "Building: Anvil Office Tower",
+                "rom": "Room: 907"
+            }
+        ],
+        "sessionnote": "Section Notes:: BUSN 3380 002 - This section is \nrestricted to Business Management Diplomas, BBA Management, PBD \nInternational & PDD Supply Chain Management, PDD Hospitality \nManagement, PDD Hospitality Marketing, and both PBD Computer and \nInformation Systems - Data Analytics Stream & Emerging Technology \nStream until Friday, December 17, 2021 at 9 am."
+    },
+    {
+        "CRN": "16167",
+        "subject": "BUSN 3386 002",
+        "credit": "3",
+        "title": "Supply Materials Management",
+        "max": "35",
+        "enrolled": "0",
+        "remain": "35",
+        "wait": "0",
+        "status": "Open",
+        "startEnd": "04-JAN-2022 to 13-APR-2022",
+        "campus": "N",
+        "delivery_mode": "In Person Day Course",
+        "instructor": "Charles Dickens",
+        "prerequisites": "Yes",
+        "days": [
+            {
+                "day": "Tue",
+                "time": "12:30 - 15:20",
+                "buiding": "Building: Anvil Office Tower",
+                "rom": "Room: 907"
+            }
+        ],
+        "sessionnote": "Section Notes:: BUSN 3386 002 - This section is \nrestricted to Business Management Diplomas, BBA Management, PBD \nInternational & PDD Supply Chain Management, PDD Hospitality \nManagement, PDD Hospitality Marketing, and both PBD Computer and \nInformation Systems - Data Analytics Stream & Emerging Technology \nStream until Friday, December 17, 2021 at 9 am."
+    },
+    {
+        "CRN": "15939",
+        "subject": "BUSN 3388 050",
+        "credit": "3",
+        "title": "Supply Chain Planning",
+        "max": "35",
+        "enrolled": "0",
+        "remain": "35",
+        "wait": "0",
+        "status": "Open",
+        "startEnd": "04-JAN-2022 to 13-APR-2022",
+        "campus": "N",
+        "delivery_mode": "In Person Evening Course",
+        "instructor": "Ralph Ferens",
+        "prerequisites": "Yes",
+        "days": [
+            {
+                "day": "Wed",
+                "time": "18:30 - 21:20",
+                "buiding": "Building: Anvil Office Tower",
+                "rom": "Room: 707"
+            }
+        ],
+        "sessionnote": "Section Notes:: BUSN 3388 050 - This section is \nrestricted to Business Management Diplomas, BBA Management, PBD \nInternational & PDD Supply Chain Management, PDD Hospitality \nManagement, PDD Hospitality Marketing, and both PBD Computer and \nInformation Systems - Data Analytics Stream & Emerging Technology \nStream until Friday, December 17, 2021 at 9 am."
+    },
+    {
+        "CRN": "15080",
+        "subject": "BUSN 3410 001",
+        "credit": "3",
+        "title": "Global Supply Chain Management",
+        "max": "35",
+        "enrolled": "0",
+        "remain": "35",
+        "wait": "0",
+        "status": "Open",
+        "startEnd": "04-JAN-2022 to 13-APR-2022",
+        "campus": "N",
+        "delivery_mode": "In Person Day Course",
+        "instructor": "(Faculty) TBA",
+        "prerequisites": "Yes",
+        "days": [
+            {
+                "day": "Mon",
+                "time": "15:30 - 18:20",
+                "buiding": "Building:",
+                "rom": "Room:"
+            }
+        ],
+        "sessionnote": "Section Notes:: BUSN 3410 001 - This section is \nrestricted to Business Management Diplomas, BBA Management, PDD \nInternational Business, Supply Chain Mgmt PD Diploma, and PBD \nInternational & PDD Supply Chain Management until Friday, December \n17, 2021 at 9 am."
+    },
+    {
+        "CRN": "15235",
+        "subject": "BUSN 3410 002",
+        "credit": "3",
+        "title": "Global Supply Chain Management",
+        "max": "35",
+        "enrolled": "0",
+        "remain": "35",
+        "wait": "0",
+        "status": "Open",
+        "startEnd": "04-JAN-2022 to 13-APR-2022",
+        "campus": "N",
+        "delivery_mode": "In Person Day Course",
+        "instructor": "(Faculty) TBA",
+        "prerequisites": "Yes",
+        "days": [
+            {
+                "day": "Wed",
+                "time": "12:30 - 15:20",
+                "buiding": "Building:",
+                "rom": "Room:"
+            }
+        ],
+        "sessionnote": "Section Notes:: BUSN 3410 002 - This section is \nrestricted to Business Management Diplomas, BBA Management, PDD \nInternational Business, Supply Chain Mgmt PD Diploma, and PBD \nInternational & PDD Supply Chain Management until Friday, December \n17, 2021 at 9 am."
+    },
+    {
+        "CRN": "13924",
+        "subject": "BUSN 3431 001",
+        "credit": "3",
+        "title": "Business Statistics II",
+        "max": "35",
+        "enrolled": "0",
+        "remain": "35",
+        "wait": "0",
+        "status": "Open",
+        "startEnd": "04-JAN-2022 to 13-APR-2022",
+        "campus": "N",
+        "delivery_mode": "In Person Day Course",
+        "instructor": "Charles Dickens",
+        "prerequisites": "Yes",
+        "days": [
+            {
+                "day": "Tue",
+                "time": "08:30 - 11:20",
+                "buiding": "Building: Anvil Office Tower",
+                "rom": "Room: 807"
+            }
+        ]
+    },
+    {
+        "CRN": "14440",
+        "subject": "BUSN 3431 002",
+        "credit": "3",
+        "title": "Business Statistics II",
+        "max": "35",
+        "enrolled": "0",
+        "remain": "35",
+        "wait": "0",
+        "status": "Open",
+        "startEnd": "04-JAN-2022 to 13-APR-2022",
+        "campus": "N",
+        "delivery_mode": "In Person Day Course",
+        "instructor": "Victor Law",
+        "prerequisites": "Yes",
+        "days": [
+            {
+                "day": "Wed",
+                "time": "12:30 - 15:20",
+                "buiding": "Building: Anvil Office Tower",
+                "rom": "Room: 808"
+            }
+        ]
+    },
+    {
+        "CRN": "16414",
+        "subject": "BUSN 3431 003",
+        "credit": "3",
+        "title": "Business Statistics II",
+        "max": "35",
+        "enrolled": "0",
+        "remain": "35",
+        "wait": "0",
+        "status": "Open",
+        "startEnd": "04-JAN-2022 to 13-APR-2022",
+        "campus": "N",
+        "delivery_mode": "In Person Day Course",
+        "instructor": "Charles Dickens",
+        "prerequisites": "Yes",
+        "days": [
+            {
+                "day": "Thu",
+                "time": "15:30 - 18:20",
+                "buiding": "Building: Anvil Office Tower",
+                "rom": "Room: 907"
+            }
+        ]
+    },
+    {
+        "CRN": "14120",
+        "subject": "BUSN 3431 050",
+        "credit": "3",
+        "title": "Business Statistics II",
+        "max": "35",
+        "enrolled": "0",
+        "remain": "35",
+        "wait": "0",
+        "status": "Open",
+        "startEnd": "04-JAN-2022 to 13-APR-2022",
+        "campus": "N",
+        "delivery_mode": "In Person Evening Course",
+        "instructor": "Victor Law",
+        "prerequisites": "Yes",
+        "days": [
+            {
+                "day": "Tue",
+                "time": "18:30 - 21:20",
+                "buiding": "Building: Anvil Office Tower",
+                "rom": "Room: 808"
+            }
+        ]
+    },
+    {
+        "CRN": "15596",
+        "subject": "BUSN 3500 001",
+        "credit": "3",
+        "title": "Int'l Business Entry Strategy",
+        "max": "35",
+        "enrolled": "0",
+        "remain": "35",
+        "wait": "0",
+        "status": "Open",
+        "startEnd": "04-JAN-2022 to 13-APR-2022",
+        "campus": "N",
+        "delivery_mode": "In Person Day Course",
+        "instructor": "Monica Semeniuk",
+        "prerequisites": "Yes",
+        "days": [
+            {
+                "day": "Wed",
+                "time": "15:30 - 18:20",
+                "buiding": "Building: Anvil Office Tower",
+                "rom": "Room: 708"
+            }
+        ],
+        "sessionnote": "Section Notes:: BUSN 3500 001 - This section is \nrestricted to Business Management Diplomas, BBA Management, PDD \nInternational Business Management, and PBD International Supply Chain \nManagement until Friday, December 17, 2021 at 9 am."
+    },
+    {
+        "CRN": "16101",
+        "subject": "BUSN 3500 050",
+        "credit": "3",
+        "title": "Int'l Business Entry Strategy",
+        "max": "35",
+        "enrolled": "0",
+        "remain": "35",
+        "wait": "0",
+        "status": "Open",
+        "startEnd": "04-JAN-2022 to 13-APR-2022",
+        "campus": "N",
+        "delivery_mode": "In Person Evening Course",
+        "instructor": "Monica Semeniuk",
+        "prerequisites": "Yes",
+        "days": [
+            {
+                "day": "Tue",
+                "time": "18:30 - 21:20",
+                "buiding": "Building: Anvil Office Tower",
+                "rom": "Room: 708"
+            }
+        ],
+        "sessionnote": "Section Notes:: BUSN 3500 050 - This section is \nrestricted to Business Management Diplomas, BBA Management, PDD \nInternational Business Management, and PBD International Supply Chain \nManagement until Friday, December 17, 2021 at 9 am."
+    },
+    {
+        "CRN": "15370",
+        "subject": "BUSN 3600 001",
+        "credit": "3",
+        "title": "Project Management Essentials",
+        "max": "35",
+        "enrolled": "0",
+        "remain": "35",
+        "wait": "0",
+        "status": "Open",
+        "startEnd": "04-JAN-2022 to 13-APR-2022",
+        "campus": "N",
+        "delivery_mode": "In Person Day Course",
+        "instructor": "Florence Daddey",
+        "prerequisites": "No",
+        "days": [
+            {
+                "day": "Tue",
+                "time": "12:30 - 15:20",
+                "buiding": "Building: Anvil Office Tower",
+                "rom": "Room: 709"
+            }
+        ],
+        "sessionnote": "Section Notes:: BUSN 3600 001 - This section is \nrestricted to Business Management Diplomas, BBA Management, PDD Project \nManagement, PBD International & PDD Supply Chain Management, PBD \nHealth Information Management, and PDD Information & Communication \nTechnology until Friday, December 17, 2021 at 9 am. BUSN 3600 is\n equivalent to COBA 3200. Students whose program requires them to take \nCOBA 3200 should take BUSN 3600. Students who have taken COBA 3200 may \nnot take BUSN 3600 for credit."
+    },
+    {
+        "CRN": "16859",
+        "subject": "BUSN 3600 004",
+        "credit": "3",
+        "title": "Project Management Essentials",
+        "max": "35",
+        "enrolled": "0",
+        "remain": "35",
+        "wait": "0",
+        "status": "Open",
+        "startEnd": "04-JAN-2022 to 13-APR-2022",
+        "campus": "N",
+        "delivery_mode": "In Person Day Course",
+        "instructor": "Adrienne Watt",
+        "prerequisites": "No",
+        "days": [
+            {
+                "day": "Wed",
+                "time": "08:30 - 11:20",
+                "buiding": "Building: Anvil Office Tower",
+                "rom": "Room: 608"
+            }
+        ],
+        "sessionnote": "Section Notes:: BUSN 3600 004 - This section is \nrestricted to Business Management Diplomas, BBA Management, PDD Project \nManagement, PBD International & PDD Supply Chain Management, PBD \nHealth Information Management, and PDD Information & Communication \nTechnology until Friday, December 17, 2021 at 9 am.BUSN 3600 is \nequivalent to COBA 3200. Students whose program requires them to take \nCOBA 3200 should take BUSN 3600. Students who have taken COBA 3200 may \nnot take BUSN 3600 for credit."
+    },
+    {
+        "CRN": "16860",
+        "subject": "BUSN 3600 005",
+        "credit": "3",
+        "title": "Project Management Essentials",
+        "max": "35",
+        "enrolled": "0",
+        "remain": "35",
+        "wait": "0",
+        "status": "Open",
+        "startEnd": "04-JAN-2022 to 13-APR-2022",
+        "campus": "N",
+        "delivery_mode": "In Person Day Course",
+        "instructor": "Adrienne Watt",
+        "prerequisites": "No",
+        "days": [
+            {
+                "day": "Thu",
+                "time": "12:30 - 15:20",
+                "buiding": "Building: Anvil Office Tower",
+                "rom": "Room: 907"
+            }
+        ],
+        "sessionnote": "Section Notes:: BUSN 3600 005 - This section is \nrestricted to Business Management Diplomas, BBA Management, PDD Project \nManagement, PBD International & PDD Supply Chain Management, PBD \nHealth Information Management, and PDD Information & Communication \nTechnology until Friday, December 17, 2021 at 9 am.BUSN 3600 is \nequivalent to COBA 3200. Students whose program requires them to take \nCOBA 3200 should take BUSN 3600. Students who have taken COBA 3200 may \nnot take BUSN 3600 for credit."
+    },
+    {
+        "CRN": "16341",
+        "subject": "BUSN 3600 050",
+        "credit": "3",
+        "title": "Project Management Essentials",
+        "max": "35",
+        "enrolled": "0",
+        "remain": "35",
+        "wait": "0",
+        "status": "Open",
+        "startEnd": "04-JAN-2022 to 13-APR-2022",
+        "campus": "N",
+        "delivery_mode": "In Person Evening Course",
+        "instructor": "Florence Daddey",
+        "prerequisites": "No",
+        "days": [
+            {
+                "day": "Tue",
+                "time": "18:30 - 21:20",
+                "buiding": "Building: Anvil Office Tower",
+                "rom": "Room: 624"
+            }
+        ],
+        "sessionnote": "Section Notes:: BUSN 3600 050 - This section is \nrestricted to Business Management Diplomas, BBA Management, PDD Project \nManagement, PBD International & PDD Supply Chain Management, PBD \nHealth Information Management, and PDD Information & Communication \nTechnology until Friday, December 17, 2021 at 9 am.    BUSN 3600\n is equivalent to COBA 3200. Students whose program requires them to \ntake COBA 3200 should take BUSN 3600. Students who have taken COBA 3200 \nmay not take BUSN 3600 for credit."
+    },
+    {
+        "CRN": "16093",
+        "subject": "BUSN 3610 050",
+        "credit": "3",
+        "title": "Project Communication Mgmt",
+        "max": "24",
+        "enrolled": "0",
+        "remain": "24",
+        "wait": "0",
+        "status": "Open",
+        "startEnd": "04-JAN-2022 to 13-APR-2022",
+        "campus": "N",
+        "delivery_mode": "In Person Evening Course",
+        "instructor": "Monica Semeniuk",
+        "prerequisites": "Yes",
+        "days": [
+            {
+                "day": "Thu",
+                "time": "18:30 - 21:20",
+                "buiding": "Building: Anvil Office Tower",
+                "rom": "Room: 624"
+            }
+        ],
+        "sessionnote": "Section Notes:: BUSN 3610 050 - This section is \nrestricted to Business Management Diplomas, BBA Management, and PDD \nProject Management until Friday, December 17, 2021 at 9 am."
+    },
+    {
+        "CRN": "16119",
+        "subject": "BUSN 3620 002",
+        "credit": "3",
+        "title": "Project Time & Scope Mgmt",
+        "max": "30",
+        "enrolled": "0",
+        "remain": "30",
+        "wait": "0",
+        "status": "Open",
+        "startEnd": "04-JAN-2022 to 13-APR-2022",
+        "campus": "N",
+        "delivery_mode": "In Person Day Course",
+        "instructor": "Adrienne Watt",
+        "prerequisites": "Yes",
+        "days": [
+            {
+                "day": "Thu",
+                "time": "08:30 - 11:20",
+                "buiding": "Building: Anvil Office Tower",
+                "rom": "Room: 707"
+            }
+        ],
+        "sessionnote": "Section Notes:: BUSN 3620 002 - This section is \nrestricted to Business Management Diplomas, BBA Management, and PDD \nProject Management until Friday, December 11, 2020 at 9 am."
+    },
+    {
+        "CRN": "16636",
+        "subject": "BUSN 3620 050",
+        "credit": "3",
+        "title": "Project Time & Scope Mgmt",
+        "max": "30",
+        "enrolled": "0",
+        "remain": "30",
+        "wait": "0",
+        "status": "Open",
+        "startEnd": "04-JAN-2022 to 13-APR-2022",
+        "campus": "N",
+        "delivery_mode": "In Person Evening Course",
+        "instructor": "Min Jin Kim",
+        "prerequisites": "Yes",
+        "days": [
+            {
+                "day": "Mon",
+                "time": "18:30 - 21:20",
+                "buiding": "Building: Anvil Office Tower",
+                "rom": "Room: 707"
+            }
+        ],
+        "sessionnote": "Section Notes:: BUSN 3620 050 - This section is \nrestricted to Business Management Diplomas, BBA Management, and PDD \nProject Management until Friday, December 17, 2021 at 9 am."
+    },
+    {
+        "CRN": "16453",
+        "subject": "BUSN 3630 001",
+        "credit": "3",
+        "title": "Project Cost, Qual, Risk, Proc",
+        "max": "35",
+        "enrolled": "0",
+        "remain": "35",
+        "wait": "0",
+        "status": "Open",
+        "startEnd": "04-JAN-2022 to 13-APR-2022",
+        "campus": "N",
+        "delivery_mode": "In Person Day Course",
+        "instructor": "Florence Daddey",
+        "prerequisites": "Yes",
+        "days": [
+            {
+                "day": "Fri",
+                "time": "12:30 - 15:20",
+                "buiding": "Building: Anvil Office Tower",
+                "rom": "Room: 707"
+            }
+        ],
+        "sessionnote": "Section Notes:: BUSN 3630 001 - This section is \nrestricted to Business Management Diplomas, BBA Management, and PDD \nProject Management until Friday, December 17, 2021 at 9 am."
+    },
+    {
+        "CRN": "16314",
+        "subject": "BUSN 4275 002",
+        "credit": "3",
+        "title": "Busn Strategy & Compet Analysi",
+        "max": "30",
+        "enrolled": "0",
+        "remain": "30",
+        "wait": "0",
+        "status": "Open",
+        "startEnd": "04-JAN-2022 to 13-APR-2022",
+        "campus": "N",
+        "delivery_mode": "In Person Day Course",
+        "instructor": "John Swain Jr.",
+        "prerequisites": "No",
+        "days": [
+            {
+                "day": "Tue",
+                "time": "12:30 - 15:20",
+                "buiding": "Building:",
+                "rom": "Room:"
+            }
+        ],
+        "sessionnote": "Section Notes:: BUSN 4275 002 - This section is \nrestricted to Business Management Diplomas, BBA Management, BBA \nAccounting, PBD Accounting, PDD Accounting, PBD Accounting & \nFinance, PBD Finance, BBA Financial Services, PBD Advanced Human \nResource Management and PBD International & PDD Supply Chain \nManagement until Friday, December 17, 2021 at 9 am.Students must have 90 credits towards a BBA Degree or be in 4th year standing to register."
+    },
+    {
+        "CRN": "16454",
+        "subject": "BUSN 4275 003",
+        "credit": "3",
+        "title": "Busn Strategy & Compet Analysi",
+        "max": "30",
+        "enrolled": "0",
+        "remain": "30",
+        "wait": "0",
+        "status": "Open",
+        "startEnd": "04-JAN-2022 to 13-APR-2022",
+        "campus": "N",
+        "delivery_mode": "In Person Day Course",
+        "instructor": "Neil Brown",
+        "prerequisites": "No",
+        "days": [
+            {
+                "day": "Thu",
+                "time": "12:30 - 15:20",
+                "buiding": "Building:",
+                "rom": "Room:"
+            }
+        ],
+        "sessionnote": "Section Notes:: BUSN 4275 003 - This section is \nrestricted to Business Management Diplomas, BBA Management, BBA \nAccounting, PBD Accounting, PDD Accounting, PBD Accounting & \nFinance, PBD Finance, BBA Financial Services, PBD Advanced Human \nResource Management and PBD International & PDD Supply Chain \nManagement until Friday, December 17, 2021 at 9 am.Students must have 90 credits towards a BBA Degree or be in 4th year standing to register."
+    },
+    {
+        "CRN": "13488",
+        "subject": "BUSN 4275 050",
+        "credit": "3",
+        "title": "Busn Strategy & Compet Analysi",
+        "max": "30",
+        "enrolled": "0",
+        "remain": "30",
+        "wait": "0",
+        "status": "Open",
+        "startEnd": "04-JAN-2022 to 13-APR-2022",
+        "campus": "N",
+        "delivery_mode": "In Person Evening Course",
+        "instructor": "John Swain Jr.",
+        "prerequisites": "No",
+        "days": [
+            {
+                "day": "Tue",
+                "time": "18:30 - 21:20",
+                "buiding": "Building: Anvil Office Tower",
+                "rom": "Room: 709"
+            }
+        ],
+        "sessionnote": "Section Notes:: BUSN 4275 050 – This section is \nrestricted to Business Management Diplomas, BBA Management, BBA \nAccounting, PBD Accounting, PDD Accounting, PBD Accounting & \nFinance, PBD Finance, BBA Financial Services, PBD Advanced Human \nResource Management and PBD International & PDD Supply Chain \nManagement until Friday, December 17, 2021 at 9 am.Students must have 90 credits towards a BBA Degree or be in 4th year standing to register."
+    },
+    {
+        "CRN": "13818",
+        "subject": "BUSN 4275 051",
+        "credit": "3",
+        "title": "Busn Strategy & Compet Analysi",
+        "max": "30",
+        "enrolled": "0",
+        "remain": "30",
+        "wait": "0",
+        "status": "Open",
+        "startEnd": "04-JAN-2022 to 13-APR-2022",
+        "campus": "N",
+        "delivery_mode": "In Person Evening Course",
+        "instructor": "Neil Brown",
+        "prerequisites": "No",
+        "days": [
+            {
+                "day": "Wed",
+                "time": "18:30 - 21:20",
+                "buiding": "Building: Anvil Office Tower",
+                "rom": "Room: 709"
+            }
+        ],
+        "sessionnote": "Section Notes:: BUSN 4275 051 - This section is \nrestricted to Business Management Diplomas, BBA Management, BBA \nAccounting, PBD Accounting, PDD Accounting, PBD Accounting & \nFinance, PBD Finance, BBA Financial Services, PBD Advanced Human \nResource Management and PBD International & PDD Supply Chain \nManagement until Friday, December 17, 2021 at 9 am.Students must have 90 credits towards a BBA Degree or be in 4th year standing to register."
+    },
+    {
+        "CRN": "15284",
+        "subject": "BUSN 4500 001",
+        "credit": "1.5",
+        "title": "Career Portfolio Development",
+        "max": "16",
+        "enrolled": "0",
+        "remain": "16",
+        "wait": "0",
+        "status": "Open",
+        "startEnd": "04-JAN-2022 to 13-APR-2022",
+        "campus": "O",
+        "delivery_mode": "Online Synchronous Course",
+        "instructor": "Rachael Newton",
+        "prerequisites": "Yes",
+        "days": [
+            {
+                "day": "Wed",
+                "time": "15:30 - 18:20",
+                "buiding": "Building:",
+                "rom": "Room:"
+            }
+        ],
+        "sessionnote": "Section Notes:: BUSN 4500 001 - This course is \nrestricted to students with a minimum 105 credits towards a BBA and ENGL\n 1130 or CMNS 1115 (completion of both is highly recommended)."
+    },
+    {
+        "CRN": "16139",
+        "subject": "BUSN 4500 002",
+        "credit": "1.5",
+        "title": "Career Portfolio Development",
+        "max": "16",
+        "enrolled": "0",
+        "remain": "16",
+        "wait": "0",
+        "status": "Open",
+        "startEnd": "04-JAN-2022 to 13-APR-2022",
+        "campus": "O",
+        "delivery_mode": "Online Synchronous Course",
+        "instructor": "Rachael Newton",
+        "prerequisites": "Yes",
+        "days": [
+            {
+                "day": "Wed",
+                "time": "15:30 - 18:20",
+                "buiding": "Building:",
+                "rom": "Room:"
+            }
+        ],
+        "sessionnote": "Section Notes:: BUSN 4500 002 - This course is \nrestricted to students with a minimum 105 credits towards a BBA and ENGL\n 1130 or CMNS 1115 (completion of both is highly recommended)."
+    },
+    {
+        "CRN": "16150",
+        "subject": "BUSN 4640 050",
+        "credit": "3",
+        "title": "Project Mgmt Methods",
+        "max": "30",
+        "enrolled": "0",
+        "remain": "30",
+        "wait": "0",
+        "status": "Open",
+        "startEnd": "04-JAN-2022 to 13-APR-2022",
+        "campus": "N",
+        "delivery_mode": "In Person Evening Course",
+        "instructor": "Min Jin Kim",
+        "prerequisites": "Yes",
+        "days": [
+            {
+                "day": "Tue",
+                "time": "18:30 - 21:20",
+                "buiding": "Building: Anvil Office Tower",
+                "rom": "Room: 707"
+            }
+        ]
+    },
+    {
+        "CRN": "14850",
+        "subject": "HOSP 1115 001",
+        "credit": "3",
+        "title": "Tourism Business Structure",
+        "max": "35",
+        "enrolled": "0",
+        "remain": "35",
+        "wait": "0",
+        "status": "Open",
+        "startEnd": "04-JAN-2022 to 13-APR-2022",
+        "campus": "C",
+        "delivery_mode": "In Person Day Course",
+        "instructor": "Catherine Collis",
+        "prerequisites": "No",
+        "days": [
+            {
+                "day": "Tue",
+                "time": "14:30 - 16:20",
+                "buiding": "Building: Coquitlam - Bldg. A",
+                "rom": "Room: A2280"
+            },
+            {
+                "day": "Thu",
+                "time": "14:30 - 16:20",
+                "buiding": "Building: Coquitlam - Bldg. A",
+                "rom": "Room: A2280"
+            }
+        ],
+        "sessionnote": "Section Notes:: HOSP 1115 001 is restricted to Hospitality students."
+    },
+    {
+        "CRN": "13943",
+        "subject": "HOSP 1145 001",
+        "credit": "3",
+        "title": "Introductory Food Management",
+        "max": "35",
+        "enrolled": "0",
+        "remain": "35",
+        "wait": "0",
+        "status": "Open",
+        "startEnd": "04-JAN-2022 to 13-APR-2022",
+        "campus": "C",
+        "delivery_mode": "In Person Day Course",
+        "instructor": "Andrea Terpenkas",
+        "prerequisites": "No",
+        "days": [
+            {
+                "day": "Mon",
+                "time": "12:30 - 14:20",
+                "buiding": "Building: Coquitlam - Bldg. A",
+                "rom": "Room: A2280"
+            },
+            {
+                "day": "Wed",
+                "time": "12:30 - 14:20",
+                "buiding": "Building: Coquitlam - Bldg. A",
+                "rom": "Room: A2280"
+            }
+        ],
+        "sessionnote": "Section Notes:: HOSP 1145 001 is restricted to Hospitality students."
+    },
+    {
+        "CRN": "12429",
+        "subject": "HOSP 1210 001",
+        "credit": "3",
+        "title": "Accounting Principles",
+        "max": "35",
+        "enrolled": "0",
+        "remain": "35",
+        "wait": "0",
+        "status": "Open",
+        "startEnd": "04-JAN-2022 to 13-APR-2022",
+        "campus": "C",
+        "delivery_mode": "In Person Day Course",
+        "instructor": "Rod Comrie",
+        "prerequisites": "No",
+        "days": [
+            {
+                "day": "Tue",
+                "time": "08:30 - 10:20",
+                "buiding": "Building: Coquitlam - Bldg. A",
+                "rom": "Room: A2280"
+            },
+            {
+                "day": "Thu",
+                "time": "08:30 - 10:20",
+                "buiding": "Building: Coquitlam - Bldg. A",
+                "rom": "Room: A2280"
+            }
+        ],
+        "sessionnote": "Section Notes:: HOSP 1210 001 is restricted to Hospitality students."
+    },
+    {
+        "CRN": "13117",
+        "subject": "HOSP 1235 001",
+        "credit": "3",
+        "title": "Food and Beverage Service Oper",
+        "max": "35",
+        "enrolled": "0",
+        "remain": "35",
+        "wait": "0",
+        "status": "Open",
+        "startEnd": "04-JAN-2022 to 13-APR-2022",
+        "campus": "C",
+        "delivery_mode": "In Person Day Course",
+        "instructor": "Andrea Terpenkas",
+        "prerequisites": "No",
+        "days": [
+            {
+                "day": "Mon",
+                "time": "14:30 - 16:20",
+                "buiding": "Building: Coquitlam - Bldg. A",
+                "rom": "Room: A2280"
+            },
+            {
+                "day": "Wed",
+                "time": "14:30 - 16:20",
+                "buiding": "Building: Coquitlam - Bldg. A",
+                "rom": "Room: A2280"
+            }
+        ],
+        "sessionnote": "Section Notes:: HOSP 1235 001 is restricted to Hospitality students."
+    },
+    {
+        "CRN": "13118",
+        "subject": "HOSP 1235 002",
+        "credit": "3",
+        "title": "Food and Beverage Service Oper",
+        "max": "35",
+        "enrolled": "0",
+        "remain": "35",
+        "wait": "0",
+        "status": "Open",
+        "startEnd": "04-JAN-2022 to 13-APR-2022",
+        "campus": "C",
+        "delivery_mode": "In Person Day Course",
+        "instructor": "Andrea Terpenkas",
+        "prerequisites": "No",
+        "days": [
+            {
+                "day": "Tue",
+                "time": "12:30 - 14:20",
+                "buiding": "Building: Coquitlam - Bldg. A",
+                "rom": "Room: A2280"
+            },
+            {
+                "day": "Thu",
+                "time": "12:30 - 14:20",
+                "buiding": "Building: Coquitlam - Bldg. A",
+                "rom": "Room: A2280"
+            }
+        ],
+        "sessionnote": "Section Notes:: HOSP 1235 002 is restricted to Hospitality students."
+    },
+    {
+        "CRN": "13941",
+        "subject": "HOSP 2240 001",
+        "credit": "3",
+        "title": "Front Desk Operations",
+        "max": "35",
+        "enrolled": "0",
+        "remain": "35",
+        "wait": "0",
+        "status": "Open",
+        "startEnd": "04-JAN-2022 to 13-APR-2022",
+        "campus": "C",
+        "delivery_mode": "In Person Day Course",
+        "instructor": "Mark Elliott",
+        "prerequisites": "Yes",
+        "days": [
+            {
+                "day": "Tue",
+                "time": "12:30 - 14:20",
+                "buiding": "Building: Coquitlam - Bldg. A",
+                "rom": "Room: A2290"
+            },
+            {
+                "day": "Thu",
+                "time": "12:30 - 14:20",
+                "buiding": "Building: Coquitlam - Bldg. A",
+                "rom": "Room: A2290"
+            }
+        ],
+        "sessionnote": "Section Notes:: HOSP 2240 001 is restricted to Hospitality students."
+    },
+    {
+        "CRN": "14921",
+        "subject": "HOSP 2240 002",
+        "credit": "3",
+        "title": "Front Desk Operations",
+        "max": "35",
+        "enrolled": "0",
+        "remain": "35",
+        "wait": "0",
+        "status": "Open",
+        "startEnd": "04-JAN-2022 to 13-APR-2022",
+        "campus": "C",
+        "delivery_mode": "In Person Day Course",
+        "instructor": "Catherine Collis",
+        "prerequisites": "Yes",
+        "days": [
+            {
+                "day": "Mon",
+                "time": "16:30 - 19:20",
+                "buiding": "Building: Coquitlam - Bldg. A",
+                "rom": "Room: A1130"
+            }
+        ],
+        "sessionnote": "Section Notes:: HOSP 2240 002 is restricted to Hospitality students."
+    },
+    {
+        "CRN": "13053",
+        "subject": "HOSP 2255 001",
+        "credit": "3",
+        "title": "Beverage Management",
+        "max": "35",
+        "enrolled": "0",
+        "remain": "35",
+        "wait": "0",
+        "status": "Open",
+        "startEnd": "04-JAN-2022 to 13-APR-2022",
+        "campus": "C",
+        "delivery_mode": "In Person Day Course",
+        "instructor": "Andrea Terpenkas",
+        "prerequisites": "Yes",
+        "days": [
+            {
+                "day": "Tue",
+                "time": "10:30 - 12:20",
+                "buiding": "Building: Coquitlam - Bldg. A",
+                "rom": "Room: A2280"
+            },
+            {
+                "day": "Thu",
+                "time": "10:30 - 12:20",
+                "buiding": "Building: Coquitlam - Bldg. A",
+                "rom": "Room: A2280"
+            }
+        ],
+        "sessionnote": "Section Notes:: HOSP 2255 001 is restricted to Hospitality students."
+    },
+    {
+        "CRN": "13054",
+        "subject": "HOSP 2255 002",
+        "credit": "3",
+        "title": "Beverage Management",
+        "max": "35",
+        "enrolled": "0",
+        "remain": "35",
+        "wait": "0",
+        "status": "Open",
+        "startEnd": "04-JAN-2022 to 13-APR-2022",
+        "campus": "C",
+        "delivery_mode": "In Person Day Course",
+        "instructor": "Mark Portner",
+        "prerequisites": "Yes",
+        "days": [
+            {
+                "day": "Thu",
+                "time": "16:30 - 19:20",
+                "buiding": "Building: Coquitlam - Bldg. A",
+                "rom": "Room: A2280"
+            }
+        ],
+        "sessionnote": "Section Notes:: HOSP 2255 002 is restricted to Hospitality students."
+    },
+    {
+        "CRN": "15881",
+        "subject": "HOSP 2255 003",
+        "credit": "3",
+        "title": "Beverage Management",
+        "max": "35",
+        "enrolled": "0",
+        "remain": "35",
+        "wait": "0",
+        "status": "Open",
+        "startEnd": "04-JAN-2022 to 13-APR-2022",
+        "campus": "C",
+        "delivery_mode": "In Person Day Course",
+        "instructor": "Mark Portner",
+        "prerequisites": "Yes",
+        "days": [
+            {
+                "day": "Fri",
+                "time": "09:30 - 12:20",
+                "buiding": "Building: Coquitlam - Bldg. A",
+                "rom": "Room: A2280"
+            }
+        ],
+        "sessionnote": "Section Notes:: HOSP 2255 003 is restricted to Hospitality students."
+    },
+    {
+        "CRN": "14016",
+        "subject": "HOSP 2310 001",
+        "credit": "3",
+        "title": "Hospitality Mgmt Accounting",
+        "max": "35",
+        "enrolled": "0",
+        "remain": "35",
+        "wait": "0",
+        "status": "Open",
+        "startEnd": "04-JAN-2022 to 13-APR-2022",
+        "campus": "C",
+        "delivery_mode": "In Person Day Course",
+        "instructor": "Rod Comrie",
+        "prerequisites": "Yes",
+        "days": [
+            {
+                "day": "Wed",
+                "time": "09:00 - 11:50",
+                "buiding": "Building: Coquitlam - Bldg. A",
+                "rom": "Room: A1130"
+            }
+        ],
+        "sessionnote": "Section Notes:: HOSP 2310 001 is restricted to Hospitality students."
+    },
+    {
+        "CRN": "13976",
+        "subject": "HOSP 2330 001",
+        "credit": "3",
+        "title": "Food & Beverage Cost Controls",
+        "max": "35",
+        "enrolled": "0",
+        "remain": "35",
+        "wait": "0",
+        "status": "Open",
+        "startEnd": "04-JAN-2022 to 13-APR-2022",
+        "campus": "C",
+        "delivery_mode": "In Person Day Course",
+        "instructor": "Joseph Dharmaraj",
+        "prerequisites": "Yes",
+        "days": [
+            {
+                "day": "Wed",
+                "time": "09:00 - 11:50",
+                "buiding": "Building: Coquitlam - Bldg. A",
+                "rom": "Room: A2290"
+            }
+        ],
+        "sessionnote": "Section Notes:: HOSP 2330 001 is restricted to Hospitality students."
+    },
+    {
+        "CRN": "14922",
+        "subject": "HOSP 2330 002",
+        "credit": "3",
+        "title": "Food & Beverage Cost Controls",
+        "max": "35",
+        "enrolled": "0",
+        "remain": "35",
+        "wait": "0",
+        "status": "Open",
+        "startEnd": "04-JAN-2022 to 13-APR-2022",
+        "campus": "C",
+        "delivery_mode": "In Person Day Course",
+        "instructor": "Joseph Dharmaraj",
+        "prerequisites": "Yes",
+        "days": [
+            {
+                "day": "Mon",
+                "time": "12:30 - 14:20",
+                "buiding": "Building: Coquitlam - Bldg. A",
+                "rom": "Room: A2290"
+            },
+            {
+                "day": "Wed",
+                "time": "12:30 - 14:20",
+                "buiding": "Building: Coquitlam - Bldg. A",
+                "rom": "Room: A2290"
+            }
+        ],
+        "sessionnote": "Section Notes:: HOSP 2330 002 is restricted to Hospitality students."
+    },
+    {
+        "CRN": "13942",
+        "subject": "HOSP 2415 001",
+        "credit": "3",
+        "title": "Hospitality Sales Advertising",
+        "max": "35",
+        "enrolled": "0",
+        "remain": "35",
+        "wait": "0",
+        "status": "Open",
+        "startEnd": "04-JAN-2022 to 13-APR-2022",
+        "campus": "C",
+        "delivery_mode": "In Person Day Course",
+        "instructor": "Catherine Collis",
+        "prerequisites": "Yes",
+        "days": [
+            {
+                "day": "Wed",
+                "time": "16:30 - 19:20",
+                "buiding": "Building: Coquitlam - Bldg. A",
+                "rom": "Room: A2030"
+            }
+        ],
+        "sessionnote": "Section Notes:: HOSP 2415 001 is restricted to Hospitality students."
+    },
+    {
+        "CRN": "14920",
+        "subject": "HOSP 2415 002",
+        "credit": "3",
+        "title": "Hospitality Sales Advertising",
+        "max": "35",
+        "enrolled": "0",
+        "remain": "35",
+        "wait": "0",
+        "status": "Open",
+        "startEnd": "04-JAN-2022 to 13-APR-2022",
+        "campus": "C",
+        "delivery_mode": "In Person Day Course",
+        "instructor": "Catherine Collis",
+        "prerequisites": "Yes",
+        "days": [
+            {
+                "day": "Thu",
+                "time": "16:30 - 19:20",
+                "buiding": "Building: Coquitlam - Bldg. A",
+                "rom": "Room: A2030"
+            }
+        ],
+        "sessionnote": "Section Notes:: HOSP 2415 002 is restricted to Hospitality students."
+    },
+    {
+        "CRN": "13032",
+        "subject": "HOSP 2455 001",
+        "credit": "3",
+        "title": "Hospitality Business Policy Si",
+        "max": "35",
+        "enrolled": "0",
+        "remain": "35",
+        "wait": "0",
+        "status": "Open",
+        "startEnd": "04-JAN-2022 to 13-APR-2022",
+        "campus": "C",
+        "delivery_mode": "In Person Day Course",
+        "instructor": "Mark Elliott",
+        "prerequisites": "Yes",
+        "days": [
+            {
+                "day": "Mon",
+                "time": "14:30 - 16:20",
+                "buiding": "Building: Coquitlam - Bldg. A",
+                "rom": "Room: A2290"
+            },
+            {
+                "day": "Wed",
+                "time": "14:30 - 16:20",
+                "buiding": "Building: Coquitlam - Bldg. A",
+                "rom": "Room: A2290"
+            }
+        ],
+        "sessionnote": "Section Notes:: HOSP 2455 001 is restricted to Hospitality students."
+    },
+    {
+        "CRN": "13033",
+        "subject": "HOSP 2455 002",
+        "credit": "3",
+        "title": "Hospitality Business Policy Si",
+        "max": "35",
+        "enrolled": "0",
+        "remain": "35",
+        "wait": "0",
+        "status": "Open",
+        "startEnd": "04-JAN-2022 to 13-APR-2022",
+        "campus": "C",
+        "delivery_mode": "In Person Day Course",
+        "instructor": "Mark Elliott",
+        "prerequisites": "Yes",
+        "days": [
+            {
+                "day": "Tue",
+                "time": "08:30 - 10:20",
+                "buiding": "Building: Coquitlam - Bldg. A",
+                "rom": "Room: A2290"
+            },
+            {
+                "day": "Thu",
+                "time": "08:30 - 10:20",
+                "buiding": "Building: Coquitlam - Bldg. A",
+                "rom": "Room: A2290"
+            }
+        ],
+        "sessionnote": "Section Notes:: HOSP 2455 002 is restricted to Hospitality students."
+    },
+    {
+        "CRN": "13433",
+        "subject": "HOSP 2465 001",
+        "credit": "3",
+        "title": "Event Management",
+        "max": "35",
+        "enrolled": "0",
+        "remain": "35",
+        "wait": "0",
+        "status": "Open",
+        "startEnd": "04-JAN-2022 to 13-APR-2022",
+        "campus": "C",
+        "delivery_mode": "In Person Day Course",
+        "instructor": "Joseph Dharmaraj",
+        "prerequisites": "Yes",
+        "days": [
+            {
+                "day": "Tue",
+                "time": "12:30 - 14:20",
+                "buiding": "Building: Coquitlam - Bldg. A",
+                "rom": "Room: A2270"
+            },
+            {
+                "day": "Thu",
+                "time": "12:30 - 14:20",
+                "buiding": "Building: Coquitlam - Bldg. A",
+                "rom": "Room: A2270"
+            }
+        ],
+        "sessionnote": "Section Notes:: HOSP 2465 001 is restricted to Hospitality students."
+    },
+    {
+        "CRN": "13434",
+        "subject": "HOSP 2465 002",
+        "credit": "3",
+        "title": "Event Management",
+        "max": "35",
+        "enrolled": "0",
+        "remain": "35",
+        "wait": "0",
+        "status": "Open",
+        "startEnd": "04-JAN-2022 to 13-APR-2022",
+        "campus": "C",
+        "delivery_mode": "In Person Day Course",
+        "instructor": "Joseph Dharmaraj",
+        "prerequisites": "Yes",
+        "days": [
+            {
+                "day": "Tue",
+                "time": "14:30 - 16:20",
+                "buiding": "Building: Coquitlam - Bldg. A",
+                "rom": "Room: A1170"
+            },
+            {
+                "day": "Thu",
+                "time": "14:30 - 16:20",
+                "buiding": "Building: Coquitlam - Bldg. A",
+                "rom": "Room: A1170"
+            }
+        ],
+        "sessionnote": "Section Notes:: HOSP 2465 002 is restricted to Hospitality students."
+    },
+    {
+        "CRN": "15981",
+        "subject": "HOSP 3100 001",
+        "credit": "3",
+        "title": "Revenue Management in Hosp",
+        "max": "35",
+        "enrolled": "0",
+        "remain": "35",
+        "wait": "0",
+        "status": "Open",
+        "startEnd": "04-JAN-2022 to 13-APR-2022",
+        "campus": "C",
+        "delivery_mode": "In Person Day Course",
+        "instructor": "Mark Portner",
+        "prerequisites": "Yes",
+        "days": [
+            {
+                "day": "Wed",
+                "time": "16:30 - 19:20",
+                "buiding": "Building: Coquitlam - Bldg. A",
+                "rom": "Room: A2290"
+            }
+        ],
+        "sessionnote": "Section Notes:: HOSP 3100 001 is restricted to Hospitality students."
+    },
+    {
+        "CRN": "15982",
+        "subject": "HOSP 3110 001",
+        "credit": "3",
+        "title": "Strategic Management in Hosp",
+        "max": "35",
+        "enrolled": "0",
+        "remain": "35",
+        "wait": "0",
+        "status": "Open",
+        "startEnd": "04-JAN-2022 to 13-APR-2022",
+        "campus": "C",
+        "delivery_mode": "In Person Day Course",
+        "instructor": "Mark Portner",
+        "prerequisites": "Yes",
+        "days": [
+            {
+                "day": "Tue",
+                "time": "16:30 - 19:20",
+                "buiding": "Building: Coquitlam - Bldg. A",
+                "rom": "Room: A2290"
+            }
+        ],
+        "sessionnote": "Section Notes:: HOSP 3110 001 is restricted to Hospitality students."
+    },
+    {
+        "CRN": "16085",
+        "subject": "HOSP 3120 001",
+        "credit": "3",
+        "title": "Sustainable Event Planning",
+        "max": "35",
+        "enrolled": "0",
+        "remain": "35",
+        "wait": "0",
+        "status": "Open",
+        "startEnd": "04-JAN-2022 to 13-APR-2022",
+        "campus": "C",
+        "delivery_mode": "In Person Day Course",
+        "instructor": "(Faculty) TBA",
+        "prerequisites": "Yes",
+        "days": [
+            {
+                "day": "Mon",
+                "time": "16:30 - 19:20",
+                "buiding": "Building: Coquitlam - Bldg. A",
+                "rom": "Room: A2290"
+            }
+        ],
+        "sessionnote": "Section Notes:: HOSP 3120 001 is restricted to Hospitality students."
+    }
+]
