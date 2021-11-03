@@ -1,5 +1,8 @@
 # Course Registration Assistant for Douglas College (Schedulify)
 
+![image](https://user-images.githubusercontent.com/9379521/140168846-6bfb0456-033b-47f5-b1cf-35640b790508.png)
+
+
 ## Setup for Development Using Docker
 
 1.  Download and Install [Docker](https://www.docker.com/get-started) on your System
